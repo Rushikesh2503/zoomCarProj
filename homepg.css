@@ -1024,9 +1024,9 @@ body {
   margin: auto;
   padding: 0 2vw;
 }
-#last .wrap .slides .active {
+/* #last .wrap .slides .active {
   display: block;
-}
+} */
 #last .wrap .slides > .container {
   width: 350px;
   height: 100px;
