@@ -1,3 +1,4 @@
+  
 body {
   margin: 0%;
   padding: 0%;
@@ -956,7 +957,7 @@ body {
   position: relative;
   width: 90vw;
 }
-#last .item {
+#last .item2 {
   font-size: 35px;
   width: 80vw;
   display: none;
@@ -965,7 +966,7 @@ body {
   left: 200px;
 }
 
-#last .item > div {
+#last .item2 > div {
   font-size: 50px;
   font-weight: 700;
   color: #5eb32d;
