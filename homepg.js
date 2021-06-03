@@ -49,3 +49,106 @@ setInterval(function () {
     counterr = 1;
   }
 }, 3000);
+
+//                                      MIDDLE PAGE JS                             //
+
+var slideIndex = 1;
+slideview(slideIndex);
+
+// Next/previous controls
+function plusMove(n) {
+  slideview((slideIndex += n));
+}
+
+// Thumbnail image controls
+
+function slideview(n) {
+  var i;
+  var slides = document.getElementsByClassName("row");
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
+}
+
+//                                                        last part of home page
+
+var index = 1;
+showSlides(index);
+//Next/previous controls
+function plusItems(n) {
+  showSlides((index += n));
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("item2");
+
+  if (n > slides.length) {
+    index = 1;
+  }
+  if (n < 1) {
+    index = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[index - 1].style.display = "block";
+}
+
+// press autoplay Slide
+
+var slideIndex = 0;
+function plusSlides(n) {
+  showSlides2((slideIndex = n));
+}
+
+function showSlides2(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  if (slideIndex < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides2, 5000); // Change image every 2 seconds
+}
+
+//   var chng = document.getElementsByClassName('Button');
+
+function changeColor(id) {
+  var mouse = document.getElementById(`${id}`);
+  var drag = document.getElementById(`p${id}`);
+  var change = "rgb(34,34,41)";
+  var newTxt = "green";
+  mouse.style.backgroundColor = change;
+  drag.style.color = newTxt;
+  mouse.removeEventListener("mouseout", changeColor(`${id}`));
+}
+function initial(id) {
+  var mouse = document.getElementById(`${id}`);
+  var drag = document.getElementById(`p${id}`);
+  mouse.style.backgroundColor = "rgb(51, 65, 79)";
+  drag.style.color = "rgb(255, 255, 255)";
+}
+
+// mouse.addEventListener('mouseover', changeColor);
+// mouse.addEventListener('mouseout', initial);
