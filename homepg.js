@@ -107,10 +107,11 @@ function showSlides(n) {
 
 // press autoplay Slide
 
-var slideIndex = 0;
+var slideIndex = 1;
 function plusSlides(n) {
   showSlides2((slideIndex = n));
 }
+showSlides2(slideIndex);
 
 function showSlides2(n) {
   var i;
@@ -129,7 +130,7 @@ function showSlides2(n) {
     slideIndex = 1;
   }
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides2, 5000); // Change image every 2 seconds
+  setTimeout(showSlides2, 2000); // Change image every 2 seconds
 }
 
 //   var chng = document.getElementsByClassName('Button');
