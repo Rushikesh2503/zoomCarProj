@@ -153,3 +153,5 @@ function initial(id) {
 
 // mouse.addEventListener('mouseover', changeColor);
 // mouse.addEventListener('mouseout', initial);
+
+//click signup
