@@ -1117,12 +1117,6 @@ body {
 #last .footer .Button .link {
   /* border: 1px solid white; */
   margin-left: 100px;
-  /* width: 400px;
-=======
-   margin-left: 100px; 
-         /* width: 400px;
->>>>>>> 89379c910e0dba1c413473909fb27696306a5926
-         height: 150px;  */
   align-content: center;
 }
 #last .footer .Button .link img {
