@@ -19,6 +19,7 @@ body {
   background-color: rgb(51, 65, 79);
   justify-content: left;
   position: fixed;
+  z-index: 1000;
 }
 /* Naviation Bar: Logo,texting and Image */
 #home #logo {
@@ -75,7 +76,7 @@ body {
   text-align: center;
   align-items: center;
 }
-#sub_det_item .arrow {
+#sub_det_item .arrowmiddle {
   position: absolute;
   width: 11px;
   height: 11px;
@@ -142,7 +143,7 @@ body {
   font-size: 12px;
   text-align: center;
 }
-.arrow2 {
+.arrowmiddle2 {
   position: absolute;
   width: 11px;
   height: 11px;
@@ -189,7 +190,7 @@ body {
   font-size: 12px;
   text-align: center;
 }
-.arrow3 {
+.arrowmiddle3 {
   position: absolute;
   width: 11px;
   height: 11px;
@@ -228,7 +229,7 @@ body {
 #navbar .item:hover > .mob_det {
   display: block;
 }
-.arrow4 {
+.arrowmiddle4 {
   position: absolute;
   width: 11px;
   height: 11px;
@@ -716,7 +717,7 @@ body {
 #supermillerhead {
   margin-top: 300px;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   background: url(/img/car_bg.jpg);
   background-size: cover;
 }
@@ -772,9 +773,11 @@ body {
   /* position: absolute; */
 
   padding-top: 70px;
+
   top: 120px;
   left: 220px;
   right: 220px;
+  margin-left: 150px;
 
   color: #fff;
 
@@ -812,7 +815,7 @@ body {
   margin-left: 170px;
 }
 
-.arrow {
+.arrowmiddle {
   top: 0;
   height: 120px;
   width: 120px;
@@ -823,14 +826,14 @@ body {
   cursor: pointer;
 }
 
-.left {
-  margin-top: 120px;
+.leftmiddle {
+  margin-top: 0px;
   transform: rotate(130deg);
-  margin-left: 50px;
+  margin-left: 110px;
 }
 
-.right {
-  margin-top: -480px;
+.rightmiddle {
+  margin-top: -121px;
   transform: rotate(-45deg);
   margin-left: 1200px;
 }
@@ -878,6 +881,7 @@ body {
   text-decoration: none;
   color: #323a44;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .apps {
@@ -890,7 +894,7 @@ body {
 .zoomGo {
   width: 70%;
   margin: -350px auto;
-  position: relative;
+  /* position: relative; */
 }
 
 .store {
@@ -912,10 +916,10 @@ body {
   grid-template-columns: 225px 225px 225px 225px 225px;
   grid-template-rows: 60px 30px 45px;
 
-  grid-gap: 25px;
+  grid-gap: 19px;
   /* justify-content: center; */
 
-  margin-left: 80px;
+  margin-left: 0px;
 
   align-items: center;
 }
@@ -940,118 +944,132 @@ body {
 .imgdiv p span {
   text-align: left;
 }
+
 /* LAST PART */
 #last {
   width: 100%;
-  position: relative;
+  margin-top: 110px;
 }
 #last .bg_image {
   height: 500px;
-  width: 100vw;
+  width: 100%;
   text-align: center;
-  position: relative;
+  background-size: 100%;
+  background: url(img/bg_image.jpg);
 }
 #last .quotation {
   width: 100px;
   height: 90px;
   /* margin: -400px -146px; */
   display: inline-block;
-  position: absolute;
-  top: 70px;
-  left: 400px;
+  margin-left: -121px;
+  margin-top: 15px;
+  /* display: flex; */
   background-repeat: no-repeat;
 }
 #last .items {
   color: whitesmoke;
-  position: relative;
-  width: 90vw;
+  display: grid;
+  grid-template-columns: 100px 600px 100px;
+  grid-template-rows: auto;
+  /* width: 900px; */
 }
 #last .item2 {
-  font-size: 35px;
-  width: 80vw;
+  font-size: 20px;
+  width: 900px;
   display: none;
-  position: absolute;
-  top: -325px;
-  left: 200px;
+  /* float: left; */
+  margin-left: 120px;
+  margin-top: 50px;
 }
 
 #last .item2 > div {
-  font-size: 50px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 600;
   color: #5eb32d;
+  width: 400px;
+  margin: auto;
 }
-#last .items .arrow {
-  position: absolute;
-  height: 100px;
-  width: 100px;
+
+.arrowlast {
+  height: 120px;
+  width: 120px;
+  border: 0;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  display: inline-block;
   cursor: pointer;
-  top: -300px;
-  border-bottom: 1px solid whitesmoke;
-  border-right: 1px solid whitesmoke;
 }
-#last .items .arrow.left {
-  transform: rotate(135deg);
-  left: 40px;
+
+.leftlast {
+  margin-top: 65px;
+  transform: rotate(130deg);
+  margin-left: 80px;
 }
-#last .items .arrow.right {
+
+.rightlast {
+  margin-top: 60px;
   transform: rotate(-45deg);
-  right: -150px;
+  margin-left: 465px;
 }
+
 #last .press {
-  margin-top: 100px;
-  position: relative;
+  margin-top: 50px;
+  margin-left: 100px;
+  display: grid;
+  grid-template-columns: 50px 1250px 50px;
+  grid-template-rows: auto;
   width: 100%;
 }
-#last .press .arrow {
-  position: absolute;
-  top: 20px;
+#last .press .arrowlast2 {
   height: 20px;
   width: 20px;
   border-right: 3px solid black;
   border-bottom: 3px solid black;
   cursor: pointer;
 }
-#last .press .arrow.left {
+#last .press .arrowlast2.leftlast2 {
   transform: rotate(135deg);
-  left: 40px;
+  margin-left: 30px;
+  margin-top: 15px;
 }
-#last .press .arrow.right {
+#last .press .arrowlast2.rightlast2 {
   transform: rotate(-45deg);
-  right: 75px;
+  margin-top: 15px;
+  margin-left: -200px;
 }
 #last .wrap {
-  width: 950px;
+  width: 100%;
   padding: 0 20px;
+  /* margin-left: 55px; */
   /* transform-style: preserve-3d; */
 }
-#last .wrap .slides {
-  /* display: grid; */
-  /* display: none; */
+#last .wrap .slides1 {
+  display: grid;
+  display: none;
   /* grid-template-columns: auto auto auto auto;
-         grid-template-rows: auto; */
-  position: absolute;
+   grid-template-rows: auto; */
+
   display: none;
   margin: auto;
-  padding: 0 2vw;
 }
 /* #last .wrap .slides .active {
   display: block;
 } */
-#last .wrap .slides > .container {
+#last .wrap .slides1 > .container {
   width: 350px;
   height: 100px;
   padding: 0 20px;
-  margin-left: 2vw;
-  align-content: center;
+  margin-left: 5px;
+  justify-content: center;
 }
-#last .wrap .slides .grid {
+#last .wrap .slides1 .grid {
   display: grid;
-  grid-template-columns: 400px 400px 400px 400px;
+  grid-template-columns: 200px 400px 300px 350px;
   grid-template-rows: auto;
-  margin-left: 150px;
+  /* margin-left: 150px; */
 }
-#last .wrap .slides img {
-  width: auto;
+#last .wrap .slides1 img {
   height: 50px;
 }
 
@@ -1064,35 +1082,36 @@ body {
 #last .footer {
   background-color: rgb(51, 65, 79);
   color: white;
-  margin-top: 230px;
-  height: 1750px;
+  margin-top: 50px;
+  height: 1650px;
   width: 100%;
   padding-top: 20px;
 }
 #last .footer .Button {
   display: grid;
 
-  grid-template-columns: 400px 400px 400px 400px;
+  grid-template-columns: 300px 300px 300px 300px;
 
   grid-template-rows: auto;
   margin-left: 100px;
   font-size: 18px;
 }
 #last .footer .Button button {
-  width: 400px;
+  width: 300px;
   border: thin;
   background-color: rgb(51, 65, 79);
   height: 150px;
 }
 #last .footer .Button .link {
   /* border: 1px solid white; */
-  /* margin-left: 100px;
-         width: 400px;
-         height: 150px; */
+  margin-left: 100px;
+  /* width: 400px;
+         height: 150px;  */
   align-content: center;
 }
 #last .footer .Button .link img {
   width: 50px;
+  margin-right: 100px;
   padding-bottom: 5px;
 }
 #last .footer .Button button p {
@@ -1112,7 +1131,7 @@ body {
 }
 #last .footer .aboutus {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 250px 250px 250px 250px;
   grid-template-rows: auto auto;
   grid-gap: 20px;
   padding: 10px;
@@ -1121,12 +1140,12 @@ body {
 #last .footer .aboutus a {
   color: white;
   margin-left: 50px;
-  font-size: 22px;
+  font-size: 14px;
   text-decoration: none;
 }
 #last .footer .cities {
   display: grid;
-  grid-template-columns: 400px 400px 400px 400px;
+  grid-template-columns: 250px 250px 250px 250px;
   grid-template-rows: 50px 50px 50px 50px 50px 50px 50px;
   /* padding: 20px; */
   grid-gap: 20px;
@@ -1135,32 +1154,33 @@ body {
 }
 #last .footer .cities .help {
   margin-left: 50px;
-  font-size: 23px;
+  font-size: 14px;
   font-family: sans-serif;
   color: white;
   text-decoration: none;
 }
 #last .footer .cities a {
   color: white;
-  /* margin-left: 50px; */
-  font-size: 22px;
+
+  font-size: 14px;
   text-decoration: none;
 }
 
 #last .footer .airport {
   display: grid;
-  grid-template-columns: 400px 400px 400px 400px;
+  grid-template-columns: 280px 280px 280px 280px;
   grid-template-rows: 50px 50px 50px 50px 50px 50px 50px;
-  /* padding: 20px; */
-  grid-gap: 20px;
+  padding: 20px;
+  /* grid-gap: 20px; */
   padding: 10px;
   margin-left: 100px;
 }
 #last .footer .airport a {
-  margin-left: 50px;
+  /* margin-left: 50px; */
   color: white;
-  font-size: 22px;
+  font-size: 14px;
   text-decoration: none;
+  margin-left: 58px;
 }
 
 #last .footer hr {
@@ -1197,9 +1217,9 @@ body {
   background-color: white;
   color: rgb(56, 54, 54);
   margin-left: 100px;
-  margin-top: 50px;
+  margin-top: 100px;
   width: 80vw;
-  font-size: 22px;
+  font-size: 14px;
 }
 #last .footer .content a {
   text-decoration: none;

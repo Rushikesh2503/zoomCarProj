@@ -115,7 +115,7 @@ showSlides2(slideIndex);
 
 function showSlides2(n) {
   var i;
-  var slides = document.getElementsByClassName("slides");
+  var slides = document.getElementsByClassName("slides1");
   if (slideIndex > slides.length) {
     slideIndex = 1;
   }
@@ -153,3 +153,5 @@ function initial(id) {
 
 // mouse.addEventListener('mouseover', changeColor);
 // mouse.addEventListener('mouseout', initial);
+
+//click signup
