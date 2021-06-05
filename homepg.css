@@ -1,4 +1,3 @@
-  
 body {
   margin: 0%;
   padding: 0%;
@@ -950,10 +949,6 @@ body {
 #last {
   width: 100%;
   margin-top: 110px;
-<<<<<<< HEAD
-=======
- 
->>>>>>> 89379c910e0dba1c413473909fb27696306a5926
 }
 #last .bg_image {
   height: 500px;
@@ -974,9 +969,9 @@ body {
 }
 #last .items {
   color: whitesmoke;
- display: grid;
- grid-template-columns: 100px 600px 100px;
- grid-template-rows: auto;
+  display: grid;
+  grid-template-columns: 100px 600px 100px;
+  grid-template-rows: auto;
   /* width: 900px; */
 }
 #last .item2 {
@@ -987,8 +982,6 @@ body {
   margin-left: 120px;
   margin-top: 50px;
 }
-  
-
 
 #last .item2 > div {
   font-size: 30px;
@@ -1020,18 +1013,15 @@ body {
   margin-left: 465px;
 }
 
-
 #last .press {
   margin-top: 50px;
   margin-left: 100px;
- display: grid;
- grid-template-columns: 50px 1250px 50px;
- grid-template-rows: auto;
+  display: grid;
+  grid-template-columns: 50px 1250px 50px;
+  grid-template-rows: auto;
   width: 100%;
 }
 #last .press .arrowlast2 {
-  
-  
   height: 20px;
   width: 20px;
   border-right: 3px solid black;
@@ -1045,8 +1035,8 @@ body {
 }
 #last .press .arrowlast2.rightlast2 {
   transform: rotate(-45deg);
- margin-top: 15px;
- margin-left: -200px;
+  margin-top: 15px;
+  margin-left: -200px;
 }
 #last .wrap {
   width: 100%;
@@ -1055,14 +1045,13 @@ body {
   /* transform-style: preserve-3d; */
 }
 #last .wrap .slides1 {
-  display: grid; 
-  display: none; 
-   /* grid-template-columns: auto auto auto auto;
+  display: grid;
+  display: none;
+  /* grid-template-columns: auto auto auto auto;
    grid-template-rows: auto; */
- 
+
   display: none;
   margin: auto;
- 
 }
 /* #last .wrap .slides .active {
   display: block;
@@ -1081,7 +1070,6 @@ body {
   /* margin-left: 150px; */
 }
 #last .wrap .slides1 img {
-  
   height: 50px;
 }
 
@@ -1171,7 +1159,7 @@ body {
 }
 #last .footer .cities a {
   color: white;
-  
+
   font-size: 14px;
   text-decoration: none;
 }
