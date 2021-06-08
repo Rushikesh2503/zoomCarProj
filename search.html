@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+    <style>
+      #selectbar {
+        display: flex;
+        margin: 30px 100px;
+      }
+      #selectbar input {
+        display: none;
+      }
+      #selectbar .sel_radiobox1,
+      .sel_radiobox2,
+      .sel_radiobox3 {
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        border: 4px solid rgb(19, 146, 19);
+        box-sizing: border-box;
+      }
+      #selectbar .sel_hori_line1,
+      .sel_hori_line2 {
+        width: 200px;
+        height: 1.5px;
+        margin-top: 15px;
+        margin-left: 0.2px;
+        background-color: gray;
+      }
+      #search_box_cont {
+        margin-left: 100px;
+      }
+      #search_box_cont h1 {
+        font-weight: 500;
+        font-size: 27px;
+        color: rgb(61, 70, 87);
+      }
+      #search_box_cont #sel_start {
+        display: flex;
+      }
+      #sel_start #city_sel {
+        border: 2px solid greenyellow;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+        width: 150px;
+        height: 40px;
+      }
+      #sel_start #sele_st_loca {
+        width: 370px;
+        height: 40px;
+      }
+      #sel_start #sele_st_loca h3 {
+        font-weight: 400;
+        color: grey;
+        margin: 7px 3px;
+      }
+      #locate_btn {
+        border: grey;
+        cursor: pointer;
+        color: grey;
+        font-size: 9px;
+        width: 70px;
+      }
+      #locate_btn .div_locate > img {
+        width: 13px;
+        height: 13px;
+        margin-top: 0%;
+        margin-bottom: 5px;
+      }
+      .locate_par {
+        font-size: 10px;
+      }
+      #showmap_btn {
+        border: none;
+        background: none;
+      }
+      #showmap_btn a {
+        color: grey;
+      }
+      #city_sel select {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border: none;
+        box-sizing: border-box;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      #drop_diff_city {
+        display: flex;
+        margin: 30px 100px;
+      }
+      #drop_diff_city .center {
+        margin-left: 25px;
+      }
+      #diff_city_check[type="checkbox"] {
+        position: relative;
+        width: 40px;
+        height: 15px;
+        appearance: none;
+        background: rgb(223, 220, 220);
+        outline: none;
+        border-radius: 10px;
+        box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+        /* transition: 0.5s; */
+      }
+      #diff_city_check:checked[type="checkbox"] {
+        background-color: rgb(72, 185, 72);
+      }
+      #diff_city_check[type="checkbox"]::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        top: -3px;
+        left: 0;
+        background-color: white;
+        transform: scale(1.2);
+        transition: 0.2s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      }
+      #diff_city_check:checked[type="checkbox"]::before {
+        left: 20px;
+      }
+      .diff_city_para {
+        font-family: "Trebuchet MS", sans-serif;
+        color: #323a44;
+        font-size: 18px;
+      }
+      #popular_pick {
+        margin-left: 100px;
+      }
+      #popular_pick button {
+        color: rgb(61, 70, 87);
+        display: block;
+        margin: 10px 0px;
+        width: 150px;
+        height: 30px;
+        background: none;
+        border: none;
+      }
+      #popular_pick p:first-child {
+        color: black;
+      }
+      #input_sel_st {
+        width: 100%;
+        height: 110%;
+        box-sizing: border-box;
+        border-left: none;
+        border-top: 2px solid greenyellow;
+        border-right: 2px solid greenyellow;
+        border-bottom: 2px solid greenyellow;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      /*hidden things on select*/
+      #sel_start2 {
+        display: none;
+        margin-left: 100px;
+      }
+      #sel_start2 #city_sel2 {
+        border: 2px solid greenyellow;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+        width: 150px;
+        height: 40px;
+      }
+      #sel_start2 #sele_st_loca2 {
+        width: 370px;
+        height: 40px;
+      }
+      #sel_start2 #sele_st_loca2 h3 {
+        font-weight: 400;
+        color: grey;
+        margin: 7px 3px;
+      }
+      #locate_btn2 {
+        border: grey;
+        cursor: pointer;
+        color: grey;
+        font-size: 9px;
+        width: 70px;
+      }
+      #locate_btn2 .div_locate2 > img {
+        width: 13px;
+        height: 13px;
+        margin-top: 0%;
+        margin-bottom: 5px;
+      }
+      .locate_par2 {
+        font-size: 10px;
+      }
+      #showmap_btn2 {
+        border: none;
+        background: none;
+      }
+      #showmap_btn2 a {
+        color: grey;
+      }
+      #city_sel2 select {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border: none;
+        box-sizing: border-box;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      #input_sel_st2 {
+        width: 100%;
+        height: 110%;
+        box-sizing: border-box;
+        border-left: none;
+        border-top: 2px solid greenyellow;
+        border-right: 2px solid greenyellow;
+        border-bottom: 2px solid greenyellow;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="searchpage">
+      <div id="selectbar">
+        <div class="sel_radiobox1"></div>
+        <input type="radio" name="radio-btn" id="radio1" />
+        <div class="sel_hori_line1"></div>
+        <div class="sel_radiobox2"></div>
+        <input type="radio" name="radio-btn" id="radio2" />
+        <div class="sel_hori_line2"></div>
+        <div class="sel_radiobox3"></div>
+        <input type="radio" name="radio-btn" id="radio3" />
+      </div>
+    </div>
+    <div id="search_box_cont">
+      <h1>Tell us your Starting Point</h1>
+      <div id="sel_start">
+        <div id="city_sel">
+          <select name="city" id="city_sub" onchange="checkC()">
+            <option value="select">City</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Vadodara">Vadodara</option>
+            <option value="Pune">Pune</option>
+          </select>
+        </div>
+        <div id="sele_st_loca">
+          <input
+            type="text"
+            placeholder="Tell us your starting point in City"
+            id="input_sel_st"
+          />
+        </div>
+        <button id="locate_btn">
+          <div class="div_locate">
+            <img
+              src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+              alt=""
+            />
+            <div class="locate_par">Locate me</div>
+          </div>
+        </button>
+        <button id="showmap_btn"><a href="">show map</a></button>
+      </div>
+    </div>
+    <div id="drop_diff_city">
+      <div class="diff_city_para">
+        I want to drop my car in a different city
+      </div>
+
+      <div class="center">
+        <input type="checkbox" id="diff_city_check" onchange="divappend()" />
+      </div>
+    </div>
+
+    <div id="sel_start2"></div>
+
+    <div id="popular_pick"></div>
+  </body>
+</html>
+<script>
+  let city = JSON.parse(localStorage.getItem("city"));
+  let your_city = (document.getElementById("city_sub").value = city);
+  let parent = document.getElementById("input_sel_st");
+  parent.placeholder = `Tell us your starting point in ${your_city}`;
+
+  var parent2 = document.getElementById("popular_pick");
+  var parent_diff_city = document.getElementById("sel_start2");
+
+  function checkC() {
+    var start_loc = document.getElementById("city_sub").value;
+    if (start_loc == "Mumbai") {
+      parent.placeholder = `Tell us your starting point in ${start_loc}`;
+      parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                              <button >Kandivali West</button>
+                              <button>Thane</button>
+                              <button>Kharghar</button>
+                              <button>Andheri West</button>
+                              <button>Vashi</button>
+                              `;
+      parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Ahmedabad">Ahmedabad</option>
+             <option value="Nagpur">Nagpur</option>
+             <option value="Pune">Pune</option>
+             <option value="Vadodara">Vadodara</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+    } else if (start_loc == "Bangalore") {
+      parent.placeholder = `Tell us your starting point in ${start_loc}`;
+      parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Indiranagar</p>
+                         <p>Koramangala</p>
+                         <p>Rajajinagar</p>
+                         <p>Magrath Road</p>
+                         <p>Yeshwantpur</p>`;
+
+      parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Chennai">Chennai</option>
+             <option value="Hyderabad">Hyderabad</option>
+             <option value="Mysore">Mysore</option>
+             <option value="Udupi-Manipal">Udupi-Manipal</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+    } else if (start_loc == "Chennai") {
+      parent.placeholder = `Tell us your starting point in ${start_loc}`;
+
+      parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Thuraipakkam</p>
+                         <p>Nelson </p>
+                         <p>Kodambakkam</p>
+                         <p>Porur</p>`;
+
+      parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Bangalore">Bangalore</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+    } else if (start_loc == "Chandigarh") {
+      parent.placeholder = `Tell us your starting point in ${start_loc}`;
+      parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Sector 10</p>
+                         <p>Sector 17</p>
+                         <p>Panchkula</p>
+                         <p>Mohali</p>`;
+
+      parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Delhi">Delhi</option>
+             <option value="Jaipur">Jaipur</option>
+             <option value="Lucknow">Lucknow</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+    } else if (start_loc == "Delhi") {
+      parent.placeholder = `Tell us your starting point in ${start_loc}`;
+      parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Mahipalpur</p>
+                         <p>East of Kailash</p>
+                         <p>Laxmi Nagar</p>
+                         <p>Gurgaon</p>`;
+      parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Chandigarh">Chandigarh</option>
+             <option value="Jaipur">Jaipur</option>
+             <option value="Lucknow">Lucknow</option>
+             <option value="Patna">Patna</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+    } else if (start_loc == "Hyderabad") {
+      parent.placeholder = `Tell us your starting point in ${start_loc}`;
+      parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Madhapur</p>
+                         <p>Gachibowli</p>
+                         <p>Kothapet</p>
+                         <p>HITEC City</p>`;
+      parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Bangalore">Bangalore</option>
+             <option value="Vijaywada">Vijaywada</option>
+             <option value="Vizag">Vizag</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+    } else if (start_loc == "Kolkata") {
+      parent.placeholder = `Tell us your starting point in ${start_loc}`;
+      parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Salt Lake</p>
+                         <p>New Alipore</p>
+                         <p>Ballygunge</p>
+                         <p>Tollygunge</p>`;
+      parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Bhubaneswar">Bhubaneswar</option>
+             <option value="Patna">Patna</option>
+             <option value="Siliguri">Siliguri</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+    } else if (start_loc == "Pune") {
+      parent.placeholder = `Tell us your starting point in ${start_loc}`;
+      parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Aundh</p>
+                         <p>Hinjewadi</p>
+                         <p>Kothrud</p>
+                         <p>Rasta Peth</p>`;
+      parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Ahmedabad">Ahmedabad</option>
+             <option value="Mumbai">Mumbai</option>
+             <option value="Nagpur">Nagpur</option>
+             <option value="Vadodara">Vadodara</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+    } else {
+      parent.placeholder = `Tell us your starting point in ${start_loc}`;
+      parent2.innerHTML = "";
+    }
+  }
+
+  if (your_city == "Mumbai") {
+    parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                              <p>Kandivali West</p>
+                              <p>Thane</p>
+                              <p>Kharghar</p>
+                              <p>Andheri West</p>
+                              <p>Vashi</p>
+                              `;
+    parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Ahmedabad">Ahmedabad</option>
+             <option value="Nagpur">Nagpur</option>
+             <option value="Pune">Pune</option>
+             <option value="Vadodara">Vadodara</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+  } else if (your_city == "Bangalore") {
+    parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Indiranagar</p>
+                         <p>Koramangala</p>
+                         <p>Rajajinagar</p>
+                         <p>Magrath Road</p>
+                         <p>Yeshwantpur</p>`;
+
+    parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Chennai">Chennai</option>
+             <option value="Hyderabad">Hyderabad</option>
+             <option value="Mysore">Mysore</option>
+             <option value="Udupi-Manipal">Udupi-Manipal</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+  } else if (your_city == "Chennai") {
+    parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Thuraipakkam</p>
+                         <p>Nelson </p>
+                         <p>Kodambakkam</p>
+                         <p>Porur</p>`;
+    parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+            <option value="Bangalore">Bangalore</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+  } else if (your_city == "Chandigarh") {
+    parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Sector 10</p>
+                         <p>Sector 17</p>
+                         <p>Panchkula</p>
+                         <p>Mohali</p>`;
+    parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Delhi">Delhi</option>
+             <option value="Jaipur">Jaipur</option>
+             <option value="Lucknow">Lucknow</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+  } else if (your_city == "Delhi") {
+    parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Mahipalpur</p>
+                         <p>East of Kailash</p>
+                         <p>Laxmi Nagar</p>
+                         <p>Gurgaon</p>`;
+    parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Chandigarh">Chandigarh</option>
+             <option value="Jaipur">Jaipur</option>
+             <option value="Lucknow">Lucknow</option>
+             <option value="Patna">Patna</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+  } else if (your_city == "Hyderabad") {
+    parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Madhapur</p>
+                         <p>Gachibowli</p>
+                         <p>Kothapet</p>
+                         <p>HITEC City</p>`;
+    parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Bangalore">Bangalore</option>
+             <option value="Vijaywada">Vijaywada</option>
+             <option value="Vizag">Vizag</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+  } else if (your_city == "Kolkata") {
+    parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Salt Lake</p>
+                         <p>New Alipore</p>
+                         <p>Ballygunge</p>
+                         <p>Tollygunge</p>`;
+    parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Bhubaneswar">Bhubaneswar</option>
+             <option value="Patna">Patna</option>
+             <option value="Siliguri">Siliguri</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+  } else if (your_city == "Pune") {
+    parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
+                         <p>Aundh</p>
+                         <p>Hinjewadi</p>
+                         <p>Kothrud</p>
+                         <p>Rasta Peth</p>`;
+    parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Ahmedabad">Ahmedabad</option>
+             <option value="Mumbai">Mumbai</option>
+             <option value="Nagpur">Nagpur</option>
+             <option value="Vadodara">Vadodara</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+  } else {
+    parent2.innerHTML = "";
+  }
+
+  let dCity = document.getElementById("diff_city_check");
+
+  /* let parent_diff_city = document.getElementById("sel_start2");
+  let diff_sel_city = document.getElementById("city_sub").value;
+  console.log("diff_sel_city:", diff_sel_city);
+
+  if (start_loc == "Mumbai") {
+    parent_diff_city.innerHTML = `<div id="city_sel2">
+           <select name="city" id="city_sub2" onchange="checkCh2()">
+             <option value="Ahmedabad">Ahmedabad</option>
+             <option value="Nagpur">Nagpur</option>
+             <option value="Pune">Pune</option>
+             <option value="Vadodara">Vadodara</option>
+           </select>
+         </div>
+         <div id="sele_st_loca2">
+           <input
+             type="text"
+             placeholder="Tell us your starting point in City"
+             id="input_sel_st2"
+           />
+         </div>
+         <button id="locate_btn2">
+           <div class="div_locate2">
+             <img
+               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+               alt=""
+             />
+             <div class="locate_par2">Locate me</div>
+           </div>
+         </button>
+         <button id="showmap_btn2"><a href="">show map</a></button>
+       </div>`;
+  }*/
+  function divappend() {
+    if (dCity.checked == true) {
+      let popu_pick = document.getElementById("popular_pick");
+      popu_pick.style.display = "none";
+      let sele_diff_city = document.getElementById("sel_start2");
+      sele_diff_city.style.display = "flex";
+    } else if (dCity.checked == false) {
+      let sele_diff_city = document.getElementById("sel_start2");
+      sele_diff_city.style.display = "none";
+      let popu_pick = document.getElementById("popular_pick");
+      popu_pick.style.display = "block";
+    }
+  }
+</script>

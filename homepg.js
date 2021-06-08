@@ -50,6 +50,11 @@ setInterval(function () {
   }
 }, 3000);
 
+function checkCity() {
+  var city = document.getElementById("city").value;
+  localStorage.setItem("city", JSON.stringify(city));
+}
+
 //                                      MIDDLE PAGE JS                             //
 
 var slideIndex = 1;
