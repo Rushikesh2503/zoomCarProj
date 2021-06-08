@@ -293,6 +293,8 @@
   var parent2 = document.getElementById("popular_pick");
   var parent_diff_city = document.getElementById("sel_start2");
 
+  //if we change value of current city
+
   function checkC() {
     var start_loc = document.getElementById("city_sub").value;
     if (start_loc == "Mumbai") {
@@ -566,6 +568,8 @@
     }
   }
 
+  //if we dont change value of current city as per home page
+
   if (your_city == "Mumbai") {
     parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
                               <p>Kandivali West</p>
@@ -826,38 +830,6 @@
 
   let dCity = document.getElementById("diff_city_check");
 
-  /* let parent_diff_city = document.getElementById("sel_start2");
-  let diff_sel_city = document.getElementById("city_sub").value;
-  console.log("diff_sel_city:", diff_sel_city);
-
-  if (start_loc == "Mumbai") {
-    parent_diff_city.innerHTML = `<div id="city_sel2">
-           <select name="city" id="city_sub2" onchange="checkCh2()">
-             <option value="Ahmedabad">Ahmedabad</option>
-             <option value="Nagpur">Nagpur</option>
-             <option value="Pune">Pune</option>
-             <option value="Vadodara">Vadodara</option>
-           </select>
-         </div>
-         <div id="sele_st_loca2">
-           <input
-             type="text"
-             placeholder="Tell us your starting point in City"
-             id="input_sel_st2"
-           />
-         </div>
-         <button id="locate_btn2">
-           <div class="div_locate2">
-             <img
-               src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
-               alt=""
-             />
-             <div class="locate_par2">Locate me</div>
-           </div>
-         </button>
-         <button id="showmap_btn2"><a href="">show map</a></button>
-       </div>`;
-  }*/
   function divappend() {
     if (dCity.checked == true) {
       let popu_pick = document.getElementById("popular_pick");
