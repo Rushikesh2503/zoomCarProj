@@ -218,6 +218,65 @@
         border-bottom: 2px solid greenyellow;
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
       }
+      #deta_Airport {
+        display: flex;
+        margin-top: 18vh;
+        margin-left: 0%;
+        padding: 20px 50px;
+        background-color: rgb(248, 248, 248);
+      }
+      #air_para {
+        font-size: 16px;
+        color: rgb(69, 71, 82);
+      }
+      .airport_btn {
+        width: 17vw;
+        margin: 0 20px;
+        background: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: rgb(69, 71, 82);
+        border-color: rgb(69, 71, 82);
+      }
+      #zoom_air_work {
+        margin-left: 20vw;
+        cursor: pointer;
+        color: rgb(69, 71, 82);
+      }
+      #last_nav {
+        display: flex;
+        background-color: rgb(65, 79, 94);
+        height: 100px;
+      }
+      #start_div_fo {
+        background-color: rgb(51, 65, 79);
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        width: 18vw;
+      }
+      #start_div_fo > div {
+        color: #bdbdbd;
+        font-weight: 500;
+        font-family: sans-serif;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      #st2_divin {
+        font-size: 12px;
+        font-style: italic;
+      }
+      #next_btn {
+        margin-left: 60vw;
+        width: 200px;
+        height: 50px;
+        margin-top: 25px;
+        background: rgb(155, 155, 155);
+        color: white;
+        border: 2px solid rgb(155, 155, 155);
+        box-sizing: border-box;
+        font-size: 18px;
+      }
     </style>
   </head>
   <body>
@@ -255,6 +314,7 @@
             type="text"
             placeholder="Tell us your starting point in City"
             id="input_sel_st"
+            onchange="checknextbtn()"
           />
         </div>
         <button id="locate_btn">
@@ -282,6 +342,20 @@
     <div id="sel_start2"></div>
 
     <div id="popular_pick"></div>
+
+    <div id="deta_Airport">
+      <p id="air_para">Need Zoomcar at your_city Airport</p>
+      <button class="airport_btn">International Terminal(T2)</button>
+      <button class="airport_btn">Domestic Terminal(T1A/T1B)</button>
+      <a href="" id="zoom_air_work">How Zoom Airport works ?</a>
+    </div>
+    <footer id="last_nav">
+      <div id="start_div_fo">
+        <div id="st1_divin">STARTING POINT</div>
+        <div id="st2_divin">Select Pick-up Location</div>
+      </div>
+      <button id="next_btn">NEXT</button>
+    </footer>
   </body>
 </html>
 <script>
@@ -295,17 +369,17 @@
   var parent_diff_city = document.getElementById("sel_start2");
 
   //if we change current city
-
+  var st_loc = document.getElementById("city_sub").value;
   function checkC() {
     var start_loc = document.getElementById("city_sub").value;
     if (start_loc == "Mumbai") {
       parent.placeholder = `Tell us your starting point in ${start_loc}`;
       parent2.innerHTML = `<p>POPULAR PICK_UP POINTS</p>
-                              <button >Kandivali West</button>
-                              <button>Thane</button>
-                              <button>Kharghar</button>
-                              <button>Andheri West</button>
-                              <button>Vashi</button>
+                              <p >Kandivali West</p>
+                              <p>Thane</p>
+                              <p>Kharghar</p>
+                              <p>Andheri West</p>
+                              <p>Vashi</p>
                               `;
       parent_diff_city.innerHTML = `<div id="city_sel2">
            <select name="city" id="city_sub2" onchange="checkCh2()">
@@ -868,11 +942,46 @@
       popu_pick.style.display = "none";
       let sele_diff_city = document.getElementById("sel_start2");
       sele_diff_city.style.display = "flex";
+      let deta_Airport = document.getElementById("deta_Airport");
+      deta_Airport.style.marginTop = "35vh";
     } else if (dCity.checked == false) {
       let sele_diff_city = document.getElementById("sel_start2");
       sele_diff_city.style.display = "none";
       let popu_pick = document.getElementById("popular_pick");
       popu_pick.style.display = "block";
+      let deta_Airport2 = document.getElementById("deta_Airport");
+      deta_Airport2.style.marginTop = "17vh";
     }
+  }
+
+  //button for work
+  function checknextbtn() {
+    let inputGiven = document.getElementById("input_sel_st").value;
+    // console.log("inputGiven:", inputGiven);
+    let next_btn = document.getElementById("next_btn");
+
+    let footer_div1_1 = document.getElementById("st1_divin");
+    let footer_div1_2 = document.getElementById("st2_divin");
+
+    if (inputGiven != "") {
+      next_btn.style.backgroundColor = "greenyellow";
+      next_btn.addEventListener("click", nextpage_s2);
+      footer_div1_1.innerText = st_loc;
+      footer_div1_2.innerText = inputGiven;
+    }
+    if (inputGiven == "") {
+      next_btn.style.backgroundColor = "rgb(155, 155, 155)";
+      next_btn.addEventListener("click", notnextpg);
+      window.location.href = "search.html";
+    }
+  }
+  function nextpage_s2() {
+    let sel_radiobox1 = document.querySelector(".sel_radiobox1");
+    console.log("sel_radiobox1:", sel_radiobox1);
+    sel_radiobox1.style.backgroundColor = "green";
+    // window.location.href = "search2.html";
+  }
+  function notnextpg() {
+    window.location.href = "search.html";
   }
 </script>
