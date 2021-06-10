@@ -392,7 +392,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Mumbai"
              id="input_sel_st2"
            />
          </div>
@@ -427,7 +427,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Bangalore"
              id="input_sel_st2"
            />
          </div>
@@ -459,7 +459,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Chennai"
              id="input_sel_st2"
            />
          </div>
@@ -492,7 +492,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Chandigarh"
              id="input_sel_st2"
            />
          </div>
@@ -525,7 +525,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Delhi"
              id="input_sel_st2"
            />
          </div>
@@ -557,7 +557,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Hydrabad"
              id="input_sel_st2"
            />
          </div>
@@ -589,7 +589,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Kolkata"
              id="input_sel_st2"
            />
          </div>
@@ -622,7 +622,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Pune"
              id="input_sel_st2"
            />
          </div>
@@ -663,7 +663,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Mumbai"
              id="input_sel_st2"
            />
          </div>
@@ -697,7 +697,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Bangalore"
              id="input_sel_st2"
            />
          </div>
@@ -726,7 +726,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Chennai"
              id="input_sel_st2"
            />
          </div>
@@ -757,7 +757,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Chandigarh"
              id="input_sel_st2"
            />
          </div>
@@ -789,7 +789,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Delhi"
              id="input_sel_st2"
            />
          </div>
@@ -820,7 +820,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Hydrabad"
              id="input_sel_st2"
            />
          </div>
@@ -851,7 +851,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Kolkata"
              id="input_sel_st2"
            />
          </div>
@@ -883,7 +883,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point in City"
+             placeholder="Tell us your starting point near Pune"
              id="input_sel_st2"
            />
          </div>
@@ -936,6 +936,7 @@
          <button id="showmap_btn2"><a href="">show map</a></button>
        </div>`;
   }*/
+
   function divappend() {
     if (dCity.checked == true) {
       let popu_pick = document.getElementById("popular_pick");
@@ -944,6 +945,11 @@
       sele_diff_city.style.display = "flex";
       let deta_Airport = document.getElementById("deta_Airport");
       deta_Airport.style.marginTop = "35vh";
+      let input_sel_diff_city = document.getElementById("input_sel_st2");
+      input_sel_diff_city.addEventListener("change", checknextbtn2);
+      let next_btn = document.getElementById("next_btn");
+      next_btn.style.backgroundColor = "rgb(155, 155, 155)";
+      next_btn.addEventListener("click", notnextpg);
     } else if (dCity.checked == false) {
       let sele_diff_city = document.getElementById("sel_start2");
       sele_diff_city.style.display = "none";
@@ -953,28 +959,50 @@
       deta_Airport2.style.marginTop = "17vh";
     }
   }
-
-  //button for work
   function checknextbtn() {
-    let inputGiven = document.getElementById("input_sel_st").value;
+    let inputGiven1 = document.getElementById("input_sel_st").value;
     // console.log("inputGiven:", inputGiven);
     let next_btn = document.getElementById("next_btn");
 
-    let footer_div1_1 = document.getElementById("st1_divin");
     let footer_div1_2 = document.getElementById("st2_divin");
 
-    if (inputGiven != "") {
+    if (inputGiven1 != "") {
       next_btn.style.backgroundColor = "greenyellow";
       next_btn.addEventListener("click", nextpage_s2);
-      footer_div1_1.innerText = st_loc;
-      footer_div1_2.innerText = inputGiven;
+      footer_div1_2.innerText = inputGiven1;
     }
-    if (inputGiven == "") {
+    if (inputGiven1 == "") {
       next_btn.style.backgroundColor = "rgb(155, 155, 155)";
       next_btn.addEventListener("click", notnextpg);
       window.location.href = "search.html";
     }
   }
+  //button for work
+  function checknextbtn2() {
+    let inputGiven1 = document.getElementById("input_sel_st").value;
+    let inputGiven2 = document.getElementById("input_sel_st2").value;
+    // console.log("inputGiven:", inputGiven);
+    let next_btn = document.getElementById("next_btn");
+
+    let footer_div1_2 = document.getElementById("st2_divin");
+    let par_diff_c = document.getElementById("start_div_fo");
+    let div_diff_c = document.createElement("div");
+    div_diff_c.setAttribute("id", "st2_divin");
+    par_diff_c.append(div_diff_c);
+
+    if (inputGiven1 != "" && inputGiven2 != "") {
+      footer_div1_2.innerText = inputGiven1;
+      div_diff_c.innerHTML = inputGiven2;
+      next_btn.style.backgroundColor = "greenyellow";
+      next_btn.addEventListener("click", nextpage_s2);
+    }
+    if (inputGiven1 == "" && inputGiven2 != "") {
+      next_btn.style.backgroundColor = "rgb(155, 155, 155)";
+      next_btn.addEventListener("click", notnextpg);
+      window.location.href = "search.html";
+    }
+  }
+
   function nextpage_s2() {
     let sel_radiobox1 = document.querySelector(".sel_radiobox1");
     console.log("sel_radiobox1:", sel_radiobox1);
