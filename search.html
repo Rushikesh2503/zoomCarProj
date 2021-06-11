@@ -353,6 +353,7 @@
       <div id="start_div_fo">
         <div id="st1_divin">STARTING POINT</div>
         <div id="st2_divin">Select Pick-up Location</div>
+        <div id="st3_divin"></div>
       </div>
       <button id="next_btn">NEXT</button>
     </footer>
@@ -983,16 +984,12 @@
     let inputGiven2 = document.getElementById("input_sel_st2").value;
     // console.log("inputGiven:", inputGiven);
     let next_btn = document.getElementById("next_btn");
-
     let footer_div1_2 = document.getElementById("st2_divin");
-    let par_diff_c = document.getElementById("start_div_fo");
-    let div_diff_c = document.createElement("div");
-    div_diff_c.setAttribute("id", "st2_divin");
-    par_diff_c.append(div_diff_c);
+    let footer_div1_3 = document.getElementById("st3_divin");
 
     if (inputGiven1 != "" && inputGiven2 != "") {
       footer_div1_2.innerText = inputGiven1;
-      div_diff_c.innerHTML = inputGiven2;
+      footer_div1_3.innerText = inputGiven2;
       next_btn.style.backgroundColor = "greenyellow";
       next_btn.addEventListener("click", nextpage_s2);
     }

@@ -32,19 +32,19 @@ body {
   margin: 0 20px;
 }
 
-#home #navbar ul {
+#home #navbar #nav_ul {
   display: flex;
   justify-content: center;
-  margin-left: 42vw;
+  margin-left: 40vw;
   height: 100%;
   position: relative;
 }
-#home #navbar ul li {
+#home #navbar #nav_ul li {
   list-style: none;
   font-size: 18px;
   margin: 5px 10px;
 }
-#home #navbar ul li a {
+#home #navbar #nav_ul li a {
   display: block;
   border-radius: 20px;
   text-decoration: none;
@@ -52,7 +52,67 @@ body {
   margin: 15px 0;
   float: right;
 }
+.fa-caret-down {
+  margin-left: 8px;
+  cursor: pointer;
+}
 
+#dropdown_5 {
+  position: absolute;
+  top: 100%;
+  right: 0px;
+  width: 160px;
+  padding: 0px 0 0 0;
+  margin-top: 1px;
+  display: none;
+  background-color: white;
+}
+
+.drop_d_box_user_hide {
+  display: none;
+}
+
+#dropdown_5 .drop_d_links button {
+  width: 100%;
+  height: 40px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 10px 0;
+  background: none;
+  cursor: pointer;
+}
+.last_bttn button {
+  border: none;
+}
+#dropdown_5 .drop_d_links button:hover {
+  /* font-size: 14px; */
+  background-color: yellowgreen;
+}
+.arrowmiddle55 {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  left: 130px;
+  top: -6px;
+  background-color: white;
+  transform: rotate(45deg);
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 100;
+}
+.us_name {
+  margin-top: 20px;
+  display: flex;
+  color: white;
+}
+#avtar_logo {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
+  margin-left: 0px;
+}
 /*Hover Effect on navbar-SUBSCRIBE */
 .subscr-logo1 {
   background-image: url(img/sub_logo.png);
@@ -115,6 +175,7 @@ body {
 #navbar .item:hover > .details {
   display: block;
 }
+
 /*Hover Effect on navbar-AMIGO */
 .amigo-logo2 {
   background-image: url(img/amigo_logo.png);
@@ -654,8 +715,6 @@ body {
   background-color: rgb(31, 230, 31);
 }
 
-.sign_up_topr_box1 {
-}
 .sign_up_botr_box1 {
   width: 300px;
   height: 380px;

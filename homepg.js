@@ -90,6 +90,20 @@ function signinacc(e) {
     alert("Please write your Mob No");
     e.prevent();
   }
+
+  let usermob_check = JSON.parse(localStorage.getItem("users"));
+
+  var havedata = false;
+  for (let i = 0; i < usermob_check.length; i++) {
+    if (usermob_check[i].mob_num == mob_no) {
+      havedata = true;
+    }
+  }
+  if (havedata) {
+    alert("You already register with this Number");
+    e.prevent();
+  }
+
   //console.log("sign_par:", sign_par);
   sign_par_box1.innerHTML = `
       <div class="sign_up_topr_box1">
@@ -100,7 +114,7 @@ function signinacc(e) {
       <div class="sign_up_botr_box1">
       <form id="signup_form">
         <input type="text" placeholder="Enter your Mobile number" id="mob_num" value=${mob_no}>
-        <input type="text" placeholder="Enter your Name as per D.L." id="name">
+        <input type="text" placeholder="Enter your Name" id="name">
         <input type="text" placeholder="Enter your E-mail ID" id="email">
         <input type="password" placeholder="Enter Password" id="password">
       </form>
@@ -142,7 +156,7 @@ function saveData(e) {
 
   localStorage.setItem("users", JSON.stringify(s_arr));
 
-  alert("YOU ARE SUCESSFULLY LOGIN TO ZOOMCAR");
+  alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
   window.location.href = "homepg.html";
 }
 
@@ -214,11 +228,97 @@ function checkData(e) {
   }
   if (havedata2) {
     alert("You are sucessfully Login to Zoom Car");
-    window.location.href = "homepg.html";
+    changeNav();
   } else {
     alert("Please check your Mobile number or Password");
   }
 }
+function changeNav() {
+  let pop_up22 = document.querySelector("#pop2");
+  pop_up22.style.display = "none";
+  let sign_btn = document.getElementById("signup_btn");
+  sign_btn.style.display = "none";
+  let login_btn = document.getElementById("login_btn");
+  login_btn.style.display = "none";
+
+  let form = document.getElementById("login_form");
+
+  let mob_num2 = form.mob_num2.value;
+
+  let password2 = form.password2.value;
+  let userData_name = JSON.parse(localStorage.getItem("users"));
+  let user_name;
+
+  let havData = false;
+  for (let i = 0; i < userData_name.length; i++) {
+    if (
+      userData_name[i].mob_num == mob_num2 &&
+      userData_name[i].password == password2
+    ) {
+      havData = true;
+      user_name = userData_name[i].name;
+    } else {
+      havData = false;
+    }
+  }
+  console.log(user_name);
+
+  let parent_ul = document.getElementById("nav_ul");
+
+  let li_img = document.createElement("li");
+  li_img.setAttribute("class", "item");
+
+  let divcre = document.createElement("div");
+
+  let image = document.createElement("img");
+  image.setAttribute("id", "avtar_logo");
+
+  image.src = "img/avtar_logo_log.png";
+
+  divcre.append(image);
+  li_img.append(divcre);
+
+  parent_ul.append(li_img);
+
+  let li_name = document.createElement("li");
+  li_name.setAttribute("class", "item");
+  li_name.setAttribute("id", "user_left_mar");
+  li_name.innerHTML = `<div class="us_name" onclick="show_dr_box()">${user_name}<i class="fas fa-caret-down"></i></div>
+  <div id="dropdown_5">
+  <div class="arrowmiddle55"></div>
+       <div class="drop_d_links first_us_box">
+          <button>MY ACCOUNT</button>
+       <div>
+       <div class="drop_d_links">
+          <button>MY BOOKINGS</button>
+       <div>
+       <div class="drop_d_links">
+          <button>SUPERMILER CLUB</button>
+       <div>
+       <div class="drop_d_links">
+          <button>MY REFERRALS</button>
+       <div>
+       <div class="drop_d_links last_bttn">
+          <button onclick="logoutFunc()">LOGOUT</button>
+       <div>
+  </div>`;
+
+  parent_ul.append(li_name);
+}
+
+function show_dr_box() {
+  var dropdown_5 = document.getElementById("dropdown_5");
+  if (dropdown_5.style.display != "none") {
+    dropdown_5.style.display = "none";
+  } else {
+    dropdown_5.style.display = "block";
+  }
+}
+
+function logoutFunc() {
+  window.location.href = "homepg.html";
+}
+
 //auto_slider
 var counterr = 1;
 setInterval(function () {
@@ -251,7 +351,9 @@ setInterval(function () {
 
 var counterr2 = 1;
 setInterval(function () {
-  var cir_div2 = (document.getElementById("radio" + counterr).checked = true);
+  var cir_div2 = (document.getElementById(
+    "radio" + counterr + 2
+  ).checked = true);
 
   var zPro12 = document.querySelector("#zoomPromo12");
   var zPro22 = document.querySelector("#zoomPromo22");
