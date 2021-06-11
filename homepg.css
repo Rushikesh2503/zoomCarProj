@@ -923,7 +923,7 @@ body {
   border-radius: 5px;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   #zoom_adv #adv_grid {
     display: grid;
     grid-template: "auto auto";
@@ -952,6 +952,9 @@ body {
   }
   #title #journey a {
     font-size: 10px;
+  }
+  #home #navbar #nav_ul {
+    margin-left: 0%;
   }
 }
 
@@ -1141,6 +1144,11 @@ body {
   width: 70%;
   margin: -350px auto;
   /* position: relative; */
+}
+@media only screen and (max-width: 800px) {
+  .zoomGo {
+    margin: -250px auto;
+  }
 }
 
 .store {
