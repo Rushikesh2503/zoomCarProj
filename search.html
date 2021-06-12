@@ -220,7 +220,7 @@
       }
       #deta_Airport {
         display: flex;
-        margin-top: 18vh;
+        margin-top: 12.5vh;
         margin-left: 0%;
         padding: 20px 50px;
         background-color: rgb(248, 248, 248);
@@ -393,7 +393,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point near Mumbai"
+             placeholder="Tell us your starting point in your City"
              id="input_sel_st2"
            />
          </div>
@@ -428,7 +428,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point near Bangalore"
+             placeholder="Tell us your starting point in your City"
              id="input_sel_st2"
            />
          </div>
@@ -460,7 +460,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point near Chennai"
+             placeholder="Tell us your starting point in your City"
              id="input_sel_st2"
            />
          </div>
@@ -493,7 +493,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point near Chandigarh"
+             placeholder="Tell us your starting point in your City"
              id="input_sel_st2"
            />
          </div>
@@ -526,7 +526,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point near Delhi"
+             placeholder="Tell us your starting point in your City"
              id="input_sel_st2"
            />
          </div>
@@ -558,7 +558,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point near Hydrabad"
+             placeholder="Tell us your starting point in your City"
              id="input_sel_st2"
            />
          </div>
@@ -590,7 +590,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point near Kolkata"
+             placeholder="Tell us your starting point in your City"
              id="input_sel_st2"
            />
          </div>
@@ -623,7 +623,7 @@
          <div id="sele_st_loca2">
            <input
              type="text"
-             placeholder="Tell us your starting point near Pune"
+             placeholder="Tell us your starting point in your City"
              id="input_sel_st2"
            />
          </div>
@@ -950,7 +950,7 @@
       input_sel_diff_city.addEventListener("change", checknextbtn2);
       let next_btn = document.getElementById("next_btn");
       next_btn.style.backgroundColor = "rgb(155, 155, 155)";
-      next_btn.addEventListener("click", notnextpg);
+      next_btn.addEventListener("click", checknextbtn2);
     } else if (dCity.checked == false) {
       let sele_diff_city = document.getElementById("sel_start2");
       sele_diff_city.style.display = "none";
@@ -1001,12 +1001,53 @@
   }
 
   function nextpage_s2() {
+    let start_loc_local = document.getElementById("st2_divin").innerText;
+    localStorage.setItem("start_city_name", JSON.stringify(start_loc_local));
+    let drop_loc_local = document.getElementById("st3_divin").innerText;
+    localStorage.setItem("drop_city_name", JSON.stringify(drop_loc_local));
     let sel_radiobox1 = document.querySelector(".sel_radiobox1");
     console.log("sel_radiobox1:", sel_radiobox1);
     sel_radiobox1.style.backgroundColor = "green";
-    // window.location.href = "search2.html";
+    window.location.href = "ser_2.html";
   }
   function notnextpg() {
     window.location.href = "search.html";
+  }
+
+  //if we change diff drop city
+  var st_loc22 = document.getElementById("city_sub2").value;
+
+  let parent_dc = document.getElementById("input_sel_st2");
+
+  parent_dc.placeholder = `Tell us your starting point in your City`;
+  function checkCh2() {
+    let your_city22 = document.getElementById("city_sub2").value;
+    console.log("your_city22:", your_city22);
+
+    let parent_dc = document.getElementById("input_sel_st2");
+
+    parent_dc.placeholder = `Tell us your starting point in ${your_city22}`;
+
+    var start_loc22 = document.getElementById("city_sub2").value;
+
+    if (start_loc22 == "Mumbai") {
+      parent_dc.placeholder = `Tell us your starting point in ${start_loc22}`;
+    } else if (start_loc22 == "Bangalore") {
+      parent_dc.placeholder = `Tell us your starting point in ${start_loc22}`;
+    } else if (start_loc22 == "Chennai") {
+      parent_dc.placeholder = `Tell us your starting point in ${start_loc22}`;
+    } else if (start_loc22 == "Chandigarh") {
+      parent_dc.placeholder = `Tell us your starting point in ${start_loc22}`;
+    } else if (start_loc22 == "Delhi") {
+      parent_dc.placeholder = `Tell us your starting point in ${start_loc22}`;
+    } else if (start_loc22 == "Hyderabad") {
+      parent_dc.placeholder = `Tell us your starting point in ${start_loc22}`;
+    } else if (start_loc22 == "Kolkata") {
+      parent_dc.placeholder = `Tell us your starting point in ${start_loc22}`;
+    } else if (start_loc22 == "Pune") {
+      parent_dc.placeholder = `Tell us your starting point in ${start_loc22}`;
+    } else {
+      parent_dc.placeholder = `Tell us your starting point in ${start_loc22}`;
+    }
   }
 </script>

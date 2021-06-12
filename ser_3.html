@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PICKUP TIME</title>
+    <style>
+      #selectbar {
+        display: flex;
+        margin: 30px 100px;
+      }
+      #selectbar input {
+        display: none;
+      }
+      #selectbar .sel_radiobox1,
+      .sel_radiobox2,
+      .sel_radiobox3 {
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        border: 4px solid yellowgreen;
+        box-sizing: border-box;
+      }
+     #selectbar .sel_radiobox1, #selectbar .sel_radiobox2{
+        background: url(img/rightmark_gr_box.png) center  / cover
+      }
+      #selectbar .sel_hori_line1,
+      .sel_hori_line2 {
+        width: 200px;
+        height: 1.5px;
+        margin-top: 15px;
+        margin-left: 0.2px;
+        background-color: gray;
+      }
+      .search_box_cont {
+        margin-left: 100px;
+      }
+      .search_box_cont h1 {
+        font-weight: 500;
+        font-size: 27px;
+        color: rgb(61, 70, 87);
+      }
+      .search_box_cont h2 {
+        font-weight: 500;
+        font-size: 20px;
+        color: rgb(61, 70, 87);
+      }
+
+      #deta_Airport {
+        display: flex;
+        margin-top: 10vh;
+        margin-left: 0%;
+        padding: 20px 50px;
+        background-color: rgb(248, 248, 248);
+      }
+      #air_para {
+        font-size: 16px;
+        color: rgb(69, 71, 82);
+      }
+      .airport_btn {
+        width: 17vw;
+        margin: 0 20px;
+        background: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: rgb(69, 71, 82);
+        border-color: rgb(69, 71, 82);
+      }
+      #zoom_air_work {
+        margin-left: 20vw;
+        cursor: pointer;
+        color: rgb(69, 71, 82);
+      }
+      #last_nav {
+        display: flex;
+        background-color: rgb(65, 79, 94);
+        height: 100px;
+      }
+      #start_div_fo, #date_div_fo, #date_div_fo2 {
+        background-color: rgb(51, 65, 79);
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        width: 18vw;
+        margin-right: 20px;
+      }
+      #start_div_fo > div, #date_div_fo > div , #date_div_fo2 > div {
+        color: #bdbdbd;
+        font-weight: 500;
+        font-family: sans-serif;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      #st2_divin, #dt2_divin, #dt22_divin  {
+        font-size: 12px;
+        font-style: italic;
+      }
+      #next_btn {
+        margin-left: 25vw;
+        width: 200px;
+        height: 50px;
+        margin-top: 25px;
+        background: greenyellow;
+        color: black;
+        border: none;
+        box-sizing: border-box;
+        font-size: 18px;
+      }
+
+      .component-month {
+        margin-bottom: 30px;
+        margin-left: 100px;
+      }
+
+      .heading {
+        font-size: 12px;
+        color: #9b9b9b;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        margin-left: 100px;
+        font-weight: 600;
+      }
+
+      .component-month .months {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .component-month .months .month {
+        width: 90px;
+        border: 1px solid #323a44;
+        margin: 0 25px 5px 0;
+        padding: 8px 0;
+        border-radius: 3px;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        background: none;
+      }
+      #date_show {
+        text-decoration: underline;
+        margin-top: 10px;
+        margin-left: 30px;
+        background: none;
+        border: none;
+      }
+      #dt2_divin{
+          display: flex;
+        
+      }#dt22_divin{
+          display: flex;
+        
+      }
+      #date_dis{
+          display: flex;
+      }
+      #days {
+        display: flex;
+        margin:20px 100px;
+        text-align: center;
+
+      }
+      #days button:not(:last-child):hover{
+          transform: scale(1.2);
+          border: 1px solid green;
+          box-sizing: border-box;
+      } 
+      .months button:hover{
+          transform: scale(1.2);
+          border: 2px solid green;
+          border-radius: 2px;
+      }
+      .day {
+        border: 1px solid black;
+        border-radius: 3px;
+        width: 3.5vw;
+        margin-left: 20px;
+        padding-top: 5px;
+        box-sizing: border-box;
+        background: none;
+      }
+      #days p {
+        font-size: 1.2vw;
+        font-weight: 300;
+      }
+      .day:first-child {
+        margin-left: 0%;
+      }
+      button{
+          cursor: pointer;
+      }
+      #time_d{
+          margin-left: 100px;
+          width: 60%;
+          position: relative;
+      }
+      input[type=time] {
+       border: none;
+       font-size: 14px;
+       font-family: helvetica;
+       width: 160px;
+     }
+
+
+     input[type=time]::-webkit-datetime-edit-fields-wrapper {
+       display: flex;
+     }
+
+
+    input[type=time]::-webkit-datetime-edit-text {
+      padding: 19px 4px;
+    }
+
+
+
+/* Hour */
+input[type=time]::-webkit-datetime-edit-hour-field {
+  border-radius: 15%;
+  padding: 19px 13px;
+}
+
+/* Minute */
+input[type=time]::-webkit-datetime-edit-minute-field {
+  border-radius: 15%;
+  padding: 19px 13px;
+}
+
+/* AM/PM */
+input[type=time]::-webkit-datetime-edit-ampm-field {
+  background-color: #7155d3;
+  border-radius: 15%;
+  color: #fff;
+  padding: 19px 13px;
+}
+
+ </style>
+</head>
+  <body>
+    <div id="searchpage">
+      <div id="selectbar">
+        <div class="sel_radiobox1"></div>
+        <input type="radio" name="radio-btn" id="radio1" />
+        <div class="sel_hori_line1"></div>
+        <div class="sel_radiobox2"></div>
+        <input type="radio" name="radio-btn" id="radio2" />
+        <div class="sel_hori_line2"></div>
+        <div class="sel_radiobox3"></div>
+        <input type="radio" name="radio-btn" id="radio3" />
+      </div>
+    </div>
+    <div class="search_box_cont">
+      <h1>From when do you need a Zoomcar?</h1>
+    </div>
+    <div class="heading">Select a month</div>
+    <div class="component-month">
+          <div class="months">
+            <button class="month" id="mon_frb" onclick="checkmon(this)"> Jun </button>
+            <button class="month" id="mon_secb" onclick="checkmon(this)"> Jul </button>                     
+            <button class="month" id="mon_thrb" onclick="checkmon(this)"> Aug </button>
+            <button class="month" id="mon_fob" onclick="checkmon(this)"> Sep </button>
+            <button class="month" id="mon_fifb" onclick="checkmon(this)"> Oct </button>
+            <button class="month" id="mon_sib" onclick="checkmon(this)"> Nov </button>
+            <button class="month" id="mon_seb" onclick="checkmon(this)"> Dec </button> 
+          </div>             
+        </div>
+    </div>
+    <div class="search_box_cont">
+      <h2>Start date <i>(Prices will be higher than usual on Weekends/Festive days)</i></h2>
+    </div>
+    <div class="heading">Select a Date</div>
+    <div id="days">
+        <button class="day" id="day_frb" onclick="checkday(this)"><p id="date_frp"></p></button>
+        <button class="day" id="day_secb" onclick="checkday(this)"><p id="date_sep"></p></button>
+        <button class="day" id="day_thrb" onclick="checkday(this)"><p id="date_thp"></p></button>
+        <button class="day" id="day_fob" onclick="checkday(this)"><p id="date_fop"></p></button>
+        <button class="day" id="day_fifb" onclick="checkday(this)"><p id="date_fifp"></p></button>
+        <button class="day" id="day_sib" onclick="checkday(this)"><p id="date_sip"></p></button>
+        <button class="day" id="day_seb" onclick="checkday(this)"><p id="date_sep"></p></button>
+        <button class="day" id="day_eib" onclick="checkday(this)"><p id="date_eip"></p></button>
+        <button id="date_show">Show More</button>
+    </div>
+    <div class="heading">Select a Time</div>
+
+    <div id="time_d">
+        <input type="time" id="timething1" onchange="checkTime()">
+    </div>
+
+    <div id="deta_Airport">
+      <p id="air_para">Need Zoomcar at your_city Airport</p>
+      <button class="airport_btn">International Terminal(T2)</button>
+      <button class="airport_btn">Domestic Terminal(T1A/T1B)</button>
+      <a href="" id="zoom_air_work">How Zoom Airport works ?</a>
+    </div>
+    <footer id="last_nav">
+      <div id="start_div_fo">
+        <div id="st1_divin">STARTING POINT</div>
+        <div id="st2_divin">Select Pick-up Location</div>
+        <div id="st3_divin"></div>
+      </div>
+      <div id="date_div_fo">
+        <div id="dt1_divin">PICKUP TIME</div>
+        <div id="dt2_divin">  
+            <div id="mon_dis"></div>
+            <div id="date_dis"></div>
+        </div>
+        <div id="dt3_divin"></div>
+      </div>
+      <div id="date_div_fo2">
+        <div id="dt11_divin">DROP TIME</div>
+        <div id="dt22_divin">  
+            <div id="mon_dis2"></div>
+            <div id="date_dis2"></div>
+        </div>
+        <div id="dt33_divin"></div>
+      </div>
+      <button id="next_btn" onclick="gotopageBook()">DONE</button>
+    </footer>
+  </body>
+</html>
+<script>
+    let start_city=JSON.parse(localStorage.getItem("start_city_name"));
+    let drop_city=JSON.parse(localStorage.getItem("drop_city_name"));
+    let pick_dt=JSON.parse(localStorage.getItem("pick_up_date"));
+    let pick_ti=JSON.parse(localStorage.getItem("pick_up_time"));
+    
+    let start_div_fr=document.getElementById("st2_divin");
+    start_div_fr.innerText=start_city;
+    let drop_div_fr=document.getElementById("st3_divin");
+    drop_div_fr.innerText=drop_city;
+    let pickup_date=document.getElementById("mon_dis");
+    pickup_date.innerText=pick_dt;
+    let pickup_time=document.getElementById("dt3_divin");
+    pickup_time.innerText=`Time: ${pick_ti}`;
+    
+    
+
+    let week=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    let monthss=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+    let today= new Date()
+
+    let full_year=today.getFullYear();
+    
+    let date_2day=Number(today.getDate());
+
+    let fr_date_box=document.getElementById("day_frb");
+    let day_2day= Number(today.getDay());
+    let res_day=week[day_2day];
+    fr_date_box.innerHTML=`<p>${date_2day}</p>${res_day}`;
+
+    let sec_date_box=document.getElementById("day_secb");
+    let day_d2= Number(today.getDay());
+    let date_d2=date_2day+1;
+    day_d2=(day_d2+1) % 7;
+    let res_day2=week[day_d2];
+    sec_date_box.innerHTML=`<p>${date_d2}</p>${res_day2}`;
+
+    let th_date_box=document.getElementById("day_thrb");
+    let day_d3= Number(today.getDay());
+    let date_d3=date_2day+2;
+    day_d3=(day_d3+2) % 7;
+    let res_day3=week[day_d3];
+    th_date_box.innerHTML=`<p>${date_d3}</p>${res_day3}`;
+
+    let fo_date_box=document.getElementById("day_fob");
+    let day_d4= Number(today.getDay());
+    let date_d4=date_2day+3;
+    day_d4=(day_d4+3) % 7;
+    let res_day4=week[day_d4];
+    fo_date_box.innerHTML=`<p>${date_d4}</p>${res_day4}`;
+
+    let fif_date_box=document.getElementById("day_fifb");
+    let day_d5= Number(today.getDay());
+    let date_d5=date_2day+4;
+    day_d5=(day_d5+4) % 7;
+    let res_day5=week[day_d5];
+    fif_date_box.innerHTML=`<p>${date_d5}</p>${res_day5}`;
+
+    let si_date_box=document.getElementById("day_sib");
+    let day_d6= Number(today.getDay());
+    let date_d6=date_2day+5;
+    day_d6=(day_d6+5) % 7;
+    let res_day6=week[day_d6];
+    si_date_box.innerHTML=`<p>${date_d6}</p>${res_day6}`;
+
+    let se_date_box=document.getElementById("day_seb");
+    let day_d7= Number(today.getDay());
+    let date_d7=date_2day+6;
+    day_d7=(day_d7+6) % 7;
+    let res_day7=week[day_d7];
+    se_date_box.innerHTML=`<p>${date_d7}</p>${res_day7}`;
+
+    let ei_date_box=document.getElementById("day_eib");
+    let day_d8= Number(today.getDay());
+    let date_d8=date_2day+7
+    day_d8=(day_d8+7) % 7;
+    let res_day8=week[day_d8];
+    ei_date_box.innerHTML=`<p>${date_d8}</p>${res_day8}`;
+
+
+   function checkmon(v){
+    let id=v.id;
+    let par_mon_div=document.getElementById(id);
+    // par_mon_div.style.border="2px solid green"
+    let par_mon=document.getElementById(id).innerText;
+    let mon_dis=document.getElementById("mon_dis2");
+    mon_dis.innerText=par_mon;
+   }
+
+   function checkday(e){
+    let id2=e.id;
+    let par_date_div=document.getElementById(id2);
+    let par_date=document.getElementById(id2).innerText;
+    par_date= par_date.split(/[\r\n]+/);
+    let date_dis=document.getElementById("date_dis2");
+    date_dis.innerText=par_date[0]+","+full_year+" "+par_date[1];
+
+   let re2=document.getElementById("mon_dis2").innerText;
+   let re3=document.getElementById("date_dis2").innerText;
+
+   let re=re2+re3;
+   localStorage.setItem("pick_up_date",JSON.stringify(re))
+   }
+   
+   let months2=document.getElementById("mon_dis2");
+   let month_2ch=document.getElementById("mon_frb").innerText
+   months2.innerText=month_2ch;
+   let dates2=document.getElementById("date_dis2");
+   let dates_2ch=document.getElementById("day_frb").innerText;
+   dates_2ch= dates_2ch.split(/[\r\n]+/);
+   dates2.innerText=dates_2ch[0]+","+full_year+" "+dates_2ch[1];
+
+   let dis_month2=document.getElementById("mon_dis2").innerText;
+   let dis_date2=document.getElementById("date_dis2").innerText;
+
+   let res=dis_month2+dis_date2;
+    console.log('res:', res)
+    localStorage.setItem("drop_date",JSON.stringify(res))
+
+   let time=document.getElementById("timething1");
+   let latest_time_h=today.getHours();
+   
+   let latest_time_min=today.getMinutes();
+   if(latest_time_min<10){
+       latest_time_min=0+""+latest_time_min
+   }else{
+       latest_time_min=latest_time_min
+    }
+//   console.log('latest_time_h:', latest_time_h)
+// console.log('latest_time_min:', latest_time_min)
+   time.value=`${latest_time_h}:${latest_time_min}`
+
+   function checkTime(){
+    let time_par=document.getElementById("dt33_divin");
+    let time_dis=document.getElementById("timething1").value;
+    time_par.innerText=`Time: ${time_dis}`
+    let disp_time=time_par.innerText;
+    disp_time= disp_time.split(" ")
+    disp_time=disp_time[1];
+     localStorage.setItem("drop_time",JSON.stringify(disp_time))
+   }
+    let time_par=document.getElementById("dt33_divin");
+    let time_dis=document.getElementById("timething1").value;
+    time_par.innerText=`Time: ${time_dis}`
+   
+    let disp_time=time_par.innerText;
+    disp_time= disp_time.split(" ")
+    disp_time=disp_time[1];
+    console.log('disp_time:', disp_time)
+    localStorage.setItem("drop_time",JSON.stringify(disp_time))
+
+
+    function gotopageBook(){
+        window.location.href="final_book.html"
+    }
+</script>
+
