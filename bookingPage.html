@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>booking Car</title>
+  <link rel="stylesheet" href="homepg.css">
+</head>
+
+<style>
+     #navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* position: relative; */
+    height: 70px;
+    background-color: rgb(51, 65, 79);
+    justify-content: left;
+    /* position: fixed; */
+    z-index: 1000;
+  }
+  /* Naviation Bar: Logo,texting and Image */
+  #home #logo {
+    margin: 0 20px;
+  }
+  #home #logo img {
+    width: 120px;
+    height: 90px;
+    border: none;
+    margin: 0 20px;
+  }
+  
+  #home #navbar ul {
+    display: flex;
+    justify-content: center;
+    margin-left: 60vw;
+    height: 100%;
+    position: relative;
+  }
+  #home #navbar ul li {
+    list-style: none;
+    font-size: 18px;
+    margin: 5px 10px;
+  }
+  #home #navbar ul li a {
+    display: block;
+    border-radius: 20px;
+    text-decoration: none;
+    color: aliceblue;
+    margin: 15px 0;
+    float: right;
+  }
+  
+
+  #navbar .item:hover > .details2 {
+    display: block;
+  }
+  
+  
+  /*Hover Effect on navbar-MOB APP */
+  .details4 {
+    display: block;
+    position: absolute;
+    color: black;
+    background-color: white;
+    width: 170px;
+    height: 90px;
+    top: 70%;
+    border-radius: 4px;
+    right: 110px;
+    text-align: center;
+    align-items: center;
+  }
+  .mob_det {
+    display: none;
+  }
+  #navbar .item:hover > .mob_det {
+    display: block;
+  }
+   .arrowmiddle4 {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    left: 450px;
+    top: 43px;
+    background-color: white;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: -1;
+  }  
+   .mob_anc {
+    width: 100%;
+    height: 50%;
+    font-size: 18px;
+  }
+  .mob_anc .mob1,
+  .mob_anc .mob2 {
+    display: flex;
+    color: rgb(83, 83, 83);
+    margin: 0%;
+    box-sizing: border-box;
+  } 
+  
+   .mob_anc .mob2 {
+    border-top: 1px solid rgb(161, 160, 160);
+    display: flex;
+    position: absolute;
+    top: 55%;
+    width: 100%;
+    padding: 3px 0px 0 0;
+  }
+  .mob1 img {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    margin-left: 8px;
+  }
+  .mob2 img {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    margin-left: 5px;
+  } 
+ /* Search bar */
+/* <---------------------------------------------------> */
+.gridBook {
+  display: grid;
+  grid-template-columns: 310px 1050px;
+  grid-template-rows: 200px;
+}
+.smallBox{
+  height: 1800px;
+  background: #efefef;
+}
+.bigBox{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50px 40px 800px;
+  background-color: white;
+}
+.flex{
+           display: flex;
+           margin-bottom: 5px;
+           align-items: center;
+           margin-top: 15px;
+       }
+       .tick{
+        
+           width: 20px;
+           height: 20px;
+           border-radius: 50%;
+           margin-right: 5px;
+           background-color: #70ad4d;
+       }
+       .tickMark{
+           
+           width: 2px;
+           height: 7px;
+           padding: 2px;
+           margin-left: 6px;
+           border: solid white;
+           border-width: 0 1.5px 1.5px 0 ;
+           transform: rotate(45deg);
+       }
+
+       .flex h4{
+        font-size: 12px;
+       }
+
+       .cityBox{
+           width: 85%;
+           height: 80px;
+           border: 1px solid rgb(247, 235, 213);
+           background-color: white;
+           margin: auto;
+           display: flex;
+           flex-direction: row;
+           
+
+       }
+       .cityBox h6{
+        margin-left: 25px;
+        margin-top: 38px;
+       }
+       .diffCity{
+            display: flex;
+            width: 85%;
+            height: 40px;
+            margin: auto;
+           border: 1px solid rgb(247, 235, 213);
+           background-color: white; 
+       }
+       .diffCity h3{
+         font-size: 14px;
+       }
+       .diffCity input{
+       
+         margin: auto;
+
+       }
+       .smallBox hr{
+         color: gray;
+         margin-top: 20px;
+       }
+       .kmBox {
+         width: 150px;
+         height: 100px;
+         margin-left: 20px;
+         background-color: white;
+       }
+       .kmBox h5{
+         color: gray;
+         padding: 5px 20px;
+         font-size: 12px;
+       }
+       .kmBox h6{
+         font-size: 14px;
+         margin-top: 5px;
+         text-align: center;
+
+       }
+       .smallItem {
+         display: grid;
+         grid-template-columns: auto auto auto;
+         grid-template-rows: auto;
+         grid-gap: 5px;
+       }
+       .rightArrow {
+        display: inline-block;
+        margin-top: 40px;
+        width: 5px;
+        height: 5px;
+        border-right: 1.5px solid rgba(0,0,0,.54);
+        border-bottom: 1.5px solid rgba(0,0,0,.54);
+        transform: rotate(-45deg);
+        margin-left: 2px;
+      }
+      .arrowBig {
+        width: 40px;
+        height: 45px;
+        transform: rotate(140deg);
+        margin-left: -40px;
+        margin-top: 20px;
+        margin-right: -5px;
+        background-color: transparent;
+        border-left: 2px solid #d8d8d89e;
+        border-top: 2px solid #d8d8d89e;
+       }
+
+
+       .sort{
+         display: flex;
+         flex-direction: row;
+         margin-left: 10px;
+        
+       }
+       .sort button{
+         width: auto;
+         height: 30px;
+         margin: 5px 5px;
+         background-color: white;
+       }
+
+/* <------Car List---------> */
+
+
+</style>
+<body>
+
+        <div id="h_page">
+            <div id="home">
+  
+        <nav id="navbar">
+            <div id="logo">
+              <a href="#"><img src="img/logo-f38397447048ccba047af6980364e92e.svg" alt="Zoom_Car" /></a>
+            </div>
+            <ul>
+              <li class="item"><a href="#">MOBILE APP
+                  <div class="mob_det">
+                    <div class="arrowmiddle4"></div>
+                    <div class="details4">
+                      <a href="https://play.google.com/store/apps/details?id=com.zoomcar&referrer=utm_source%3Dhome%2520page%26utm_medium%3Dheader%2520links%26utm_content%3Dandroid%26utm_campaign%3Dinstalls"
+                        class="mob_anc">
+                        <div class="mob1">
+                          <img src="img/g_play_logo2.png" alt="">Google Play
+                        </div>
+                      </a>
+                      <a href="https://apps.apple.com/us/app/zoomcar-self-drive-cars/id889910218?utm_campaign=installs&utm_content=iOS&utm_medium=header%20links&utm_source=home%20page"
+                        class="mob_anc">
+                        <div class="mob2"><img src="img/apple_log.png" alt="">Apple Store</div>
+                      </a>
+                    </div>
+                  </div>
+    
+              </li>
+              <li class="item" id="signup_btn"><a href="#">SIGNUP</a></li>
+              <li class="item" id="login_btn"><a href="#">LOGIN</a></li>
+    
+            </ul>
+          </nav>
+        </div>
+      </div>
+        <div>
+    <div class="gridBook">
+    
+      <div class="smallBox">
+        <div class="item">
+          <div class="flex">
+            <span class="tick">
+              <div class="tickMark"></div>
+            </span>
+            <h4>START AND DESTINATION</h4>
+    
+    
+          </div>
+          <div class="cityBox">
+            <h6>STARTING POINT</h6>
+            <span class="rightArrow"></span>
+            <span class="arrowBig"></span>
+            <h6>DESTINATION</h6>
+            <span class="rightArrow"></span>
+          </div>
+          <div class="diffCity">
+            <h3>DROP OFF IN A DIFFERENT CITY</h3>
+            <input type="checkbox" />
+          </div>
+        </div>
+        <div class="item">
+          <div class="flex">
+            <span class="tick">
+              <div class="tickMark"></div>
+            </span>
+            <h4>SELECT DATE AND TIME FOR YOUR TRIP</h4>
+    
+    
+          </div>
+          <div class="cityBox">
+            <h6>PICKUP TIME</h6>
+            <span class="rightArrow"></span>
+            <span class="arrowBig"></span>
+            <h6>DROP OFF TIME</h6>
+            <span class="rightArrow"></span>
+    
+          </div>
+    
+    
+        </div>
+        <hr>
+    
+      </div>
+       <div class="bigBox">
+             <div style="background-color: #e4f1dc;">
+              <h3 style="text-align: center;">Book Early, Book Cheaper!</h3>
+            </div>
+            <div style="background-color: #e6e6e6;">
+              <div class="sort">
+                <h6 style="margin: 15px;">Sort by:</h6>
+                <div><button>Price low to high</button></div>
+                <div><button>Price hight to low</button></div>
+                <div><button>Distance</button></div>
+              </div>
+            </div>
+
+  
+        </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
