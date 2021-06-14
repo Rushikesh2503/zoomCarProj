@@ -229,8 +229,10 @@ function checkData(e) {
   if (havedata2) {
     alert("You are sucessfully Login to Zoom Car");
     changeNav();
+    localStorage.setItem("logindone", JSON.stringify("yes"));
   } else {
     alert("Please check your Mobile number or Password");
+    localStorage.setItem("logindone", JSON.stringify("no"));
   }
 }
 function changeNav() {
@@ -314,9 +316,11 @@ function show_dr_box() {
     dropdown_5.style.display = "block";
   }
 }
+localStorage.setItem("logindone", JSON.stringify("no"));
 
 function logoutFunc() {
   window.location.href = "homepg.html";
+  localStorage.setItem("logindone", JSON.stringify("no"));
 }
 
 //auto_slider
