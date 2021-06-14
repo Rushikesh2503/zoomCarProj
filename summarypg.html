@@ -1956,5 +1956,26 @@ function initial(id) {
   mouse.style.backgroundColor = "rgb(51, 65, 79)";
   drag.style.color = "rgb(255, 255, 255)";
 }
+/*starting date and time get from local storage*/
+let get_pi_tm=JSON.parse(localStorage.getItem("pick_up_time"));
+let get_pi_dt=JSON.parse(localStorage.getItem("pick_up_date"));
+ get_pi_dt=get_pi_dt.split(" ");
+ get_pi_dt=get_pi_dt[0];
 
+let time_parent=document.getElementById("pi_ti");
+let date_parent=document.getElementById("pi_dt");
+time_parent.innerText=get_pi_tm;
+date_parent.innerText=get_pi_dt;
+
+/*getting drop time and date from LS*/
+
+let get_dr_tm=JSON.parse(localStorage.getItem("drop_time"));
+let get_dr_dt=JSON.parse(localStorage.getItem("drop_date"));
+ get_dr_dt=get_dr_dt.split(" ");
+ get_dr_dt=get_dr_dt[0];
+
+let time_parent2=document.getElementById("dr_ti");
+let date_parent2=document.getElementById("dr_dt");
+time_parent2.innerText=get_dr_tm;
+date_parent2.innerText=get_dr_dt;
 </script>
