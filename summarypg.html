@@ -1978,4 +1978,8 @@ let time_parent2=document.getElementById("dr_ti");
 let date_parent2=document.getElementById("dr_dt");
 time_parent2.innerText=get_dr_tm;
 date_parent2.innerText=get_dr_dt;
+
+let bookingPrice=JSON.parse(localStorage.getItem("booking_pr"))
+let book_parent=document.getElementById("bkn_amount");
+book_parent.innerText=bookingPrice;
 </script>
