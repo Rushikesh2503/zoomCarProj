@@ -1366,7 +1366,7 @@ body {
     <div id="sumry">
         <div id="top_w_img">
             <p class="heading_sumry">SUMMARY</p>
-            <img src="img/sum_car_img.png" alt="">
+            <img src="img/sum_car_img.png" alt="" id="right_car">
             <p id="car_name">KUV 100</p>
             <p id="seating_cap">(5 Seater)</p>
         </div>
@@ -1982,4 +1982,23 @@ date_parent2.innerText=get_dr_dt;
 let bookingPrice=JSON.parse(localStorage.getItem("booking_pr"))
 let book_parent=document.getElementById("bkn_amount");
 book_parent.innerText=bookingPrice;
+
+let carName=JSON.parse(localStorage.getItem("car_name"))
+let carNm_parent=document.getElementById("car_name");
+carNm_parent.innerText=carName;
+
+let carImg=JSON.parse(localStorage.getItem("car_img_src"))
+let carImg_parent=document.getElementById("right_car");
+carImg_parent.src=carImg;
+
+
+let bk_amt=document.getElementById("bkn_amount").innerText;
+ bk_amt=Number(bk_amt);
+
+ let ref_amt=document.getElementById("ref_amount").innerText;
+ ref_amt=Number(ref_amt);
+
+ let tt_amt=document.getElementById("total_amount");
+ tt_amt.innerText=bk_amt+ref_amt;
+
 </script>

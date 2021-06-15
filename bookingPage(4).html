@@ -10,6 +10,10 @@
 </head>
 
 <style>
+  body{
+    margin: 0%;
+    padding: 0%;
+  }
      #navbar {
     width: 100%;
     display: flex;
@@ -632,7 +636,7 @@ carGroupFilter=> used for filtering(not using//can be used) */
 <div id="detailGrid">
 
   <div class="carImage">
-    <img src="img/ciaz.png" />
+    <img src="img/ciaz.png" id="car_img_1"/>
   </div>
   <div class="carDetails">
     <div>
@@ -717,7 +721,7 @@ carGroupFilter=> used for filtering(not using//can be used) */
   <div id="detailGrid">
   
     <div class="carImage">
-      <img src="img/ecosport.png" />
+      <img src="img/ecosport.png" id="car_img_2" />
     </div>
     <div class="carDetails">
       <div>
@@ -802,7 +806,7 @@ carGroupFilter=> used for filtering(not using//can be used) */
     <div id="detailGrid">
     
       <div class="carImage">
-        <img src="img/xuv500.png" />
+        <img src="img/xuv500.png" id="car_img_3"/>
       </div>
       <div class="carDetails">
         <div>
@@ -887,7 +891,7 @@ carGroupFilter=> used for filtering(not using//can be used) */
       <div id="detailGrid">
       
         <div class="carImage">
-          <img src="img/tiago.jpg" />
+          <img src="img/tiago.jpg" id="car_img_4"/>
         </div>
         <div class="carDetails">
           <div>
@@ -972,7 +976,7 @@ carGroupFilter=> used for filtering(not using//can be used) */
         <div id="detailGrid">
         
           <div class="carImage">
-            <img src="img/swift.png" />
+            <img src="img/swift.png" id="car_img_5"/>
           </div>
           <div class="carDetails">
             <div>
@@ -1115,43 +1119,116 @@ function gotosearchpg(){
   window.location.href="search.html"
 }
 function bookingnow(e){
-  //console.log(e)
   let pr_val=document.getElementById(`price_${e}`).innerText;
   let car_name=document.getElementById(`car_name_${e}`).innerText;
-  console.log('car_name:', car_name)
-  console.log('pr_val:', pr_val)
+  let car_img=document.getElementById(`car_img_${e}`).src;
+  // console.log('car_img:', car_img)
+  // console.log('car_name:', car_name)
+  // console.log('pr_val:', pr_val)
   localStorage.setItem("car_name",JSON.stringify(car_name));
   localStorage.setItem("booking_pr",JSON.stringify(pr_val));
+  localStorage.setItem("car_img_src",JSON.stringify(car_img));
+
   window.location.href="summarypg.html"
 }
 
-// function sortLH(){
-//   var arr=[];
-//   var data=[1,2,3,4,5];
-//   for(let i=1;i<6;i++){
-//     let pr_val=document.getElementById(`price_${i}`).innerText;
-//     arr.push(pr_val)
-//   }
-//   for(var i=0;i<data.length-1;i++){
-//       for(var j=0;j<data.length-i-1;j++){
-//         if(arr[j]<arr[j+1]){
-//           swap(arr,j,j+1);
-//           swap(data,j,j+1);
+function sortLH(){
+  var array1=[1,2,3,4,5];
+  var arr=[];
+  var data=[1,2,3,4,5];
+  for(let i=1;i<6;i++){
+    let pr_val=document.getElementById(`price_${i}`).innerText;
+    arr.push(pr_val)
+  }
+  for(var i=0;i<data.length-1;i++){
+      for(var j=0;j<data.length-i-1;j++){
+        if(arr[j]>arr[j+1]){
+          swap(arr,j,j+1);
+          swap(data,j,j+1);
           
-//         }
+        }
+      }
+    }
+
+  function swap(arr,a,b){
+    var temp = arr[a];
+    arr[a] =arr[b];
+    arr[b] = temp;
+  }
+  var price_amtt=[];
+  var carNames=[];
+  var carImg_src=[];
+  for(let i=0;i<data.length;i++){
+  let pr_val=document.getElementById(`price_${data[i]}`).innerText;
+    price_amtt.push(pr_val);
+
+  let car_name=document.getElementById(`car_name_${data[i]}`).innerText;
+    carNames.push(car_name);
+
+  let car_img_src=document.getElementById(`car_img_${data[i]}`).src;
+    carImg_src.push(car_img_src)
+  }
+  //console.log(price_amtt,carNames,carImg_src);
+
+  for(let i=0;i<array1.length;i++){
+  let pr_val=document.getElementById(`price_${array1[i]}`);
+    pr_val.innerText=`${price_amtt[i]}`
+  let car_name=document.getElementById(`car_name_${array1[i]}`);
+    car_name.innerText=`${carNames[i]}`
+  let car_img_src=document.getElementById(`car_img_${array1[i]}`);
+    car_img_src.src=`${carImg_src[i]}`
+  }
+}
+
+
+function sortHL(){
+  var array1=[1,2,3,4,5];
+  var arr=[];
+  var data=[1,2,3,4,5];
+  for(let i=1;i<6;i++){
+    let pr_val=document.getElementById(`price_${i}`).innerText;
+    arr.push(pr_val)
+  }
+  for(var i=0;i<data.length-1;i++){
+      for(var j=0;j<data.length-i-1;j++){
+        if(arr[j]<arr[j+1]){
+          swap(arr,j,j+1);
+          swap(data,j,j+1);
+          
+        }
         
-//       }
-//     }
+      }
+    }
 
-//   function swap(arr,a,b){
-//     var temp = arr[a];
-//     arr[a] =arr[b];
-//     arr[b] = temp;
-//   }
+  function swap(arr,a,b){
+    var temp = arr[a];
+    arr[a] =arr[b];
+    arr[b] = temp;
+  }
+  var price_amtt=[];
+  var carNames=[];
+  var carImg_src=[];
+  for(let i=0;i<data.length;i++){
+  let pr_val=document.getElementById(`price_${data[i]}`).innerText;
+    price_amtt.push(pr_val);
 
-  
-//    console.log(data)
-// }
+  let car_name=document.getElementById(`car_name_${data[i]}`).innerText;
+    carNames.push(car_name);
+
+  let car_img_src=document.getElementById(`car_img_${data[i]}`).src;
+    carImg_src.push(car_img_src)
+  }
+  //console.log(price_amtt,carNames,carImg_src);
+
+  for(let i=0;i<array1.length;i++){
+  let pr_val=document.getElementById(`price_${array1[i]}`);
+    pr_val.innerText=`${price_amtt[i]}`
+  let car_name=document.getElementById(`car_name_${array1[i]}`);
+    car_name.innerText=`${carNames[i]}`
+  let car_img_src=document.getElementById(`car_img_${array1[i]}`);
+    car_img_src.src=`${carImg_src[i]}`
+  }
+}
 
 </script>
 
