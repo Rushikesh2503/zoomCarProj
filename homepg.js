@@ -227,7 +227,7 @@ function checkData(e) {
     }
   }
   if (havedata2) {
-    alert("You are sucessfully Login to Zoom Car");
+    //   alert("You are sucessfully Login to Zoom Car");
     changeNav();
     localStorage.setItem("logindone", JSON.stringify("yes"));
   } else {
