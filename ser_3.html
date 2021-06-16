@@ -404,6 +404,11 @@
     let id=v.id;
     let par_mon_div=document.getElementById(id);
     // par_mon_div.style.border="2px solid green"
+    let cls=document.querySelectorAll(".month");
+    for(let i=0;i<cls.length;i++){
+      cls[i].style.border="1px solid black";
+       par_mon_div.style.border="3px solid green"
+    }
     let par_mon=document.getElementById(id).innerText;
     let mon_dis=document.getElementById("mon_dis2");
     mon_dis.innerText=par_mon;
@@ -412,6 +417,11 @@
    function checkday(e){
     let id2=e.id;
     let par_date_div=document.getElementById(id2);
+    let cls=document.querySelectorAll(".day");
+    for(let i=0;i<cls.length;i++){
+      cls[i].style.border="1px solid black";
+      par_date_div.style.border="3px solid green"
+    }
     let par_date=document.getElementById(id2).innerText;
     par_date= par_date.split(/[\r\n]+/);
     let date_dis=document.getElementById("date_dis2");
