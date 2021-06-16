@@ -1360,7 +1360,7 @@ body {
             <div id="total_div"><p>Total Amount: ₹</p><p id="total_amount">6699</p> </div>
         </div>
       </div>
-      <div id="b_check_div"><button class="checkout_btn">CHECKOUT</button></div>
+      <div id="b_check_div"><button class="checkout_btn" onclick="gotopaypg()">CHECKOUT</button></div>
     </div>
 
     <div id="sumry">
@@ -2001,4 +2001,11 @@ let bk_amt=document.getElementById("bkn_amount").innerText;
  let tt_amt=document.getElementById("total_amount");
  tt_amt.innerText=bk_amt+ref_amt;
 
+ let res=tt_amt.innerText;
+ console.log('res:', res)
+
+ function gotopaypg(){
+ localStorage.setItem("payable_amt",JSON.stringify(res));
+ window.location.href="payment.html"
+ }
 </script>
