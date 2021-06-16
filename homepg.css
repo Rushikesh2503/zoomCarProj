@@ -1334,199 +1334,228 @@ body {
          height: 50px; } */
 
 #last {
-            margin-top: 10vh;
-             /* background-color: #eaeaea; */
-        }
+  margin-top: 10vh;
+  /* background-color: #eaeaea; */
+}
 
-        #last .footer {
-            background-color: rgb(51, 65, 79);
-            color: white;
-            margin-top: 50px;
-            width: 100%;
-            padding-top: 20px;
-            box-sizing: border-box;
+#last .footer {
+  background-color: rgb(51, 65, 79);
+  color: white;
+  margin-top: 50px;
+  width: 100%;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
 
-        }
+#last .footer .Button {
+  display: grid;
+  grid-template-columns: 210px 210px 210px 210px;
+  grid-template-rows: auto;
+  font-size: 14px;
+  width: 800px;
+  margin: auto;
+  /* background-color: black; */
+}
 
-        #last .footer .Button {
-            display: grid;
-            grid-template-columns: 210px 210px 210px 210px;
-            grid-template-rows: auto;
-            font-size: 14px;
-            width: 800px;
-            margin: auto;
-            /* background-color: black; */
-        }
+#last .footer .Button button {
+  width: 210px;
+  border: thin;
+  background-color: rgb(51, 65, 79);
+  text-align: center;
+  height: 150px;
+}
 
-        #last .footer .Button button {
-            width: 210px;
-            border: thin;
-            background-color: rgb(51, 65, 79);
-            text-align: center;
-            height: 150px;
-        }
+#last .footer .Button .link {
+  /* border: 1px solid white; */
+  align-content: center;
+}
 
-        #last .footer .Button .link {
-            /* border: 1px solid white; */
-            align-content: center;
-        }
+#last .footer .Button .link img {
+  width: 50px;
+  padding-bottom: 5px;
+}
 
-        #last .footer .Button .link img {
-            width: 50px;
-            padding-bottom: 5px;
-        }
+#last .footer .Button button p {
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 200;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
 
-        #last .footer .Button button p {
-            font-size: 14px;
-            font-family: sans-serif;
-            font-weight: 200;
-            text-align: center;
-            text-decoration: none;
-            color: white;
+#last .footer h4 {
+  text-align: center;
+  font-weight: 200;
+  font-size: 25px;
+  width: 180px;
+  margin: 15px auto;
+  color: white;
+}
 
-        }
+#last .footer .aboutus {
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px;
+  grid-template-rows: auto auto;
+  grid-gap: 15px 25px;
+  width: 1020px;
+  margin: auto;
+}
 
-        #last .footer h4 {
-            text-align: center;
-            font-weight: 200;
-            font-size: 25px;
-            width: 180px;
-            margin: 15px auto;
-            color: white;
+#last .footer .aboutus > div {
+  width: 220px;
+  height: 50px;
+}
 
-        }
+#last .footer .aboutus a {
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
 
-        #last .footer .aboutus {
-            display: grid;
-            grid-template-columns: 250px 250px 250px 250px;
-            grid-template-rows: auto auto;
-            grid-gap: 15px 25px;
-            width: 1020px;
-            margin: auto;
+#last .footer .cities {
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px;
+  grid-template-rows: 50px 50px 50px 50px 50px 50px 50px;
+  /* padding: 20px; */
+  grid-gap: 20px 25px;
+  width: 1020px;
+  margin: auto;
+  /* background-color: black; */
+}
 
+#last .footer .cities .help {
+  font-size: 14px;
+  font-family: sans-serif;
+  color: white;
+  text-decoration: none;
+  width: 200px;
+  height: 30px;
+  /* background-color: blanchedalmond; */
+}
 
-        }
+#last .footer .cities a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
 
-        #last .footer .aboutus>div {
-            width: 220px;
-            height: 50px;
-        }
+#last .footer .airport {
+  display: grid;
+  grid-template-columns: 220px 220px 220px 220px;
+  grid-template-rows: 50px 50px 50px 50px 50px;
+  grid-gap: 20px 60px;
+  width: 1020px;
+  margin: auto;
+  /* background-color: black; */
+}
 
-        #last .footer .aboutus a {
-            color: white;
-            font-size: 15px;
-            text-decoration: none;
-        }
+#last .footer .airport > div {
+  width: 220px;
+  height: 30px;
+  /* background-color: blanchedalmond */
+}
 
-        #last .footer .cities {
-            display: grid;
-            grid-template-columns: 250px 250px 250px 250px;
-            grid-template-rows: 50px 50px 50px 50px 50px 50px 50px;
-            /* padding: 20px; */
-            grid-gap: 20px 25px;
-            width: 1020px;
-            margin: auto;
-            /* background-color: black; */
-        }
+#last .footer .airport a {
+  /* margin-left: 50px; */
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
 
-        #last .footer .cities .help {
-            font-size: 14px;
-            font-family: sans-serif;
-            color: white;
-            text-decoration: none;
-            width: 200px;
-            height: 30px;
-            /* background-color: blanchedalmond; */
+#last .footer hr {
+  margin-top: -0;
+  height: 2px;
+}
 
-        }
+#last .footer .address {
+  width: 1050px;
+  height: 200px;
+  margin: auto;
+}
 
-        #last .footer .cities a {
-            color: white;
-            font-size: 14px;
-            text-decoration: none;
-        }
+#last .footer .social img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 
-        #last .footer .airport {
-            display: grid;
-            grid-template-columns: 220px 220px 220px 220px;
-            grid-template-rows: 50px 50px 50px 50px 50px;
-            grid-gap: 20px 60px;
-            width: 1020px;
-            margin: auto;
-            /* background-color: black; */
-        }
+#last .footer .address h4 {
+  margin-left: 1px;
+  font-size: 20px;
+  color: rgb(173, 179, 184);
+}
 
-        #last .footer .airport>div {
-            width: 220px;
-            height: 30px;
-            /* background-color: blanchedalmond */
-        }
+#last .footer .address p {
+  font-size: 15px;
+  color: rgb(173, 179, 184);
+  margin-left: 5px;
+}
 
-        #last .footer .airport a {
-            /* margin-left: 50px; */
-            color: white;
-            font-size: 14px;
-            text-decoration: none;
-        }
-
-        #last .footer hr {
-            margin-top: -0;
-            height: 2px;
-        }
-
-        #last .footer .address {
-            width: 1050px;
-            height: 200px;
-            margin: auto;
-        }
-
-        #last .footer .social img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-
-        #last .footer .address h4 {
-            margin-left: 1px;
-            font-size: 20px;
-            color: rgb(173, 179, 184);
-        }
-
-        #last .footer .address p {
-            font-size: 15px;
-            color: rgb(173, 179, 184);
-            margin-left: 5px;
-        }
-
-        #last .address .social {
-            display: grid;
-            grid-template-columns: 20px 20px 20px 20px 20px 20px;
-            grid-template-rows: auto;
-            grid-gap: 40px;
-            padding: 8px;
-
-        }
-       .contentInc{
-        width: 100%;
-         background-color: #eaeaea;
-         margin-top: -20px;
-      }  
-       .content {
- 
+#last .address .social {
+  display: grid;
+  grid-template-columns: 20px 20px 20px 20px 20px 20px;
+  grid-template-rows: auto;
+  grid-gap: 40px;
+  padding: 8px;
+}
+.contentInc {
+  width: 100%;
+  background-color: #eaeaea;
+  margin-top: -20px;
+}
+.content {
   color: rgb(56, 54, 54);
   margin-left: 100px;
   padding: 5px;
   width: 80vw;
   font-size: 13px;
 }
- .content a {
+.content a {
   text-decoration: none;
   color: green;
 }
- .content h3 {
+.content h3 {
   font-weight: 700;
   color: #323a44;
-  
+
   font-size: 20px;
   font-family: sans-serif;
+}
+@media only screen and (max-width: 900px) {
+  #last .footer .cities {
+    width: 500px;
+    margin: auto;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: auto auto auto;
+  }
+  #last .footer .aboutus {
+    width: 500px;
+    margin: auto;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: auto auto auto;
+  }
+  #last .footer .airport {
+    width: 500px;
+    margin: auto;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: auto auto auto;
+    grid-gap: 20px 20px;
+  }
+  #last .footer .address {
+    width: 650px;
+  }
+  .content {
+    margin: auto;
+  }
+  .contentInc {
+    width: 750px;
+  }
+  #last .footer .Button {
+    grid-template-columns: 210px 210px;
+    grid-template-rows: auto;
+    font-size: 14px;
+    width: 420px;
+    margin: auto;
+  }
 }
