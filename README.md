@@ -51,3 +51,7 @@
 * *Rushikesh Bambadkar*
 * *Vishnu Sankar*
 * *Sameel Paikadan*
+
+
+## Demo Image of Home Page.
+![zoomHome](https://user-images.githubusercontent.com/82999542/122533925-ac781500-d03f-11eb-94a6-db56adf13d0a.png)
