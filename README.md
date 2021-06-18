@@ -18,7 +18,7 @@
 
 *5. Payment Page*
 
-*6. Signup Function *
+*6. Signup Function.*
 
 *7. Signup and Login Function*
 
