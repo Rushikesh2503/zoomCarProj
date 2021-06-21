@@ -53,5 +53,9 @@
 * *Sameel Paikadan*
 
 
+## Note:
+*All the images and icon links have been taken from main website and some other internet sources and may be subject to copyright so try not to use the images or icons for business purposes or reproduce them without their approval on the owner the images and icons used here are just for the making this project and for learning purposes.*
+
+
 ## Demo Image of Home Page.
 ![zoomHome](https://user-images.githubusercontent.com/82999542/122533925-ac781500-d03f-11eb-94a6-db56adf13d0a.png)
