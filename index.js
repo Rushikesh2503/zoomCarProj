@@ -157,7 +157,7 @@ function saveData(e) {
   localStorage.setItem("users", JSON.stringify(s_arr));
 
   alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
-  window.location.href = "homepg.html";
+  window.location.href = "index.html";
 }
 
 //LOGIN AFTERCLICK IN POPUP
@@ -319,7 +319,7 @@ function show_dr_box() {
 localStorage.setItem("logindone", JSON.stringify("no"));
 
 function logoutFunc() {
-  window.location.href = "homepg.html";
+  window.location.href = "index.html";
   localStorage.setItem("logindone", JSON.stringify("no"));
 }
 
