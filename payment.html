@@ -13,6 +13,7 @@
             padding: 0%;
             font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
                 Helvetica, Arial, sans-serif !important;
+
         }
 
         #offers {
@@ -970,6 +971,9 @@
         .paymentMethods .content .paycontent .methods {
           min-height: 350px;
         }
+         
+
+
 
         .cardPayment .card {
            width: 300px;
@@ -986,6 +990,8 @@
        .cardPayment .card .cardNumber {
          position: relative;
          margin-top: 10px;
+         -moz-appearance: textfield
+
         }
 
         .cardPayment .card .cardInfo {
@@ -1607,17 +1613,17 @@
                                 <div class="cardPayment">
                                     <div class="card">
                                         
-                                        <div class="cardNumber"><input type="text" maxlength="22"
-                                                placeholder="ENTER CARD NUMBER" id="cardNum" onchange="checkchange()">
+                                        <div class="cardNumber"><input type="text" maxlength="16"
+                                                placeholder="ENTER CARD NUMBER" id="cardNum" oninput="checkchange()">
                                            
                                         </div>
-                                        <div class="cardInfo"><input  placeholder="MM" type="text" id="m_m" onchange="checkchange()"> 
+                                        <div class="cardInfo"><input  placeholder="MM" type="text" maxlength="2" id="m_m" oninput="checkchange()"> 
                                              <input placeholder="YYYY"
-                                                type="text"class="year" id="exyear" onchange="checkchange()"> 
+                                                type="text"class="year" maxlength="4" id="exyear" oninput="checkchange()"> 
                                            
                                         </div>
                                         <div class="cardInfo"> <input maxlength="3" placeholder="CVV" type="password"
-                                                class="cvv" id="cvV" onchange="checkchange()">
+                                                class="cvv" id="cvV" oninput="checkchange()">
                                         
                                         </div>
                                         
@@ -2305,10 +2311,14 @@
      let exyear=document.getElementById("exyear").value;
      let cvV=document.getElementById("cvV").value;
      let mm=document.getElementById("m_m").value;
-      if(cardNumVal!=""&& exyear!=""&&cvV!="" && mm!="" ){
+      if(cardNumVal.length==16 && exyear.length==4 && mm.length==2 && cvV.length==3){
          let pay_btn_main=document.getElementById("pay_btn_main");
          pay_btn_main.style.backgroundColor="greenyellow";
          pay_btn_main.style.color="black";
+       } else {
+           let pay_btn_main=document.getElementById("pay_btn_main");
+         pay_btn_main.style.backgroundColor="#ccc";
+         pay_btn_main.style.color="white";
        }
      }
 
@@ -2318,7 +2328,7 @@
      let exyear=document.getElementById("exyear").value;
      let cvV=document.getElementById("cvV").value;
      let mm=document.getElementById("m_m").value;
-     if(cardNumVal==""||exyear==""||cvV==""||mm==""){
+     if(cardNumVal==""||exyear==""||cvV==""||mm=="" || cardNumVal.length!=16 || exyear.length!=4 || mm.length!=2 || cvV.length!=3){
          alert("Please Add Valid Inputs");
          e.prevent()
      }else{
