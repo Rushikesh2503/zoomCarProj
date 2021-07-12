@@ -22,6 +22,24 @@
 
 *7. Signup and Login Function*
 
+## Zoom Car Booking Process
+
+*1. Click on Start your wonderful journey*
+
+*2. Select your Starting Location/Point*
+
+*3. You can select different nearby drop location*
+
+*4. Select Pick-Up Month/Date/Time*
+
+*5. Select Drop Month/Date/Time*
+
+*6. Select a car(You car sort cars a/c to amount) by clicking on Book Now Button.*
+
+*7. Summary Page Date/time/total amount to pay after that click on Checkout Button*
+
+*8. Pay Total Amount With Valid Card Details or Cash on Delivery*
+
 ## Functionalities Added
 
 *1. Responsiveness in Home page*
@@ -43,6 +61,7 @@
 *9. Functionality to make a payment.*
 
 *10. Popup functionality for successful Booking and payment for car*
+
 
 
 
