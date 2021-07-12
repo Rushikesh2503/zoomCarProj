@@ -162,6 +162,6 @@
 
 
     function gotopageBook(){
-        window.location.href="bookingPage.html"
+        window.location.href="../bookingpage/bookingPage.html"
         // LOCAL STORAGE NAMES //drop_time & //drop_date
     }
