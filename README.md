@@ -26,7 +26,7 @@
 
 *1. Click on Start your wonderful journey*
 
-*2. Select your Starting Location/Point*
+*2. Select your Starting Point*
 
 *3. You can select different nearby drop location*
 
@@ -34,7 +34,7 @@
 
 *5. Select Drop Month/Date/Time*
 
-*6. Select a car(You car sort cars a/c to amount) by clicking on Book Now Button.*
+*6. We can sort cars list according to booking amount and easily select car by clicking on "Book Now" Button.*
 
 *7. Summary Page Date/time/total amount to pay after that click on Checkout Button*
 
