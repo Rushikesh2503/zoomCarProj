@@ -46,7 +46,7 @@ time_parent2.innerText=get_dr_tm;
 date_parent2.innerText=get_dr_dt;
 
 function gotosearchpg(){
-  window.location.href="../search.html"
+  window.location.href="../search/search.html"
 }
 function bookingnow(e){
   let pr_val=document.getElementById(`price_${e}`).innerText;
@@ -59,7 +59,7 @@ function bookingnow(e){
   localStorage.setItem("booking_pr",JSON.stringify(pr_val));
   localStorage.setItem("car_img_src",JSON.stringify(car_img));
 
-  window.location.href="../summarypg.html"
+  window.location.href="../summary/summarypg.html"
 }
 
 function sortLH(){
