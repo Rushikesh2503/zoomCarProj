@@ -103,7 +103,7 @@
         sign_par_box1.innerHTML = `
       <div class="sign_up_topr_box1">
           <div class="log_r_top_logo">
-              <img src="img/zoom-logo-color.png" alt="">
+              <img src="../img/zoom-logo-color.png" alt="">
           </div>
       </div>
       <div class="sign_up_botr_box1">
@@ -178,7 +178,7 @@
             login_par_box2.innerHTML = `
       <div class="login_topr_box1">
           <div class="log_r_top_logo">
-              <img src="img/zoom-logo-color.png" alt="">
+              <img src="../img/zoom-logo-color.png" alt="">
           </div>
       </div>
       <div class="login_botr_box1">
