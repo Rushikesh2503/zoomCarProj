@@ -486,7 +486,7 @@
          e.prevent()
      }else{
          alert("Your Payment Done Successfully!");
-         window.location.href=".../index.html"
+         window.location.href="../index.html"
      }
 
     }
