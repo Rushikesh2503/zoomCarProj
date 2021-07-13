@@ -22,7 +22,7 @@ function popCancel() {
   var sign_par_1 = document.querySelector(".log_right");
   sign_par_1.innerHTML = `<div class="log_r_top">
               <div class="log_r_top_logo">
-                <img src="img/zoom-logo-color.png" alt="">
+                <img src="../img/zoom-logo-color.png" alt="">
               </div>
               <div class="log_r_top_cont">
                 <label for="">Continue with</label>
@@ -55,7 +55,7 @@ function popCancel2() {
   var sign_par_2 = document.querySelector(".log_right");
   sign_par_2.innerHTML = `<div class="log_r_top">
               <div class="log_r_top_logo">
-                <img src="img/zoom-logo-color.png" alt="">
+                <img src="../img/zoom-logo-color.png" alt="">
               </div>
               <div class="log_r_top_cont">
                 <label for="">Continue with</label>
@@ -108,7 +108,7 @@ function signinacc(e) {
   sign_par_box1.innerHTML = `
       <div class="sign_up_topr_box1">
           <div class="log_r_top_logo">
-              <img src="img/zoom-logo-color.png" alt="">
+              <img src="../img/zoom-logo-color.png" alt="">
           </div>
       </div>
       <div class="sign_up_botr_box1">
@@ -157,7 +157,7 @@ function saveData(e) {
   localStorage.setItem("users", JSON.stringify(s_arr));
 
   alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
-  window.location.href = "index.html";
+  window.location.href = "../index.html";
 }
 
 //LOGIN AFTERCLICK IN POPUP
@@ -183,7 +183,7 @@ function loginacc(e) {
     login_par_box2.innerHTML = `
       <div class="login_topr_box1">
           <div class="log_r_top_logo">
-              <img src="img/zoom-logo-color.png" alt="">
+              <img src="../img/zoom-logo-color.png" alt="">
           </div>
       </div>
       <div class="login_botr_box1">
@@ -275,7 +275,7 @@ function changeNav() {
   let image = document.createElement("img");
   image.setAttribute("id", "avtar_logo");
 
-  image.src = "img/avtar_logo_log.png";
+  image.src = "../img/avtar_logo_log.png";
 
   divcre.append(image);
   li_img.append(divcre);
@@ -319,7 +319,7 @@ function show_dr_box() {
 localStorage.setItem("logindone", JSON.stringify("no"));
 
 function logoutFunc() {
-  window.location.href = "index.html";
+  window.location.href = "../index.html";
   localStorage.setItem("logindone", JSON.stringify("no"));
 }
 
