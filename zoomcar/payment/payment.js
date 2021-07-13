@@ -22,7 +22,7 @@
         var sign_par_1 = document.querySelector(".log_right");
         sign_par_1.innerHTML = `<div class="log_r_top">
               <div class="log_r_top_logo">
-                <img src="img/zoom-logo-color.png" alt="">
+                <img src="../img/zoom-logo-color.png" alt="">
               </div>
               <div class="log_r_top_cont">
                 <label for="">Continue with</label>
@@ -177,7 +177,7 @@
             login_par_box2.innerHTML = `
       <div class="login_topr_box1">
           <div class="log_r_top_logo">
-              <img src="img/zoom-logo-color.png" alt="">
+              <img src="../img/zoom-logo-color.png" alt="">
           </div>
       </div>
       <div class="login_botr_box1">
