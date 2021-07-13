@@ -19,7 +19,7 @@
   box-sizing: border-box;
 }
 #selectbar .sel_radiobox1, #selectbar .sel_radiobox2{
-  background: url(img/rightmark_gr_box.png) center  / cover
+  background: url(../img/rightmark_gr_box.png) center  / cover
 }
 #selectbar .sel_hori_line1,
 .sel_hori_line2 {
