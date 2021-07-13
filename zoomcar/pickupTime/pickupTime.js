@@ -155,6 +155,6 @@
 
 
     function gotopage3(){
-        window.location.href="dropoffTime.html"
+        window.location.href="../dropoffTime/dropoffTime.html"
         // LOCAL STORAGE NAMES //pick_up_time & //pick_up_date
     }
