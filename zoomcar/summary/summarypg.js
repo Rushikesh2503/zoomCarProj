@@ -454,5 +454,5 @@ let bk_amt=document.getElementById("bkn_amount").innerText;
 
  function gotopaypg(){
  localStorage.setItem("payable_amt",JSON.stringify(res));
- window.location.href="./payment/payment.html"
+ window.location.href="../payment/payment.html"
  }
