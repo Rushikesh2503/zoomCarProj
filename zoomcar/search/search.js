@@ -646,7 +646,7 @@
     let sel_radiobox1 = document.querySelector(".sel_radiobox1");
     console.log("sel_radiobox1:", sel_radiobox1);
     sel_radiobox1.style.backgroundColor = "green";
-    window.location.href = "../dropoffTime/dropoffTime.html";
+    window.location.href = "../pickupTime/pickupTime.html";
   }
   function notnextpg() {
     window.location.href = "search.html";
