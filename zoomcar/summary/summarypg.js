@@ -23,7 +23,7 @@
         var sign_par_1 = document.querySelector(".log_right");
         sign_par_1.innerHTML = `<div class="log_r_top">
               <div class="log_r_top_logo">
-                <img src="img/zoom-logo-color.png" alt="">
+                <img src="../img/zoom-logo-color.png" alt="">
               </div>
               <div class="log_r_top_cont">
                 <label for="">Continue with</label>
@@ -53,7 +53,7 @@
         var sign_par_2 = document.querySelector(".log_right");
         sign_par_2.innerHTML = `<div class="log_r_top">
               <div class="log_r_top_logo">
-                <img src="img/zoom-logo-color.png" alt="">
+                <img src="../img/zoom-logo-color.png" alt="">
               </div>
               <div class="log_r_top_cont">
                 <label for="">Continue with</label>
@@ -152,7 +152,7 @@
         localStorage.setItem("users", JSON.stringify(s_arr));
 
         alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
     }
 
     //LOGIN AFTERCLICK IN POPUP
@@ -268,7 +268,7 @@
         let image = document.createElement("img");
         image.setAttribute("id", "avtar_logo");
 
-        image.src = "img/avtar_logo_log.png";
+        image.src = "../img/avtar_logo_log.png";
 
         divcre.append(image);
         li_img.append(divcre);
@@ -311,7 +311,7 @@
     }
 
     function logoutFunc() {
-        window.location.href = "payment.html";
+        window.location.href = "../payment/payment.html";
     }
 
     //auto_slider
@@ -455,7 +455,7 @@
 
     function showcod(){
         alert("You Need to Pay Booking Amount Before The Date Of Journey Start At The Starting Location");
-        window.location.href="index.html"
+        window.location.href="../index.html"
     }
 
     
@@ -486,7 +486,7 @@
          e.prevent()
      }else{
          alert("Your Payment Done Successfully!");
-         window.location.href="index.html"
+         window.location.href="../index.html"
      }
 
     }
