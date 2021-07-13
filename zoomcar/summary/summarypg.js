@@ -158,7 +158,7 @@ function saveData(e) {
   localStorage.setItem("users", JSON.stringify(s_arr));
 
   alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
-  window.location.href = "index.html";
+  window.location.href = "../index.html";
 }
 
 //LOGIN AFTERCLICK IN POPUP
@@ -317,7 +317,7 @@ function show_dr_box() {
 }
 
 function logoutFunc() {
-  window.location.href = "summarypg.html";
+  window.location.href = "./summarypg.html";
 }
 
 //auto_slider
@@ -454,5 +454,5 @@ let bk_amt=document.getElementById("bkn_amount").innerText;
 
  function gotopaypg(){
  localStorage.setItem("payable_amt",JSON.stringify(res));
- window.location.href="payment.html"
+ window.location.href="./payment/payment.html"
  }
