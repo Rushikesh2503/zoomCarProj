@@ -131,7 +131,7 @@ body {
 
 /*Hover Effect on navbar-SUBSCRIBE */
 .subscr-logo1 {
-    background-image: url(img/sub_logo.png);
+    background-image: url(../img/sub_logo.png);
     display: block;
     background-size: 120px;
     background-repeat: no-repeat;
@@ -201,7 +201,7 @@ body {
 
 /*Hover Effect on navbar-AMIGO */
 .amigo-logo2 {
-    background-image: url(img/amigo_logo.png);
+    background-image: url(../img/amigo_logo.png);
     display: block;
     background-size: 120px;
     background-repeat: no-repeat;
@@ -254,7 +254,7 @@ body {
 
 /*Hover Effect on navbar-ZMS */
 .zms-logo3 {
-    background-image: url(img/zms_logo.png);
+    background-image: url(../img/zms_logo.png);
     display: block;
     background-size: 120px;
     background-repeat: no-repeat;
@@ -483,7 +483,7 @@ margin-right: 50px;
 }
 
 .btn_log_sub {
-    background: url(img/log_sub_btn.png) no-repeat top left / cover;
+    background: url(../img/log_sub_btn.png) no-repeat top left / cover;
     width: 70px;
     height: 70px;
     border: none;
@@ -687,7 +687,7 @@ margin-right: 50px;
 }
 
 .btn_log_sub2 {
-    background: url(img/log_sub_btn.png) no-repeat top left / cover;
+    background: url(../img/log_sub_btn.png) no-repeat top left / cover;
     width: 70px;
     height: 70px;
     border: none;
