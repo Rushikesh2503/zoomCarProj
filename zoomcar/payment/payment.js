@@ -102,7 +102,7 @@
         sign_par_box1.innerHTML = `
       <div class="sign_up_topr_box1">
           <div class="log_r_top_logo">
-              <img src="img/zoom-logo-color.png" alt="">
+              <img src="../img/zoom-logo-color.png" alt="">
           </div>
       </div>
       <div class="sign_up_botr_box1">
@@ -267,7 +267,7 @@
         let image = document.createElement("img");
         image.setAttribute("id", "avtar_logo");
 
-        image.src = "img/avtar_logo_log.png";
+        image.src = "../img/avtar_logo_log.png";
 
         divcre.append(image);
         li_img.append(divcre);
