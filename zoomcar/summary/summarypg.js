@@ -23,7 +23,7 @@ function popCancel() {
   var sign_par_1 = document.querySelector(".log_right");
   sign_par_1.innerHTML = `<div class="log_r_top">
               <div class="log_r_top_logo">
-                <img src="img/zoom-logo-color.png" alt="">
+                <img src="../img/zoom-logo-color.png" alt="">
               </div>
               <div class="log_r_top_cont">
                 <label for="">Continue with</label>
@@ -56,7 +56,7 @@ function popCancel2() {
   var sign_par_2 = document.querySelector(".log_right");
   sign_par_2.innerHTML = `<div class="log_r_top">
               <div class="log_r_top_logo">
-                <img src="img/zoom-logo-color.png" alt="">
+                <img src="../img/zoom-logo-color.png" alt="">
               </div>
               <div class="log_r_top_cont">
                 <label for="">Continue with</label>
@@ -109,7 +109,7 @@ function signinacc(e) {
   sign_par_box1.innerHTML = `
       <div class="sign_up_topr_box1">
           <div class="log_r_top_logo">
-              <img src="img/zoom-logo-color.png" alt="">
+              <img src="../img/zoom-logo-color.png" alt="">
           </div>
       </div>
       <div class="sign_up_botr_box1">
@@ -184,7 +184,7 @@ function loginacc(e) {
     login_par_box2.innerHTML = `
       <div class="login_topr_box1">
           <div class="log_r_top_logo">
-              <img src="img/zoom-logo-color.png" alt="">
+              <img src="../img/zoom-logo-color.png" alt="">
           </div>
       </div>
       <div class="login_botr_box1">
