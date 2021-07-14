@@ -1,0 +1,232 @@
+*{
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
+  Helvetica, Arial, sans-serif !important;
+}
+#selectbar {
+  display: flex;
+  margin: 30px 100px;
+}
+#selectbar input {
+  display: none;
+}
+#selectbar .sel_radiobox1,
+.sel_radiobox2,
+.sel_radiobox3 {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  border: 4px solid yellowgreen;
+  box-sizing: border-box;
+}
+#selectbar .sel_radiobox1, #selectbar .sel_radiobox2{
+  background: url(../img/rightmark_gr_box.png) center  / cover
+}
+#selectbar .sel_hori_line1,
+.sel_hori_line2 {
+  width: 200px;
+  height: 1.5px;
+  margin-top: 15px;
+  margin-left: 0.2px;
+  background-color: gray;
+}
+.search_box_cont {
+  margin-left: 100px;
+}
+.search_box_cont h1 {
+  font-weight: 500;
+  font-size: 27px;
+  color: rgb(61, 70, 87);
+}
+.search_box_cont h2 {
+  font-weight: 500;
+  font-size: 20px;
+  color: rgb(61, 70, 87);
+}
+
+#deta_Airport {
+  display: flex;
+  margin-top: 10vh;
+  margin-left: 0%;
+  padding: 20px 50px;
+  background-color: rgb(248, 248, 248);
+}
+#air_para {
+  font-size: 16px;
+  color: rgb(69, 71, 82);
+}
+.airport_btn {
+  width: 17vw;
+  margin: 0 20px;
+  background: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(69, 71, 82);
+  border-color: rgb(69, 71, 82);
+}
+#zoom_air_work {
+  margin-left: 20vw;
+  cursor: pointer;
+  color: rgb(69, 71, 82);
+}
+#last_nav {
+  display: flex;
+  background-color: rgb(65, 79, 94);
+  height: 100px;
+}
+#start_div_fo, #date_div_fo, #date_div_fo2 {
+  background-color: rgb(51, 65, 79);
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 18vw;
+  margin-right: 20px;
+}
+#start_div_fo > div, #date_div_fo > div , #date_div_fo2 > div {
+  color: #bdbdbd;
+  font-weight: 500;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+#st2_divin, #dt2_divin, #dt22_divin  {
+  font-size: 12px;
+  font-style: italic;
+}
+#next_btn {
+  margin-left: 25vw;
+  width: 200px;
+  height: 50px;
+  margin-top: 25px;
+  background: greenyellow;
+  color: black;
+  border: none;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.component-month {
+  margin-bottom: 30px;
+  margin-left: 100px;
+}
+
+.heading {
+  font-size: 12px;
+  color: #9b9b9b;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-left: 100px;
+  font-weight: 600;
+}
+
+.component-month .months {
+  display: flex;
+  flex-direction: row;
+}
+
+.component-month .months .month {
+  width: 90px;
+  border: 1px solid #323a44;
+  margin: 0 25px 5px 0;
+  padding: 8px 0;
+  border-radius: 3px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: none;
+}
+#date_show {
+  text-decoration: underline;
+  margin-top: 10px;
+  margin-left: 30px;
+  background: none;
+  border: none;
+}
+#dt2_divin{
+    display: flex;
+  
+}#dt22_divin{
+    display: flex;
+  
+}
+#date_dis{
+    display: flex;
+}
+#days {
+  display: flex;
+  margin:20px 100px;
+  text-align: center;
+
+}
+#days button:not(:last-child):hover{
+    transform: scale(1.2);
+    border: 1px solid green;
+    box-sizing: border-box;
+} 
+.months button:hover{
+    transform: scale(1.2);
+    border: 2px solid green;
+    border-radius: 2px;
+}
+.day {
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 3.5vw;
+  margin-left: 20px;
+  padding-top: 5px;
+  box-sizing: border-box;
+  background: none;
+}
+#days p {
+  font-size: 1.2vw;
+  font-weight: 300;
+}
+.day:first-child {
+  margin-left: 0%;
+}
+button{
+    cursor: pointer;
+}
+#time_d{
+    margin-left: 100px;
+    width: 60%;
+    position: relative;
+}
+input[type=time] {
+ border: none;
+ font-size: 14px;
+ font-family: helvetica;
+ width: 190px;
+}
+
+
+input[type=time]::-webkit-datetime-edit-fields-wrapper {
+ display: flex;
+}
+
+
+input[type=time]::-webkit-datetime-edit-text {
+padding: 19px 4px;
+}
+
+
+
+/* Hour */
+input[type=time]::-webkit-datetime-edit-hour-field {
+border-radius: 15%;
+padding: 19px 13px;
+}
+
+/* Minute */
+input[type=time]::-webkit-datetime-edit-minute-field {
+border-radius: 15%;
+padding: 19px 13px;
+}
+
+/* AM/PM */
+input[type=time]::-webkit-datetime-edit-ampm-field {
+background-color: #7155d3;
+border-radius: 15%;
+color: #fff;
+padding: 19px 13px;
+}

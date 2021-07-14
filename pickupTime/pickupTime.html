@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pickupTime.css">
+    <title>PICKUP TIME</title>
+
+</head>
+  <body>
+    <div id="searchpage">
+      <div id="selectbar">
+        <div class="sel_radiobox1"></div>
+        <input type="radio" name="radio-btn" id="radio1" />
+        <div class="sel_hori_line1"></div>
+        <div class="sel_radiobox2"></div>
+        <input type="radio" name="radio-btn" id="radio2" />
+        <div class="sel_hori_line2"></div>
+        <div class="sel_radiobox3"></div>
+        <input type="radio" name="radio-btn" id="radio3" />
+      </div>
+    </div>
+    <div class="search_box_cont">
+      <h1>From when do you need a Zoomcar?</h1>
+    </div>
+    <div class="heading">Select a month</div>
+    <div class="component-month">
+          <div class="months">
+            <button class="month" id="mon_frb" onclick="checkmon(this)"> Jun </button>
+            <button class="month" id="mon_secb" onclick="checkmon(this)"> Jul </button>                     
+            <button class="month" id="mon_thrb" onclick="checkmon(this)"> Aug </button>
+            <button class="month" id="mon_fob" onclick="checkmon(this)"> Sep </button>
+            <button class="month" id="mon_fifb" onclick="checkmon(this)"> Oct </button>
+            <button class="month" id="mon_sib" onclick="checkmon(this)"> Nov </button>
+            <button class="month" id="mon_seb" onclick="checkmon(this)"> Dec </button> 
+          </div>             
+        </div>
+    </div>
+    <div class="search_box_cont">
+      <h2>Start date <i>(Prices will be higher than usual on Weekends/Festive days)</i></h2>
+    </div>
+    <div class="heading">Select a Date</div>
+    <div id="days">
+        <button class="day" id="day_frb" onclick="checkday(this)"><p id="date_frp"></p></button>
+        <button class="day" id="day_secb" onclick="checkday(this)"><p id="date_sep"></p></button>
+        <button class="day" id="day_thrb" onclick="checkday(this)"><p id="date_thp"></p></button>
+        <button class="day" id="day_fob" onclick="checkday(this)"><p id="date_fop"></p></button>
+        <button class="day" id="day_fifb" onclick="checkday(this)"><p id="date_fifp"></p></button>
+        <button class="day" id="day_sib" onclick="checkday(this)"><p id="date_sip"></p></button>
+        <button class="day" id="day_seb" onclick="checkday(this)"><p id="date_sep"></p></button>
+        <button class="day" id="day_eib" onclick="checkday(this)"><p id="date_eip"></p></button>
+        <button id="date_show">Show More</button>
+    </div>
+    <div class="heading">Select a Time</div>
+
+    <div id="time_d">
+        <input type="time" id="timething1" onchange="checkTime()">
+    </div>
+
+    <div id="deta_Airport">
+      <p id="air_para">Need Zoomcar at your_city Airport</p>
+      <button class="airport_btn">International Terminal(T2)</button>
+      <button class="airport_btn">Domestic Terminal(T1A/T1B)</button>
+      <a href="" id="zoom_air_work">How Zoom Airport works ?</a>
+    </div>
+    <footer id="last_nav">
+      <div id="start_div_fo">
+        <div id="st1_divin">STARTING POINT</div>
+        <div id="st2_divin">Select Pick-up Location</div>
+        <div id="st3_divin"></div>
+      </div>
+      <div id="date_div_fo">
+        <div id="dt1_divin">PICKUP TIME</div>
+        <div id="dt2_divin">  
+            <div id="mon_dis"></div>
+            <div id="date_dis"></div>
+        </div>
+        <div id="dt3_divin">
+
+        </div>
+      </div>
+      <button id="next_btn" onclick="gotopage3()">NEXT</button>
+    </footer>
+  </body>
+</html>
+<script src="pickupTime.js"></script>

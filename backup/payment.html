@@ -1,0 +1,2340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/15707e82f8.js" crossorigin="anonymous"></script>
+    <title>PAYMENT</title>
+    <style>
+        body {
+            margin: 0%;
+            padding: 0%;
+            font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
+                Helvetica, Arial, sans-serif !important;
+
+        }
+
+        #offers {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        /* Naviation Bar */
+        #offers #navbar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 70px;
+            background-color: rgb(51, 65, 79);
+            justify-content: left;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        /* Naviation Bar: Logo,texting and Image */
+        #offers #logo {
+            margin: 0 20px;
+        }
+
+        #offers #logo img {
+            width: 120px;
+            height: 90px;
+            border: none;
+            margin: 0 20px;
+        }
+
+        #offers #navbar #nav_ul {
+            display: flex;
+            justify-content: center;
+            margin-left: 48vw;
+            height: 100%;
+            position: relative;
+        }
+
+        #offers #navbar #nav_ul li {
+            list-style: none;
+            font-size: 18px;
+            margin: 5px 8px;
+        }
+
+        #offers #navbar #nav_ul li a {
+            display: block;
+            border-radius: 20px;
+            text-decoration: none;
+            color: aliceblue;
+            margin: 15px 0;
+            float: right;
+        }
+
+        #offers #navbar #nav_ul li a:hover {
+            color: chartreuse;
+        }
+
+        .fa-caret-down {
+            margin-left: 8px;
+            cursor: pointer;
+        }
+
+        #dropdown_5 {
+            position: absolute;
+            top: 100%;
+            right: 0px;
+            width: 160px;
+            margin-top: 1px;
+            display: none;
+            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+            background-color: white;
+        }
+
+        .drop_d_box_user_hide {
+            display: none;
+        }
+
+        #dropdown_5 .drop_d_links button {
+            width: 100%;
+            height: 40px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            padding: 10px 0;
+            background: none;
+            cursor: pointer;
+        }
+
+        .last_bttn button {
+            border: none;
+        }
+
+        #dropdown_5 .drop_d_links button:hover {
+            /* font-size: 14px; */
+            background-color: yellowgreen;
+        }
+
+        .arrowmiddle55 {
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            left: 130px;
+            top: -6px;
+            background-color: white;
+            transform: rotate(45deg);
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 100;
+        }
+
+        .us_name {
+            margin-top: 20px;
+            display: flex;
+            color: white;
+        }
+
+        #avtar_logo {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-top: 15px;
+            margin-left: 0px;
+        }
+
+        /*Hover Effect on navbar-SUBSCRIBE */
+        .subscr-logo1 {
+            background-image: url(img/sub_logo.png);
+            display: block;
+            background-size: 120px;
+            background-repeat: no-repeat;
+            width: 120px;
+            height: 30px;
+            margin: auto;
+        }
+
+        .subscr_detail {
+            display: block;
+            position: absolute;
+            color: black;
+            background-color: white;
+            width: 260px;
+            padding: 10px;
+            top: 80%;
+            border-radius: 4px;
+            right: 350px;
+            text-align: center;
+            align-items: center;
+            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        #sub_det_item .arrowmiddle {
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            left: 121px;
+            top: 50px;
+            background-color: white;
+            transform: rotate(45deg);
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: -1;
+        }
+
+        #sub_det_item {
+            display: none;
+        }
+
+        .subscr_logo {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .subscr_detail p {
+            color: #33414f;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .subscr_btn {
+            width: 100px;
+            border-radius: 5px;
+            background-color: rgb(88, 180, 85);
+            border: none;
+            font-size: 12px;
+            padding: 7px;
+            color: white;
+            text-align: center;
+        }
+
+        #navbar .item:hover>.details {
+            display: block;
+        }
+
+        /*Hover Effect on navbar-AMIGO */
+        .amigo-logo2 {
+            background-image: url(img/amigo_logo.png);
+            display: block;
+            background-size: 120px;
+            background-repeat: no-repeat;
+            width: 120px;
+            height: 40px;
+            margin: auto;
+        }
+
+        .amigo_detail {
+            display: block;
+            position: absolute;
+            color: black;
+            background-color: white;
+            width: 260px;
+            padding: 10px;
+            top: 80%;
+            border-radius: 4px;
+            right: 270px;
+            text-align: center;
+            align-items: center;
+            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        .amigo_detail p {
+            color: #33414f;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .arrowmiddle2 {
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            left: 220px;
+            top: 50px;
+            background-color: white;
+            transform: rotate(45deg);
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: -1;
+        }
+
+        .details2 {
+            display: none;
+        }
+
+        #navbar .item:hover>.details2 {
+            display: block;
+        }
+
+        /*Hover Effect on navbar-ZMS */
+        .zms-logo3 {
+            background-image: url(img/zms_logo.png);
+            display: block;
+            background-size: 120px;
+            background-repeat: no-repeat;
+            width: 120px;
+            height: 30px;
+            margin: 2px auto;
+        }
+
+        .zms_detail {
+            display: block;
+            position: absolute;
+            color: black;
+            background-color: white;
+            width: 230px;
+            padding: 10px;
+            top: 80%;
+            border-radius: 4px;
+            right: 160px;
+            text-align: center;
+            align-items: center;
+            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        .zms_detail p {
+            color: #33414f;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .arrowmiddle3 {
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            left: 280px;
+            top: 50px;
+            background-color: white;
+            transform: rotate(45deg);
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: -1;
+        }
+
+        .details3 {
+            display: none;
+        }
+
+        #navbar .item:hover>.details3 {
+            display: block;
+        }
+
+        /*Hover Effect on navbar-MOB APP */
+        .details4 {
+            display: block;
+            position: absolute;
+            color: black;
+            background-color: white;
+            width: 170px;
+            height: 90px;
+            top: 80%;
+            border-radius: 4px;
+            right: 130px;
+            text-align: center;
+            align-items: center;
+            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        .mob_det {
+            display: none;
+        }
+
+        #navbar .item:hover>.mob_det {
+            display: block;
+        }
+
+        .arrowmiddle4 {
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            left: 380px;
+            top: 50px;
+            background-color: white;
+            transform: rotate(45deg);
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: -1;
+        }
+
+        .mob_anc {
+            width: 100%;
+            height: 50%;
+            font-size: 18px;
+        }
+
+        .mob_anc .mob1,
+        .mob_anc .mob2 {
+            display: flex;
+            color: rgb(83, 83, 83);
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        .mob_anc .mob2 {
+            border-top: 1px solid rgb(161, 160, 160);
+            display: flex;
+            position: absolute;
+            top: 55%;
+            width: 100%;
+            padding: 3px 0px 0 0;
+        }
+
+        .mob1 img {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-left: 8px;
+        }
+
+        .mob2 img {
+            width: 25px;
+            height: 25px;
+            margin-right: 15px;
+            margin-left: 5px;
+        }
+
+        /* POP UP ThINGS for sign up*/
+        #pop1 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*position: fixed;*/
+            display: none;
+        }
+
+        .log_in_cont {
+            width: 800px;
+            height: 500px;
+            background-color: white;
+            border-radius: 4px;
+            padding: 20px 10px;
+            display: flex;
+            position: relative;
+        }
+
+        #zoomPromo1,
+        #zoomPromo2,
+        #zoomPromo3 {
+            width: 320px;
+            height: 450px;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 4px;
+            border: 2px solid gray;
+            box-shadow: 0px 2px 2px 2px grey;
+            color: gray;
+            margin-left: 50px;
+        }
+
+        /* #zoomPromo3 {
+  margin-right: 50px;
+} */
+        #zoomPromo1 h2,
+        #zoomPromo2 h2,
+        #zoomPromo3 h2 {
+            color: black;
+        }
+
+        #zoomPromo1 .zc_1 img,
+        #zoomPromo2 .zc_1 img,
+        #zoomPromo3 .zc_1 img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .log_in_cont .log_right {
+            width: 450px;
+            text-align: center;
+        }
+
+        .log_r_top {
+            margin-top: 20px;
+        }
+
+        .log_r_top_cont {
+            height: 200px;
+            margin-left: 5px;
+            border-bottom: 1px solid rgb(255, 253, 253);
+            box-shadow: 0 1px 0px 0 rgb(211, 210, 210);
+        }
+
+        .log_r_top_cont_face {
+            background-color: blue;
+            margin: 20px auto 20px;
+            width: 300px;
+            height: 20px;
+            padding: 12px 0;
+            color: white;
+        }
+
+        .log_r_top_cont a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .log_r_top_cont_gmail {
+            background-color: red;
+            margin: 20px auto 20px;
+            width: 300px;
+            color: white;
+            height: 20px;
+            padding: 12px 0;
+        }
+
+        .log_r_top_cont a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .log_r_bot {
+            height: 190px;
+        }
+
+        .btn_log_sub {
+            background: url(img/log_sub_btn.png) no-repeat top left / cover;
+            width: 70px;
+            height: 70px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .log_input_email_mob {
+            margin-top: 20px;
+            width: 300px;
+            height: 35px;
+            border-radius: 5px;
+            border: 2px solid grey;
+        }
+
+        .close1 {
+            position: absolute;
+            font-size: 35px;
+            font-weight: 600;
+            top: 0;
+            right: 14px;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+
+        /*pop up auto slider things*/
+        .slider {
+            width: 400px;
+        }
+
+        .slides {
+            overflow: hidden;
+            display: flex;
+        }
+
+        .slides input {
+            display: none;
+        }
+
+        .slide {
+            width: 100%;
+            transition: 1s;
+        }
+
+        /*CSS for automatic navigation  */
+        .navigation_auto {
+            position: absolute;
+            display: flex;
+            width: 400px;
+            justify-content: center;
+        }
+
+        .navigation_auto div {
+            border: 2px solid gray;
+            padding: 5px;
+            border-radius: 10px;
+            transition: 0.5s;
+            margin-top: 400px;
+            background-color: rgb(207, 206, 206);
+        }
+
+        .navigation_auto div:not(:last-child) {
+            margin-right: 5px;
+        }
+
+        #radio1:checked~.navigation_auto .auto-btn1 {
+            background-color: rgb(31, 230, 31);
+        }
+
+        #radio2:checked~.navigation_auto .auto-btn2 {
+            background-color: rgb(31, 230, 31);
+        }
+
+        #radio3:checked~.navigation_auto .auto-btn3 {
+            background-color: rgb(31, 230, 31);
+        }
+
+        .sign_up_botr_box1 {
+            width: 300px;
+            height: 380px;
+            margin: 10px auto;
+            background-color: rgb(233, 233, 233);
+            padding: 20px 40px;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .sign_up_botr_box1 form input {
+            display: block;
+            margin: 20px 0;
+            width: 220px;
+            height: 30px;
+            border-radius: 3px;
+        }
+
+        .deta_add_btn {
+            width: 230px;
+            height: 30px;
+            background: greenyellow;
+            border: 2px solid greenyellow;
+            border-radius: 5px;
+        }
+
+        /*LOGIN POP UP BY TWO*/
+        #pop2 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*position: fixed;*/
+            display: none;
+        }
+
+        .log_in_cont2 {
+            width: 800px;
+            height: 500px;
+            background-color: white;
+            border-radius: 4px;
+            padding: 20px 10px;
+            display: flex;
+            position: relative;
+        }
+
+        #zoomPromo12,
+        #zoomPromo22,
+        #zoomPromo32 {
+            width: 320px;
+            height: 450px;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 4px;
+            border: 2px solid gray;
+            box-shadow: 0px 2px 2px 2px grey;
+            color: gray;
+            margin-left: 50px;
+        }
+
+        #zoomPromo12 h2,
+        #zoomPromo22 h2,
+        #zoomPromo32 h2 {
+            color: black;
+        }
+
+        #zoomPromo12 .zc_12 img,
+        #zoomPromo22 .zc_12 img,
+        #zoomPromo32 .zc_12 img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .log_in_cont2 .log_right2 {
+            width: 450px;
+            text-align: center;
+        }
+
+        .log_r_top2 {
+            margin-top: 20px;
+        }
+
+        .log_r_top_cont2 {
+            height: 200px;
+            margin-left: 5px;
+            border-bottom: 1px solid rgb(255, 253, 253);
+            box-shadow: 0 1px 0px 0 rgb(211, 210, 210);
+        }
+
+        .log_r_top_cont_face2 {
+            background-color: blue;
+            margin: 20px auto 20px;
+            width: 300px;
+            height: 20px;
+            padding: 12px 0;
+            color: white;
+        }
+
+        .log_r_top_cont2 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .log_r_top_cont_gmail2 {
+            background-color: red;
+            margin: 20px auto 20px;
+            width: 300px;
+            color: white;
+            height: 20px;
+            padding: 12px 0;
+        }
+
+        .log_r_top_cont2 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .log_r_bot2 {
+            height: 190px;
+        }
+
+        .btn_log_sub2 {
+            background: url(img/log_sub_btn.png) no-repeat top left / cover;
+            width: 70px;
+            height: 70px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .log_input_email_mob2 {
+            margin-top: 20px;
+            width: 300px;
+            height: 35px;
+            border-radius: 5px;
+            border: 2px solid grey;
+        }
+
+        .close12 {
+            position: absolute;
+            font-size: 35px;
+            font-weight: 600;
+            top: 0;
+            right: 14px;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+
+        /*pop up auto slider things*/
+        .slider22 {
+            width: 400px;
+        }
+
+        .slides22 {
+            overflow: hidden;
+            display: flex;
+        }
+
+        .slides22 input {
+            display: none;
+        }
+
+        .slide22 {
+            width: 100%;
+            transition: 1s;
+        }
+
+        /*CSS for automatic navigation  */
+        .navigation_auto2 {
+            position: absolute;
+            display: flex;
+            width: 400px;
+            justify-content: center;
+        }
+
+        .navigation_auto2 div {
+            border: 2px solid gray;
+            padding: 5px;
+            border-radius: 10px;
+            transition: 0.5s;
+            margin-top: 400px;
+            background-color: rgb(207, 206, 206);
+        }
+
+        .navigation_auto2 div:not(:last-child) {
+            margin-right: 5px;
+        }
+
+        #radio12:checked~.navigation_auto2 .auto-btn12 {
+            background-color: rgb(31, 230, 31);
+        }
+
+        #radio22:checked~.navigation_auto2 .auto-btn22 {
+            background-color: rgb(31, 230, 31);
+        }
+
+        #radio32:checked~.navigation_auto2 .auto-btn32 {
+            background-color: rgb(31, 230, 31);
+        }
+
+        .login_botr_box1 {
+            width: 300px;
+            height: 200px;
+            margin: 70px auto;
+            background-color: rgb(233, 233, 233);
+            padding: 20px 40px;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .login_botr_box1 form input {
+            display: block;
+            margin: 20px 0;
+            width: 220px;
+            height: 30px;
+            border-radius: 3px;
+        }
+
+        .deta_add_btn {
+            width: 230px;
+            height: 30px;
+            background: greenyellow;
+            border: 2px solid greenyellow;
+            border-radius: 5px;
+        }
+
+        #searching_box {
+            padding: 80px 0 10px;
+            background-color: rgb(232, 232, 232);
+        }
+
+        #journey {
+            display: block;
+            margin: 0 auto;
+            width: 480px;
+            height: 50px;
+            background-color: white;
+            border-radius: 5px;
+            line-height: 40px;
+            text-align: left;
+            text-indent: 20px;
+            font-size: 18px;
+            font-weight: 400;
+            /* position: relative;*/
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        #journey a {
+            display: flex;
+            text-decoration: none;
+            color: black;
+            font-size: 15px;
+            margin: 0%;
+        }
+
+        #journey a img {
+            width: 20px;
+            height: 30px;
+            margin-left: 240px;
+            margin-top: 7px;
+        }
+
+        #front_box {
+            width: 1400px;
+            height: 700px;
+            /* background-color: rgba(0, 0, 0, 0.7);  */
+            padding: 180px 50px;
+            display: flex;
+
+        }
+
+       
+
+        
+
+        #book_fee,
+        #ref_amt,
+        #ref_lef,
+        #total {
+            display: flex;
+        }
+
+        .ch_head h1,
+        .ch_head h2 {
+            font-weight: 400;
+            margin: 0%;
+            padding: 5px;
+            box-sizing: border-box;
+            font-size: 20px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+
+        #viewoff {
+            padding: 15px 20px;
+            box-sizing: border-box;
+            background-color: rgb(228, 241, 220)
+        }
+
+        #viewoff a {
+            color: green;
+        }
+
+       #paymentApp {
+        width: 65%;
+        display: inline-block;
+        }
+
+       .payableAmount {
+         width: 880px;
+         background-color: #f2f8ed;
+         border: 1px solid #ccc;
+         padding: 5px 15px;
+         margin-bottom: 10px;
+         display: flex;
+         flex-direction: row;
+        align-items: center;
+      }
+      .payableAmount h2 {
+        width: 80%;
+        color: #333;
+       font-weight: 600;
+       font-size: 16px;
+      }
+      .payableAmount .amount {
+        width: 70px;
+        text-align: right;
+        font-weight: 600;
+        font-size: 16px;
+        color: #333;
+        display: flex;
+        margin-left: 150px;
+       }
+       .payableAmount .amount span {
+         padding-right: 5px;
+       }
+       .paymentMethods {
+         width: 100%;
+         border: 1px solid #ccc;
+         background-color: #fff;
+      }
+       .paymentMethods .header {
+          padding: 15px;
+         display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .paymentMethods .header h2 {
+         width: 50%;
+         font-weight: 400;
+         font-size: 15px;
+         margin: 0;
+      }
+      .paymentMethods .header .bookingId {
+          width: 50%;
+          text-align: right;
+       }
+       .paymentMethods .header .bookingId span {
+          font-weight: 700;
+        }
+        .paymentMethods .content {
+          display: flex;
+          flex-direction: row;
+         }
+         .paymentMethods .content .tabs {
+           width: 30%;
+           color: #9b9b9b;
+         }
+         .paymentMethods .content .tabs .tab.selected {
+            position: relative;
+            border-left-color: #75b84d;
+            color: #000;
+         }
+         .paymentMethods .content .tabs .tab {
+           font-size: 15px;
+           padding: 15px 0 15px 12px;
+           border-bottom: 1px solid #ccc;
+           border-left: 3px solid #ccc;
+           cursor: pointer;
+         }
+
+         .paymentMethods .content .tabs {
+           width: 30%;
+           color: #9b9b9b;
+        }
+         .paymentMethods .content .paycontent {
+            width: 70%;
+           border-left: 1px solid #ccc;
+           background-color: #fff;
+        }
+        .paymentMethods .content .paycontent .methods {
+          min-height: 350px;
+        }
+         
+
+
+
+        .cardPayment .card {
+           width: 300px;
+          height: 165px;
+          border-radius: 5px;
+          background-image: linear-gradient(45deg,
+             #33414f 25%,#47617b 0,#47617b 50%,#33414f 0,#33414f 75%,#47617b 0,#47617b);
+          background-size: 4px 4px;
+          margin: 20px auto;
+          text-align: left;
+          padding: 20px;
+          position: relative;
+        }
+       .cardPayment .card .cardNumber {
+         position: relative;
+         margin-top: 10px;
+         -moz-appearance: textfield
+
+        }
+
+        .cardPayment .card .cardInfo {
+          /* display: flex;
+          flex-direction: row; */
+          align-items: center;
+          margin: 0;
+        }
+        .cardPayment .card input {
+         background-color: transparent;
+         border: 0;
+         border-bottom: 1px solid #878787;
+         color: #fff;
+         font-size: 15px;
+        }
+
+       .cardPayment .card input.month {
+         width: 30px;
+        height: auto;
+        text-align: right;
+        margin-top: 20px;
+       }
+       /* .cardPayment .card .cardInfo .seperatorLine {
+         color: #ccc;
+         border-bottom: 1px solid #878787;
+         font-size: 16px;
+         padding: 0 5px;
+        background-color: inherit;
+       } */
+       .cardPayment .card input.year {
+        text-align: left;
+        margin-left: 20px;
+        margin-top: 20px;
+        width: 40px;
+        height: auto;
+       }
+       .cardPayment .card input.cvv {
+          clear: both; 
+         width: 40px;
+         margin-top: 20px;
+         margin-left: 0px;
+         box-shadow: none;
+        }
+
+        .paymentButton {
+         background-color: #ccc;
+         /* margin-left: 30px; */
+         height: 50px;
+         width: 100%;
+        color: #fff;
+        cursor: pointer;
+       }
+       #pay_div_btn{
+           display: flex;
+           margin-left: 280px;
+       }
+        #sumry {
+            width: 300px;
+            height: 850px;
+            border: 1px solid black;
+            text-align: center;
+            margin-left: 70px;
+        }
+
+        #top_w_img {
+            box-sizing: border-box;
+        }
+
+        #top_w_img img {
+            width: 85%;
+            height: 150px;
+        }
+
+        #top_w_img p {
+            margin: 0%;
+            padding: 5px 0%;
+        }
+
+        #car_name,
+        .heading_sumry {
+            color: rgb(75, 74, 78);
+            font-size: 20px;
+        }
+
+        #seating_cap {
+            color: gray;
+        }
+
+        #pdt_ddt {
+            display: flex;
+            width: 73%;
+            margin: auto;
+        }
+
+        .time_hr {
+            width: 50px;
+            padding: 0%;
+            background-color: black;
+        }
+
+        .to {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: gray;
+            margin: 60px 0px;
+        }
+
+        #navi_box {
+            width: 90%;
+            height: 150px;
+            margin: auto;
+        }
+
+        #fare_inc_div {
+            width: 90%;
+            height: 150px;
+            margin: auto;
+        }
+
+        #fare_inc_div img {
+            width: 200px;
+            height: 100px;
+            margin-top: 20px;
+        }
+
+        #navi_box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #fr_ek_div {
+            display: flex;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        #fr_ek_lef {
+            width: 52%;
+            text-align: left;
+        }
+
+        #fr_ek_rig {
+            width: 50%;
+            text-align: right;
+        }
+
+        #last {
+            margin-top: 10vh;
+        }
+
+        #last .footer {
+            background-color: rgb(51, 65, 79);
+            color: white;
+            margin-top: 50px;
+            width: 100%;
+            padding-top: 20px;
+            box-sizing: border-box;
+
+        }
+
+        #last .footer .Button {
+            display: grid;
+            grid-template-columns: 210px 210px 210px 210px;
+            grid-template-rows: auto;
+            font-size: 14px;
+            width: 800px;
+            margin: auto;
+            /* background-color: black; */
+        }
+
+        #last .footer .Button button {
+            width: 210px;
+            border: thin;
+            background-color: rgb(51, 65, 79);
+            text-align: center;
+            height: 150px;
+        }
+
+        #last .footer .Button .link {
+            /* border: 1px solid white; */
+            align-content: center;
+        }
+
+        #last .footer .Button .link img {
+            width: 50px;
+            padding-bottom: 5px;
+        }
+
+        #last .footer .Button button p {
+            font-size: 14px;
+            font-family: sans-serif;
+            font-weight: 200;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+
+        }
+
+        #last .footer h4 {
+            text-align: center;
+            font-weight: 200;
+            font-size: 25px;
+            width: 180px;
+            margin: 15px auto;
+            color: white;
+
+        }
+
+        #last .footer .aboutus {
+            display: grid;
+            grid-template-columns: 250px 250px 250px 250px;
+            grid-template-rows: auto auto;
+            grid-gap: 15px 25px;
+            width: 1020px;
+            margin: auto;
+
+
+        }
+
+        #last .footer .aboutus>div {
+            width: 220px;
+            height: 50px;
+        }
+
+        #last .footer .aboutus a {
+            color: white;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        #last .footer .cities {
+            display: grid;
+            grid-template-columns: 250px 250px 250px 250px;
+            grid-template-rows: 50px 50px 50px 50px 50px 50px 50px;
+            /* padding: 20px; */
+            grid-gap: 20px 25px;
+            width: 1020px;
+            margin: auto;
+            /* background-color: black; */
+        }
+
+        #last .footer .cities .help {
+            font-size: 14px;
+            font-family: sans-serif;
+            color: white;
+            text-decoration: none;
+            width: 200px;
+            height: 30px;
+            /* background-color: blanchedalmond; */
+
+        }
+
+        #last .footer .cities a {
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        #last .footer .airport {
+            display: grid;
+            grid-template-columns: 220px 220px 220px 220px;
+            grid-template-rows: 50px 50px 50px 50px 50px;
+            grid-gap: 20px 60px;
+            width: 1050px;
+            margin: auto;
+            /* background-color: black; */
+        }
+
+        #last .footer .airport>div {
+            width: 220px;
+            height: 30px;
+            /* background-color: blanchedalmond */
+        }
+
+        #last .footer .airport a {
+            /* margin-left: 50px; */
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        #last .footer hr {
+            margin-top: -0;
+            height: 2px;
+        }
+
+        #last .footer .address {
+            width: 1050px;
+            height: 200px;
+            margin: auto;
+        }
+
+        #last .footer .social img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        #last .footer .address h4 {
+            margin-left: 1px;
+            font-size: 20px;
+            color: rgb(173, 179, 184);
+        }
+
+        #last .footer .address p {
+            font-size: 15px;
+            color: rgb(173, 179, 184);
+            margin-left: 5px;
+        }
+
+        #last .address .social {
+            display: grid;
+            grid-template-columns: 20px 20px 20px 20px 20px 20px;
+            grid-template-rows: auto;
+            grid-gap: 40px;
+            padding: 20px;
+
+        }
+
+
+        @media only screen and (max-width: 800px) {
+            #offers #navbar #nav_ul {
+                margin-left: -40px;
+            }
+
+            #grid_front_off_pg {
+                width: 100%;
+                grid-template-columns: 100%;
+            }
+
+            #front_box {
+                height: 160vh;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="offers">
+        <nav id="navbar">
+            <div id="logo">
+                <a href="index.html"><img src="img/logo-f38397447048ccba047af6980364e92e.svg" alt="Zoom_Car" /></a>
+            </div>
+            <ul id="nav_ul">
+                <li class="item hov">
+                    <a href="#">SUBSCRIPTION</a>
+                    <div class="details" id="sub_det_item">
+                        <div class="arrowmiddle"></div>
+                        <div class="subscr_detail">
+                            <span class="subscr-logo1"></span>
+                            <p>Hassle-free way of getting your personal car for flexible long term duration. You also
+                                have an option
+                                to share your car with other Zoomcar customers &amp; save up to 70% of the monthly
+                                subscription fee.
+                            </p>
+                            <button class="subscr_btn">KNOW MORE</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="item"><a href="#">AMIGO</a>
+                    <div class="details2">
+                        <div class="arrowmiddle2"></div>
+                        <div class="amigo_detail">
+                            <span class="amigo-logo2"></span>
+                            <p>A unique Community Vehicle Pooling program that allows you to share your car with your
+                                community and
+                                friends while the car not in use and earn money.</p>
+                            <button class="subscr_btn">KNOW MORE</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="item"><a href="#">ZMS</a>
+                    <div class="details3">
+                        <div class="arrowmiddle3"></div>
+                        <div class="zms_detail">
+                            <span class="zms-logo3"></span>
+                            <p>Connected technology offerings and shared mobility solutions for businesses worldwide.
+                            </p>
+                            <button class="subscr_btn">KNOW MORE</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="item mob_wid"><a href="#">MOBILE APP
+                        <div class="mob_det">
+                            <div class="arrowmiddle4"></div>
+                            <div class="details4">
+                                <a href="https://play.google.com/store/apps/details?id=com.zoomcar&referrer=utm_source%3Dhome%2520page%26utm_medium%3Dheader%2520links%26utm_content%3Dandroid%26utm_campaign%3Dinstalls"
+                                    class="mob_anc">
+                                    <div class="mob1">
+                                        <img src="img/g_play_logo2.png" alt="">Google Play
+                                    </div>
+                                </a>
+                                <a href="https://apps.apple.com/us/app/zoomcar-self-drive-cars/id889910218?utm_campaign=installs&utm_content=iOS&utm_medium=header%20links&utm_source=home%20page"
+                                    class="mob_anc">
+                                    <div class="mob2"><img src="img/apple_log.png" alt="">Apple Store</div>
+                                </a>
+                            </div>
+                        </div>
+
+                </li>
+                <li class="item" id="signup_btn"><a href="#">SIGNUP</a></li>
+                <li class="item" id="login_btn"><a href="#">LOGIN</a></li>
+
+            </ul>
+        </nav>
+
+
+
+
+        <!-- SIGNUP POPUP -->
+        <div id="pop1">
+            <div class="log_in_cont">
+                <div class="close1">+</div>
+                <!-- div slider started  -->
+                <div class="slider">
+                    <div class="slides">
+
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+
+
+                        <div class="slide first">
+                            <div id="zoomPromo1">
+                                <div class="zc_1">
+                                    <img src="img/promo-3.fuel.png" alt="" />
+                                </div>
+                                <h2>Free Fuel</h2>
+                                <p>
+                                    The fuel is on us for your complete trip. In case you re-fuel a
+                                    zoomcar, we will re-fill your pockets and that’s a promise.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <div id="zoomPromo2">
+                                <div class="zc_1">
+                                    <img src="img/super_log-removebg-preview.png" alt="" />
+                                </div>
+                                <h2>Supermiler Club</h2>
+                                <p>
+                                    Premium club which rewards you everytime you drive with us.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div id="zoomPromo3">
+                                <div class="zc_1">
+                                    <img src="img/pro1.png" alt="" />
+                                </div>
+                                <h2>Refer &amp; Earn</h2>
+                                <p>
+                                    Refer or invite your friends to zoomcar and earn free rides, free Z points and more.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="navigation_auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="log_right">
+                    <div class="log_r_top">
+                        <div class="log_r_top_logo">
+                            <img src="img/zoom-logo-color.png" alt="">
+                        </div>
+                        <div class="log_r_top_cont">
+                            <label for="">Continue with</label>
+                            <a
+                                href="https://www.facebook.com/login.php?skip_api_login=1&api_key=194504380711275&kid_directed_site=0&app_id=194504380711275&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.8%2Fdialog%2Foauth%3Fapp_id%3D194504380711275%26cbt%3D1622385494561%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfd7eb5e6eafb3%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%26client_id%3D194504380711275%26display%3Dpopup%26domain%3Dwww.zoomcar.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Fmumbai%252F%26fx_app%3Dfacebook%26locale%3Den_US%26logger_id%3Df27e55aa28e60e4%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df52f349df35ed%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%2526frame%253Df1a91b53ea2eb04%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv2.8%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df52f349df35ed%26domain%3Dwww.zoomcar.com%26origin%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Ff2bf161617a4c58%26relation%3Dopener%26frame%3Df1a91b53ea2eb04%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=mr_IN&pl_dbl=0">
+                                <div class="log_r_top_cont_face">Facebook</div>
+                            </a>
+
+                            <a
+                                href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.zoomcar.com%3Fid%3Dauth976566&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&client_id=1022741829589-ms1t8peh8j5iahb23ct46ma8uvicc7lc.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.zoomcar.com&fetch_basic_profile=true&gsiwebsdk=2&flowName=GeneralOAuthFlow">
+                                <div class="log_r_top_cont_gmail">Gmail</div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="log_r_bot">
+                        <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob">
+                        <div class="log_r_bot_btn">
+                            <button class="btn_log_sub" onclick="signinacc(event)"></button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOGIN POPUP -->
+        <div id="pop2">
+            <div class="log_in_cont2">
+                <div class="close12">+</div>
+                <!-- div slider started  -->
+                <div class="slider22">
+                    <div class="slides22">
+
+                        <input type="radio" name="radio-btn2" id="radio12">
+                        <input type="radio" name="radio-btn2" id="radio22">
+                        <input type="radio" name="radio-btn2" id="radio32">
+
+
+                        <div class="slide22 first2">
+                            <div id="zoomPromo12">
+                                <div class="zc_12">
+                                    <img src="img/promo-3.fuel.png" alt="" />
+                                </div>
+                                <h2>Free Fuel</h2>
+                                <p>
+                                    The fuel is on us for your complete trip. In case you re-fuel a
+                                    zoomcar, we will re-fill your pockets and that’s a promise.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="slide22">
+                            <div id="zoomPromo22">
+                                <div class="zc_12">
+                                    <img src="img/super_log-removebg-preview.png" alt="" />
+                                </div>
+                                <h2>Supermiler Club</h2>
+                                <p>
+                                    Premium club which rewards you everytime you drive with us.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slide22">
+                            <div id="zoomPromo32">
+                                <div class="zc_12">
+                                    <img src="img/pro1.png" alt="" />
+                                </div>
+                                <h2>Refer &amp; Earn</h2>
+                                <p>
+                                    Refer or invite your friends to zoomcar and earn free rides, free Z points and more.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="navigation_auto2">
+                            <div class="auto-btn12"></div>
+                            <div class="auto-btn22"></div>
+                            <div class="auto-btn32"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="log_right2">
+                    <div class="log_r_top2">
+                        <div class="log_r_top_logo2">
+                            <img src="img/zoom-logo-color.png" alt="">
+                        </div>
+                        <div class="log_r_top_cont2">
+                            <label for="">Continue with your</label>
+                            <a
+                                href="https://www.facebook.com/login.php?skip_api_login=1&api_key=194504380711275&kid_directed_site=0&app_id=194504380711275&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.8%2Fdialog%2Foauth%3Fapp_id%3D194504380711275%26cbt%3D1622385494561%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfd7eb5e6eafb3%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%26client_id%3D194504380711275%26display%3Dpopup%26domain%3Dwww.zoomcar.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Fmumbai%252F%26fx_app%3Dfacebook%26locale%3Den_US%26logger_id%3Df27e55aa28e60e4%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df52f349df35ed%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%2526frame%253Df1a91b53ea2eb04%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv2.8%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df52f349df35ed%26domain%3Dwww.zoomcar.com%26origin%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Ff2bf161617a4c58%26relation%3Dopener%26frame%3Df1a91b53ea2eb04%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=mr_IN&pl_dbl=0">
+                                <div class="log_r_top_cont_face2">Facebook</div>
+                            </a>
+
+                            <a
+                                href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.zoomcar.com%3Fid%3Dauth976566&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&client_id=1022741829589-ms1t8peh8j5iahb23ct46ma8uvicc7lc.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.zoomcar.com&fetch_basic_profile=true&gsiwebsdk=2&flowName=GeneralOAuthFlow">
+                                <div class="log_r_top_cont_gmail2">Gmail</div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="log_r_bot2">
+                        <input type="text" placeholder="Enter your E-mail or Mobile number"
+                            class="log_input_email_mob2">
+                        <div class="log_r_bot_btn2">
+                            <button class="btn_log_sub2" onclick="loginacc(event)"></button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="front_box">
+
+        <div id="paymentApp">
+            <div class="payableAmount">
+                <h2 >Total Payable Amount</h2>
+                <div class="amount"><p>₹ </p><p id="pay_amt">4242</p></div>
+            </div>
+            <div>
+                <div class="paymentMethods">
+                    <div class="header">
+                        <h2 style="color: #6abd19;">Payment Methods</h2>
+                        <div class="bookingId">Booking ID: <span id="bk_id">JPS69OU6D</span></div>
+                    </div>
+                    <div class="content">
+                        <div class="tabs">
+                            <div class="inner">
+                                <div class="tab selected">
+                                    <div id="card">Card Payment</div>
+                                </div>
+                                <div class="tab">
+                                    <div id="cod_div">Cash On Delivery</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paycontent">
+                            <div class="methods">
+                                <div class="cardPayment">
+                                    <div class="card">
+                                        
+                                        <div class="cardNumber"><input type="text" maxlength="16"
+                                                placeholder="ENTER CARD NUMBER" id="cardNum" oninput="checkchange()">
+                                           
+                                        </div>
+                                        <div class="cardInfo"><input  placeholder="MM" type="text" maxlength="2" id="m_m" oninput="checkchange()"> 
+                                             <input placeholder="YYYY"
+                                                type="text"class="year" maxlength="4" id="exyear" oninput="checkchange()"> 
+                                           
+                                        </div>
+                                        <div class="cardInfo"> <input maxlength="3" placeholder="CVV" type="password"
+                                                class="cvv" id="cvV" oninput="checkchange()">
+                                        
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="paymentButton" id="pay_btn_main" onclick="paymentdone(event)">
+                                        <div id="pay_div_btn"> <p>Pay ₹</p><p id="pay_amt2">4242</p></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sumry">
+            <div id="top_w_img">
+                <p class="heading_sumry">SUMMARY</p>
+                <img src="img/sum_car_img.png" alt="" id="right_car">
+                <p id="car_name">KUV 100</p>
+                <p id="seating_cap">(5 Seater)</p>
+            </div>
+            <hr>
+            <div id="pdt_ddt">
+                <div id="pdt">
+                    <h2 id="pi_ti">12:30</h2>
+                    <hr class="time_hr">
+                    <p id="pi_dt">19JUN 21</p>
+                </div>
+                <div class="to">TO</div>
+                <div id="ddt">
+                    <h2 id="dr_ti">23:30</h2>
+                    <hr class="time_hr">
+                    <p id="dr_dt">24 JUN 21</p>
+                </div>
+            </div>
+            <div id="navi_box">
+                <img src="img/navi_sum_pg.png" alt="">
+            </div>
+            <div id="fr_ek_div">
+                <div id="fr_ek_lef">
+                    <p class="fkml">Free Km(?)</p>
+                    <p class="fkml">Excess Km(?)</p>
+                </div>
+                <div id="fr_ek_rig">
+                    <p class="fkmr">630.0 Km</p>
+                    <p class="fkmr">₹ 15/km</p>
+                </div>
+            </div>
+            <hr>
+            <div id="fare_inc_div">
+                <img src="img/fare_inc_sum.png" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="last">
+        <div class="footer">
+            <div class="Button">
+                <button id="1" onmouseover="changeColor(1)" onmouseout="initial(1)"><a class="link" href=""><img
+                            src="img/Question logo.svg" alt="How Zoomcar works" width="50px" height="50px"
+                            data-src="/build/img/zc-works.2adcbe18edb84c7c1fdf0c8d6c894f8b.svg"
+                            src="/build/img/zc-works.2adcbe18edb84c7c1fdf0c8d6c894f8b.svg">
+                    </a>
+                    <p id="p1">How zoomcar works?</p>
+                </button>
+                <button id="2" onmouseover="changeColor(2)" onmouseout="initial(2)"><a class="link" href=""><img
+                            src="img/policies.svg" alt="How Zoomcar Policies" width="50px" height="50px"
+                            data-src="/build/img/policies.ceddb15a4eef16af85ba8666b1522741.svg"
+                            src="/build/img/policies.ceddb15a4eef16af85ba8666b1522741.svg">
+                    </a>
+                    <p id="p2">Policies</p>
+                </button>
+                <button id="3" onmouseover="changeColor(3)" onmouseout="initial(3)"><a class="link" href=""><img
+                            src="img/help-support.svg" alt="Help Support" width="50px" height="50px"
+                            data-src="/build/img/help-support.acf244c0683e201bd2d978f1ddc5d33d.svg"
+                            src="/build/img/help-support.acf244c0683e201bd2d978f1ddc5d33d.svg">
+                    </a>
+                    <p id="p3">Help Support</p>
+                </button>
+                <button id="4" onmouseover="changeColor(4)" onmouseout="initial(4)"><a class="link" href=""><img
+                            src="img/safety.svg" alt="Zoom Safety" width="50px" height="50px"
+                            data-src="/build/img/safety.127607759cd86e3d75f5698a641d5b83.svg"
+                            src="/build/img/safety.127607759cd86e3d75f5698a641d5b83.svg">
+                    </a>
+                    <p id="p4">Zoom in Safety</p>
+                </button>
+
+            </div>
+
+            <h4>About Us</h4>
+            <div class="aboutus">
+                <div><a href="https://www.zoomcar.com/about">Zoomcar Team</a></div>
+                <div><a href="https://www.zoomcar.com/zap/subscribe">Zoomcar Subscription</div></a>
+                <div><a href="https://www.zoomcar.com/blog/">Zoomcar Blog</a></div>
+                <div><a href="https://www.zoomcar.com/careers">Careers @ Zoomcar</a></div>
+                <div><a href="https://www.zoomcar.com/location">Locations & Cars</a></div>
+                <div><a href="https://www.zoomcar.com/mumbai/">Self Drive Cars</a></div>
+                <div><a
+                        href="https://info.ourcrowd.com/zoomcar/?utm_source=zoomcar&utm_medium=website&utm_campaign=invest_button">Invest
+                        via OurCrowd</a></div>
+            </div>
+            <h4>Cities</h4>
+            <div class="cities">
+                <div class="help"><a href="https://www.zoomcar.com/bangalore/">Self drive cars in Bangalore</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/pune/">Self drive cars in Pune</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/delhi/">Self drive cars in Delhi </a></div>
+                <div class="help"><a href="https://www.zoomcar.com/mumbai/">Self drive cars in Mumbai</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/chennai/">Self drive cars in Chennai </a></div>
+                <div class="help"><a href="https://www.zoomcar.com/hyderabad/">Self drive cars in Hyderabad</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/chandigarh/">Self drive cars in Chandigarh</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/kolkata/">Self drive cars in Kolkata </a></div>
+                <div class="help"><a href="https://www.zoomcar.com/ahmedabad/">Self drive cars in Ahmedabad</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/coimbatore/">Self drive cars in Coimbatore</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/indore/">Self drive cars in Indore</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/jaipur/">Self drive cars in Jaipur</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/ludhiana/">Self drive cars in Ludhiana</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/mangalore/">Self drive cars in Mangalore-Manipal</a>
+                </div>
+                <div class="help"><a href="https://www.zoomcar.com/mysore/">Self drive cars in Mysore</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/vizag/">Self drive cars in Vizag</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/nagpur/">Self drive cars in Nagpur</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/kochi/">Self drive cars in Kochi</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/udaipur/">Self drive cars in Udaipur</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/vijayawada/">Self drive cars in Vijayawada</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/surat/">Self drive cars in Surat</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/siliguri/">Self drive cars in Siliguri</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/lucknow/">Self drive cars in Lucknow </a></div>
+                <div class="help"><a href="https://www.zoomcar.com/guwahati/">Self drive cars in Guwahati</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/bhubaneswar/">Self drive cars in Bhubaneswar</a>
+                </div>
+                <div class="help"><a href="https://www.zoomcar.com/hassan/">Self drive cars in Hassan</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/vadodara/">Self drive cars in Vadodara</a></div>
+                <div class="help"><a href="https://www.zoomcar.com/trivandrum/">Self drive cars in Trivandrum</a></div>
+            </div>
+
+            <h4>Airport Services</h4>
+            <div class="airport">
+                <div><a href="https://www.zoomcar.com/bangalore/airport-taxi-service">Car rental from Bangalore
+                        Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/pune/airport-taxi-service">Car rental from Pune Airport</a></div>
+                <div><a href="https://www.zoomcar.com/delhi/airport-taxi-service">Car rental from Delhi Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/mumbai/airport-taxi-service">Car rental from Mumbai Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/chennai/airport-taxi-service">Car rental from Chennai Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/hyderabad/airport-taxi-service">Car rental from Hyderabad
+                        Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/chandigarh/airport-taxi-service">Car rental from Chandigarh
+                        Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/kolkata/airport-taxi-service">Car rental from Kolkata Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/ahmedabad/airport-taxi-service">Car rental from Ahmedabad
+                        Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/coimbatore/airport-taxi-service">Car rental from Coimbatore
+                        Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/indore/airport-taxi-service">Car rental from Indore Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/jaipur/airport-taxi-service">Car rental from Jaipur Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/vizag/airport-taxi-service">Car rental from Vizag Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/udaipur/airport-taxi-service">Car rental from Udaipur Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/surat/airport-taxi-service">Car rental from Surat Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/lucknow/airport-taxi-service">Car rental from Lucknow Airport</a>
+                </div>
+                <div><a href="https://www.zoomcar.com/guwahati/airport-taxi-service">Car rental from Guwahati
+                        Airport</a></div>
+            </div>
+
+            <hr>
+            </hr>
+            <div class="address">
+                <h4>Let's Keep in Touch</h4>
+                <p>7th Floor, Tower-B, Diamond District, 150, HAL Airport Road, Kodihalli, Bangalore – 560008</p>
+                <div class="social">
+                    <a class="link" href="https://www.facebook.com/zoomcar.in?ref=hl" rel="nofollow" target="_blank"
+                        title="Connect with us on Facebook!">
+                        <img src="img/FB logo.svg" alt="zoomcar-facebook"
+                            data-src="/build/img/FB.71c8c954ebf0a73be3a2fa723bd62747.svg"></a>
+                    <a class="link" href="https://twitter.com/ZoomCarIndia" rel="nofollow" target="_blank"
+                        title="Follow us on Twitter!">
+                        <img src="img/Twitter.svg" alt="zoomcar-twitter" class="lazy-img"
+                            data-src="/build/img/Twitter_2.1fcd40979beb7132d30c04e19c76deab.svg"></a>
+                    <a class="link" href="https://www.instagram.com/zoomcar_india/" rel="nofollow" target="_blank"
+                        title="Follow us on Instagram!">
+                        <img src="img/Instagram logo.svg" alt="zoomcar-instagram"
+                            data-src="/build/img/Insta.aa7386bfed43a8acf0551e8c276b559f.svg"></a>
+                    <a class="link" href="https://www.youtube.com/channel/UCIX42GaSQ6S_1RMwNfO-DYA/" rel="nofollow"
+                        target="_blank" title="Youtube"><img src="img/Youtube.svg" alt="zoomcar-twitter"
+                            class="lazy-img" data-src="/build/img/Youtube.44df3b5bfd3ac80cf0d292928e29dd89.svg"></a>
+                    <a class="link" href="https://www.zoomcar.com/blog/" rel="nofollow" target="_blank"
+                        title="Catch up with us on our Blog!">
+                        <img src="img/Blog.svg" alt="zoomcar-blog"
+                            data-src="/build/img/Blog_2.d0a034e8ec8e3ba6897a6d3b3de13e27.svg"></a>
+                    <a class="link" href="https://in.linkedin.com/company/zoomcar-india-pvt-ltd-" rel="nofollow"
+                        target="_blank" title="Follow us on LinkedIn!">
+                        <img src="img/LinkdIn.svg" alt="zoomcar-linkedIn"
+                            data-src="/build/img/LinkdIn.660ed09532750dce008ff1d3543e3d0d.svg"></a>
+                </div>
+                <p>© Copyright 2017 Zoomcar India Private Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script>
+    //LogIn POP
+    var logIn = document.getElementById("login_btn");
+    logIn.addEventListener("click", popupCome2);
+    function popupCome2() {
+        var pop_up22 = document.querySelector("#pop2");
+        pop_up22.style.display = "flex";
+    }
+    //Signup POP
+    var signIn = document.getElementById("signup_btn");
+    signIn.addEventListener("click", popupCome);
+    function popupCome() {
+        var pop_up1 = document.querySelector("#pop1");
+        pop_up1.style.display = "flex";
+    }
+
+    //cut pop-up""
+    var cancel1 = document.querySelector(".close1");
+    cancel1.addEventListener("click", popCancel);
+    function popCancel() {
+        var pop_up_can = document.querySelector("#pop1");
+        pop_up_can.style.display = "none";
+        var sign_par_1 = document.querySelector(".log_right");
+        sign_par_1.innerHTML = `<div class="log_r_top">
+              <div class="log_r_top_logo">
+                <img src="img/zoom-logo-color.png" alt="">
+              </div>
+              <div class="log_r_top_cont">
+                <label for="">Continue with</label>
+                <a
+                  href="https://www.facebook.com/login.php?skip_api_login=1&api_key=194504380711275&kid_directed_site=0&app_id=194504380711275&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.8%2Fdialog%2Foauth%3Fapp_id%3D194504380711275%26cbt%3D1622385494561%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfd7eb5e6eafb3%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%26client_id%3D194504380711275%26display%3Dpopup%26domain%3Dwww.zoomcar.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Fmumbai%252F%26fx_app%3Dfacebook%26locale%3Den_US%26logger_id%3Df27e55aa28e60e4%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df52f349df35ed%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%2526frame%253Df1a91b53ea2eb04%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv2.8%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df52f349df35ed%26domain%3Dwww.zoomcar.com%26origin%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Ff2bf161617a4c58%26relation%3Dopener%26frame%3Df1a91b53ea2eb04%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=mr_IN&pl_dbl=0">
+                  <div class="log_r_top_cont_face">Facebook</div>
+                </a>
+                <a
+                  href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.zoomcar.com%3Fid%3Dauth976566&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&client_id=1022741829589-ms1t8peh8j5iahb23ct46ma8uvicc7lc.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.zoomcar.com&fetch_basic_profile=true&gsiwebsdk=2&flowName=GeneralOAuthFlow">
+                  <div class="log_r_top_cont_gmail">Gmail</div>
+                </a>
+              </div>
+            </div>
+            <div class="log_r_bot">
+              <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob">
+              <div class="log_r_bot_btn">
+                <button class="btn_log_sub"></button>
+              </div>
+            </div>`;
+    }
+
+    var cancel12 = document.querySelector(".close12");
+    cancel12.addEventListener("click", popCancel2);
+    function popCancel2() {
+        var pop_up_can2 = document.querySelector("#pop2");
+        pop_up_can2.style.display = "none";
+        var sign_par_2 = document.querySelector(".log_right");
+        sign_par_2.innerHTML = `<div class="log_r_top">
+              <div class="log_r_top_logo">
+                <img src="img/zoom-logo-color.png" alt="">
+              </div>
+              <div class="log_r_top_cont">
+                <label for="">Continue with</label>
+                <a
+                  href="https://www.facebook.com/login.php?skip_api_login=1&api_key=194504380711275&kid_directed_site=0&app_id=194504380711275&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.8%2Fdialog%2Foauth%3Fapp_id%3D194504380711275%26cbt%3D1622385494561%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfd7eb5e6eafb3%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%26client_id%3D194504380711275%26display%3Dpopup%26domain%3Dwww.zoomcar.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Fmumbai%252F%26fx_app%3Dfacebook%26locale%3Den_US%26logger_id%3Df27e55aa28e60e4%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df52f349df35ed%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%2526frame%253Df1a91b53ea2eb04%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv2.8%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df52f349df35ed%26domain%3Dwww.zoomcar.com%26origin%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Ff2bf161617a4c58%26relation%3Dopener%26frame%3Df1a91b53ea2eb04%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=mr_IN&pl_dbl=0">
+                  <div class="log_r_top_cont_face">Facebook</div>
+                </a>
+                <a
+                  href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.zoomcar.com%3Fid%3Dauth976566&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&client_id=1022741829589-ms1t8peh8j5iahb23ct46ma8uvicc7lc.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.zoomcar.com&fetch_basic_profile=true&gsiwebsdk=2&flowName=GeneralOAuthFlow">
+                  <div class="log_r_top_cont_gmail">Gmail</div>
+                </a>
+              </div>
+            </div>
+            <div class="log_r_bot">
+              <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob">
+              <div class="log_r_bot_btn">
+                <button class="btn_log_sub"></button>
+              </div>
+            </div>`;
+    }
+
+    //signup things after click
+
+    function signinacc(e) {
+        let sign_par_box1 = document.querySelector(".log_right");
+
+        let mob_no = document.querySelector(".log_input_email_mob").value;
+        if (mob_no == "") {
+            alert("Please write your Mob No");
+            e.prevent();
+        }
+
+        let usermob_check = JSON.parse(localStorage.getItem("users"));
+
+        var havedata = false;
+        for (let i = 0; i < usermob_check.length; i++) {
+            if (usermob_check[i].mob_num == mob_no) {
+                havedata = true;
+            }
+        }
+        if (havedata) {
+            alert("You already register with this Number");
+            e.prevent();
+        }
+
+
+        sign_par_box1.innerHTML = `
+      <div class="sign_up_topr_box1">
+          <div class="log_r_top_logo">
+              <img src="img/zoom-logo-color.png" alt="">
+          </div>
+      </div>
+      <div class="sign_up_botr_box1">
+      <form id="signup_form">
+        <input type="text" placeholder="Enter your Mobile number" id="mob_num" value=${mob_no}>
+        <input type="text" placeholder="Enter your Name" id="name">
+        <input type="text" placeholder="Enter your E-mail ID" id="email">
+        <input type="password" placeholder="Enter Password" id="password">
+      </form>
+        <button class="deta_add_btn" onclick="saveData(event)">Submit</button>
+      </div>`;
+    }
+
+    function saveData(e) {
+        let form = document.getElementById("signup_form");
+
+        let mob_num = form.mob_num.value;
+
+        let name = form.name.value;
+
+        let email = form.email.value;
+
+        let password = form.password.value;
+
+        if (mob_num == "" || name == "" || email == "" || password == "") {
+            alert("PLEASE FILL ALL MANDATORY DETAILS");
+            e.prevent();
+        }
+
+        let userData = {
+            mob_num: mob_num,
+            name: name,
+            email: email,
+            password: password,
+        };
+
+        let s_arr = localStorage.getItem("users", userData);
+
+        if (s_arr == null) {
+            s_arr = [];
+        } else {
+            s_arr = JSON.parse(s_arr);
+        }
+        s_arr.push(userData);
+
+        localStorage.setItem("users", JSON.stringify(s_arr));
+
+        alert("YOU ARE SUCESSFULLY SIGNUP TO ZOOMCAR");
+        window.location.href = "index.html";
+    }
+
+    //LOGIN AFTERCLICK IN POPUP
+
+    function loginacc(e) {
+        let login_par_box2 = document.querySelector(".log_right2");
+
+        let mob_no = document.querySelector(".log_input_email_mob2").value;
+        if (mob_no == "") {
+            alert("Please write your Mob No");
+            e.prevent();
+        }
+
+        var userData = JSON.parse(localStorage.getItem("users"));
+
+        var havedata = false;
+        for (let i = 0; i < userData.length; i++) {
+            if (userData[i].mob_num == mob_no) {
+                havedata = true;
+            }
+        }
+        if (havedata) {
+            login_par_box2.innerHTML = `
+      <div class="login_topr_box1">
+          <div class="log_r_top_logo">
+              <img src="img/zoom-logo-color.png" alt="">
+          </div>
+      </div>
+      <div class="login_botr_box1">
+      <form id="login_form">
+        <input type="text" placeholder="Enter your Mobile number*" id="mob_num2" value=${mob_no}>
+        <input type="password" placeholder="Enter Password*" id="password2">
+      </form>
+        <button class="deta_add_btn" onclick="checkData(event)">Submit</button>
+      </div>`;
+        } else {
+            alert("Please First SignUp to Zoom Car Website");
+        }
+    }
+
+    function checkData(e) {
+        let form = document.getElementById("login_form");
+
+        let mob_num2 = form.mob_num2.value;
+
+        let password2 = form.password2.value;
+
+        if (mob_num2 == "" || password2 == "") {
+            alert("PLEASE FILL ALL MANDATORY DETAILS");
+            e.prevent();
+        }
+
+        let userData = {
+            mob_num2: mob_num2,
+            password2: password2,
+        };
+
+        var userData2 = JSON.parse(localStorage.getItem("users"));
+
+        var havedata2 = false;
+        for (let i = 0; i < userData2.length; i++) {
+            if (
+                userData2[i].mob_num == mob_num2 &&
+                userData2[i].password == password2
+            ) {
+                havedata2 = true;
+            }
+        }
+        if (havedata2) {
+            alert("You are sucessfully Login to Zoom Car");
+            changeNav();
+        } else {
+            alert("Please check your Mobile number or Password");
+        }
+    }
+    function changeNav() {
+        let pop_up22 = document.querySelector("#pop2");
+        pop_up22.style.display = "none";
+        let sign_btn = document.getElementById("signup_btn");
+        sign_btn.style.display = "none";
+        let login_btn = document.getElementById("login_btn");
+        login_btn.style.display = "none";
+
+        let form = document.getElementById("login_form");
+
+        let mob_num2 = form.mob_num2.value;
+
+        let password2 = form.password2.value;
+        let userData_name = JSON.parse(localStorage.getItem("users"));
+        let user_name;
+
+        let havData = false;
+        for (let i = 0; i < userData_name.length; i++) {
+            if (
+                userData_name[i].mob_num == mob_num2 &&
+                userData_name[i].password == password2
+            ) {
+                havData = true;
+                user_name = userData_name[i].name;
+            } else {
+                havData = false;
+            }
+        }
+        console.log(user_name);
+
+        let parent_ul = document.getElementById("nav_ul");
+
+        let li_img = document.createElement("li");
+        li_img.setAttribute("class", "item");
+
+        let divcre = document.createElement("div");
+
+        let image = document.createElement("img");
+        image.setAttribute("id", "avtar_logo");
+
+        image.src = "img/avtar_logo_log.png";
+
+        divcre.append(image);
+        li_img.append(divcre);
+
+        parent_ul.append(li_img);
+
+        let li_name = document.createElement("li");
+        li_name.setAttribute("class", "item");
+        li_name.setAttribute("id", "user_left_mar");
+        li_name.innerHTML = `<div class="us_name" onclick="show_dr_box()">${user_name}<i class="fas fa-caret-down"></i></div>
+  <div id="dropdown_5">
+  <div class="arrowmiddle55"></div>
+       <div class="drop_d_links first_us_box">
+          <button>MY ACCOUNT</button>
+       <div>
+       <div class="drop_d_links">
+          <button>MY BOOKINGS</button>
+       <div>
+       <div class="drop_d_links">
+          <button>SUPERMILER CLUB</button>
+       <div>
+       <div class="drop_d_links">
+          <button>MY REFERRALS</button>
+       <div>
+       <div class="drop_d_links last_bttn">
+          <button onclick="logoutFunc()">LOGOUT</button>
+       <div>
+  </div>`;
+
+        parent_ul.append(li_name);
+    }
+
+    function show_dr_box() {
+        var dropdown_5 = document.getElementById("dropdown_5");
+        if (dropdown_5.style.display != "none") {
+            dropdown_5.style.display = "none";
+        } else {
+            dropdown_5.style.display = "block";
+        }
+    }
+
+    function logoutFunc() {
+        window.location.href = "payment.html";
+    }
+
+    //auto_slider
+    var counterr = 1;
+    setInterval(function () {
+        var cir_div = (document.getElementById("radio" + counterr).checked = true);
+
+        var zPro1 = document.querySelector("#zoomPromo1");
+        var zPro2 = document.querySelector("#zoomPromo2");
+        var zPro3 = document.querySelector("#zoomPromo3");
+        if (counterr == 1) {
+            zPro1.style.display = "block";
+            zPro2.style.display = "none";
+            zPro3.style.display = "none";
+        }
+
+        if (counterr == 2) {
+            zPro1.style.display = "none";
+            zPro2.style.display = "block";
+            zPro3.style.display = "none";
+        }
+        if (counterr == 3) {
+            zPro1.style.display = "none";
+            zPro2.style.display = "none";
+            zPro3.style.display = "block";
+        }
+        counterr++;
+        if (counterr > 3) {
+            counterr = 1;
+        }
+    }, 3000);
+
+    var counterr2 = 1;
+    setInterval(function () {
+        var cir_div2 = (document.getElementById(
+            "radio" + counterr + 2
+        ).checked = true);
+
+        var zPro12 = document.querySelector("#zoomPromo12");
+        var zPro22 = document.querySelector("#zoomPromo22");
+        var zPro32 = document.querySelector("#zoomPromo32");
+        if (counterr2 == 1) {
+            zPro12.style.display = "block";
+            zPro22.style.display = "none";
+            zPro32.style.display = "none";
+        }
+
+        if (counterr2 == 2) {
+            zPro12.style.display = "none";
+            zPro22.style.display = "block";
+            zPro32.style.display = "none";
+        }
+        if (counterr2 == 3) {
+            zPro12.style.display = "none";
+            zPro22.style.display = "none";
+            zPro32.style.display = "block";
+        }
+        counterr2++;
+        if (counterr2 > 3) {
+            counterr2 = 1;
+        }
+    }, 3000);
+
+    function checkCity() {
+        var city = document.getElementById("city").value;
+        localStorage.setItem("city", JSON.stringify(city));
+    }
+
+
+    //LAST PART
+
+    function changeColor(id) {
+        var mouse = document.getElementById(`${id}`);
+        var drag = document.getElementById(`p${id}`);
+        var change = "rgb(34,34,41)";
+        var newTxt = "green";
+        mouse.style.backgroundColor = change;
+        drag.style.color = newTxt;
+        mouse.removeEventListener("mouseout", changeColor(`${id}`));
+    }
+    function initial(id) {
+        var mouse = document.getElementById(`${id}`);
+        var drag = document.getElementById(`p${id}`);
+        mouse.style.backgroundColor = "rgb(51, 65, 79)";
+        drag.style.color = "rgb(255, 255, 255)";
+    }
+    /*starting date and time get from local storage*/
+    let get_pi_tm = JSON.parse(localStorage.getItem("pick_up_time"));
+    let get_pi_dt = JSON.parse(localStorage.getItem("pick_up_date"));
+    get_pi_dt = get_pi_dt.split(" ");
+    get_pi_dt = get_pi_dt[0];
+
+    let time_parent = document.getElementById("pi_ti");
+    let date_parent = document.getElementById("pi_dt");
+    time_parent.innerText = get_pi_tm;
+    date_parent.innerText = get_pi_dt;
+
+    /*getting drop time and date from LS*/
+
+    let get_dr_tm = JSON.parse(localStorage.getItem("drop_time"));
+    let get_dr_dt = JSON.parse(localStorage.getItem("drop_date"));
+    get_dr_dt = get_dr_dt.split(" ");
+    get_dr_dt = get_dr_dt[0];
+
+    let time_parent2 = document.getElementById("dr_ti");
+    let date_parent2 = document.getElementById("dr_dt");
+    time_parent2.innerText = get_dr_tm;
+    date_parent2.innerText = get_dr_dt;
+
+    // let bookingPrice = JSON.parse(localStorage.getItem("booking_pr"))
+    // let book_parent = document.getElementById("bkn_amount");
+    // book_parent.innerText = bookingPrice;
+
+    let carName = JSON.parse(localStorage.getItem("car_name"))
+    let carNm_parent = document.getElementById("car_name");
+    carNm_parent.innerText = carName;
+
+    let carImg = JSON.parse(localStorage.getItem("car_img_src"))
+    let carImg_parent = document.getElementById("right_car");
+    carImg_parent.src = carImg;
+
+
+    // let bk_amt = document.getElementById("bkn_amount").innerText;
+    // bk_amt = Number(bk_amt);
+
+    // let ref_amt = document.getElementById("ref_amount").innerText;
+    // ref_amt = Number(ref_amt);
+
+    // let tt_amt = document.getElementById("total_amount");
+    // tt_amt.innerText = bk_amt + ref_amt;
+
+    let payable_amt=JSON.parse(localStorage.getItem("payable_amt"));
+    let pay_amt_parent=document.getElementById("pay_amt");
+    pay_amt_parent.innerText=payable_amt;
+    let pay_amt_parent2=document.getElementById("pay_amt2");
+    pay_amt_parent2.innerText=payable_amt;
+
+    let cod_div=document.getElementById("cod_div");
+    cod_div.addEventListener("click",showcod)
+
+
+    function showcod(){
+        alert("You Need to Pay Booking Amount Before The Date Of Journey Start At The Starting Location");
+        window.location.href="index.html"
+    }
+
+    
+     function checkchange(){
+    let cardNumVal=document.getElementById("cardNum").value;
+     let exyear=document.getElementById("exyear").value;
+     let cvV=document.getElementById("cvV").value;
+     let mm=document.getElementById("m_m").value;
+      if(cardNumVal.length==16 && exyear.length==4 && mm.length==2 && cvV.length==3){
+         let pay_btn_main=document.getElementById("pay_btn_main");
+         pay_btn_main.style.backgroundColor="greenyellow";
+         pay_btn_main.style.color="black";
+       } else {
+           let pay_btn_main=document.getElementById("pay_btn_main");
+         pay_btn_main.style.backgroundColor="#ccc";
+         pay_btn_main.style.color="white";
+       }
+     }
+
+
+    function paymentdone(e){
+    let cardNumVal=document.getElementById("cardNum").value;
+     let exyear=document.getElementById("exyear").value;
+     let cvV=document.getElementById("cvV").value;
+     let mm=document.getElementById("m_m").value;
+     if(cardNumVal==""||exyear==""||cvV==""||mm=="" || cardNumVal.length!=16 || exyear.length!=4 || mm.length!=2 || cvV.length!=3){
+         alert("Please Add Valid Inputs");
+         e.prevent()
+     }else{
+         alert("Your Payment Done Successfully!");
+         window.location.href="index.html"
+     }
+
+    }
+</script>

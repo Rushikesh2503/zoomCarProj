@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="search.css">
+    <title>Search</title>
+
+  </head>
+  <body>
+    <div id="searchpage">
+      <div id="selectbar">
+        <div class="sel_radiobox1"></div>
+        <input type="radio" name="radio-btn" id="radio1" />
+        <div class="sel_hori_line1"></div>
+        <div class="sel_radiobox2"></div>
+        <input type="radio" name="radio-btn" id="radio2" />
+        <div class="sel_hori_line2"></div>
+        <div class="sel_radiobox3"></div>
+        <input type="radio" name="radio-btn" id="radio3" />
+      </div>
+    </div>
+    <div id="search_box_cont">
+      <h1>Tell us your Starting Point</h1>
+      <div id="sel_start">
+        <div id="city_sel">
+          <select name="city" id="city_sub" onchange="checkC()">
+            <option value="select">City</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Vadodara">Vadodara</option>
+            <option value="Pune">Pune</option>
+          </select>
+        </div>
+        <div id="sele_st_loca">
+          <input
+            type="text"
+            placeholder="Tell us your starting point in City"
+            id="input_sel_st"
+            onchange="checknextbtn()"
+          />
+        </div>
+        <button id="locate_btn">
+          <div class="div_locate">
+            <img
+              src="https://www.zoomcar.com/assets/component-images/location.4f83fc7a3f686c9a14dc757b7a0b9b07.png"
+              alt=""
+            />
+            <div class="locate_par">Locate me</div>
+          </div>
+        </button>
+        <button id="showmap_btn"><a href="">show map</a></button>
+      </div>
+    </div>
+    <div id="drop_diff_city">
+      <div class="diff_city_para">
+        I want to drop my car in a different city
+      </div>
+
+      <div class="center">
+        <input type="checkbox" id="diff_city_check" onchange="divappend()" />
+      </div>
+    </div>
+
+    <div id="sel_start2"></div>
+
+    <div id="popular_pick"></div>
+
+    <div id="deta_Airport">
+      <p id="air_para">Need Zoomcar at your_city Airport</p>
+      <button class="airport_btn">International Terminal(T2)</button>
+      <button class="airport_btn">Domestic Terminal(T1A/T1B)</button>
+      <a href="" id="zoom_air_work">How Zoom Airport works ?</a>
+    </div>
+    <footer id="last_nav">
+      <div id="start_div_fo">
+        <div id="st1_divin">STARTING POINT</div>
+        <div id="st2_divin">Select Pick-up Location</div>
+        <div id="st3_divin"></div>
+      </div>
+      <button id="next_btn">NEXT</button>
+    </footer>
+  </body>
+</html>
+<script src="search.js"></script>
