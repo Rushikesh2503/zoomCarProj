@@ -931,7 +931,7 @@ margin-right: 50px;
   color: #9b9b9b;
 }
 .paymentMethods .content .tabs .tab.selected {
-  position: relative;
+  /* position: relative; */
   border-left-color: #75b84d;
   color: #000;
 }
@@ -974,10 +974,10 @@ margin-right: 50px;
   margin: 20px auto;
   text-align: left;
   padding: 20px;
-  position: relative;
+  /* position: relative; */
 }
 .cardPayment .card .cardNumber {
-  position: relative;
+  /* position: relative; */
   margin-top: 10px;
 }
 

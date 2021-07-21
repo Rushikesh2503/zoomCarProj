@@ -356,6 +356,7 @@ body {
   align-items: center;
   /*position: fixed;*/
   display: none;
+  z-index: 1000;
 }
 .log_in_cont {
   width: 800px;
