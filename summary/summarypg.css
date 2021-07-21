@@ -1,4 +1,3 @@
-
 body {
   margin: 0%;
   padding: 0%;
@@ -53,8 +52,8 @@ body {
   margin: 15px 0;
   float: right;
 }
-#offers #navbar #nav_ul li a:hover{
-    color: chartreuse;
+#offers #navbar #nav_ul li a:hover {
+  color: chartreuse;
 }
 .fa-caret-down {
   margin-left: 8px;
@@ -68,7 +67,7 @@ body {
   width: 160px;
   margin-top: 1px;
   display: none;
-   box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
   background-color: white;
 }
 
@@ -139,7 +138,7 @@ body {
   right: 350px;
   text-align: center;
   align-items: center;
-   box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 #sub_det_item .arrowmiddle {
   position: absolute;
@@ -251,7 +250,7 @@ body {
   right: 160px;
   text-align: center;
   align-items: center;
-   box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 .zms_detail p {
   color: #33414f;
@@ -290,7 +289,7 @@ body {
   right: 130px;
   text-align: center;
   align-items: center;
-   box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 .mob_det {
   display: none;
@@ -402,12 +401,12 @@ body {
   margin-top: 20px;
 }
 .log_r_top_cont {
-  height: 200px;
+  height: 70px;
   margin-left: 5px;
   border-bottom: 1px solid rgb(255, 253, 253);
   box-shadow: 0 1px 0px 0 rgb(211, 210, 210);
 }
-.log_r_top_cont_face {
+/* .log_r_top_cont_face {
   background-color: blue;
   margin: 20px auto 20px;
   width: 300px;
@@ -430,7 +429,7 @@ body {
 .log_r_top_cont a {
   text-decoration: none;
   color: white;
-}
+} */
 .log_r_bot {
   height: 190px;
 }
@@ -583,12 +582,12 @@ body {
   margin-top: 20px;
 }
 .log_r_top_cont2 {
-  height: 200px;
+  height: 70px;
   margin-left: 5px;
   border-bottom: 1px solid rgb(255, 253, 253);
   box-shadow: 0 1px 0px 0 rgb(211, 210, 210);
 }
-.log_r_top_cont_face2 {
+/* .log_r_top_cont_face2 {
   background-color: blue;
   margin: 20px auto 20px;
   width: 300px;
@@ -611,7 +610,7 @@ body {
 .log_r_top_cont2 a {
   text-decoration: none;
   color: white;
-}
+} */
 .log_r_bot2 {
   height: 190px;
 }
@@ -707,9 +706,9 @@ body {
   border: 2px solid greenyellow;
   border-radius: 5px;
 }
-#searching_box{
-    padding: 80px 0 10px;
-    background-color: rgb(232,232,232);
+#searching_box {
+  padding: 80px 0 10px;
+  background-color: rgb(232, 232, 232);
 }
 #journey {
   display: block;
@@ -735,176 +734,182 @@ body {
   font-size: 15px;
   margin: 0%;
 }
- #journey a img {
+#journey a img {
   width: 20px;
   height: 30px;
   margin-left: 240px;
   margin-top: 7px;
 }
-#front_box{
-    width: 100vw;
-    height: 700px;
-    /* background-color: rgba(0, 0, 0, 0.7);  */
-    padding: 180px 300px ;
-    display: flex;
-    
+#front_box {
+  width: 100vw;
+  height: 700px;
+  /* background-color: rgba(0, 0, 0, 0.7);  */
+  padding: 180px 300px;
+  display: flex;
 }
-#che_out{
-    width: 600px;
-    height: 500px;
+#che_out {
+  width: 600px;
+  height: 500px;
 }
-#cont1{
-    width: 600px;
-    height: 420px;
-    border: 1px solid black;
+#cont1 {
+  width: 600px;
+  height: 420px;
+  border: 1px solid black;
 }
-#b_check_div{
-    width: 130px;
-    height: 40px;
-    margin: 20px auto;
+#b_check_div {
+  width: 130px;
+  height: 40px;
+  margin: 20px auto;
 }
-#b_check_div .checkout_btn{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(99, 161, 62);
-    color: white;
-    border: none;
-    border-radius: 5px;
+#b_check_div .checkout_btn {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(99, 161, 62);
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
-#book_fee, #ref_amt,#ref_lef, #total{
-    display: flex;
+#book_fee,
+#ref_amt,
+#ref_lef,
+#total {
+  display: flex;
 }
-.ch_head h1,.ch_head h2{
-    font-weight: 400;
-    margin: 0%;
-    padding: 5px;
-    box-sizing: border-box;
-    font-size: 20px;
-      padding-left: 20px;
-    box-sizing: border-box;
+.ch_head h1,
+.ch_head h2 {
+  font-weight: 400;
+  margin: 0%;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
 }
-#viewoff{
-    padding: 15px 20px;
-    box-sizing: border-box;
-    background-color: rgb(228,241,220)
+#viewoff {
+  padding: 15px 20px;
+  box-sizing: border-box;
+  background-color: rgb(228, 241, 220);
 }
-#viewoff a{
-    color: green;
+#viewoff a {
+  color: green;
 }
-.vw_hr_btm{
-    margin-top: 0%;
+.vw_hr_btm {
+  margin-top: 0%;
 }
-.vw_hr_top{
-    margin-bottom: 0%;
+.vw_hr_top {
+  margin-bottom: 0%;
 }
-#book_fee_left{
-    width: 540px;
-    padding-left: 20px;
-    box-sizing: border-box;
+#book_fee_left {
+  width: 540px;
+  padding-left: 20px;
+  box-sizing: border-box;
 }
-#bookfee_amt{
-    color: blue;
+#bookfee_amt {
+  color: blue;
 }
-#bookfee_amt, #ref_ri,#total_div{
-    display: flex;
+#bookfee_amt,
+#ref_ri,
+#total_div {
+  display: flex;
 }
 #ref_lef {
-    width: 540px;
+  width: 540px;
 }
-#ref_lef h3{
-    margin: 5px 15px;
-    padding:0 ;
+#ref_lef h3 {
+  margin: 5px 15px;
+  padding: 0;
 }
-#total{
-   padding-left: 20px;
-    box-sizing: border-box;
-    background-color: rgb(228,241,220);
-    color: green;
-    height: 77px;
+#total {
+  padding-left: 20px;
+  box-sizing: border-box;
+  background-color: rgb(228, 241, 220);
+  color: green;
+  height: 77px;
 }
-#total_pay_tit p{
- width: 420px;
- font-size: 18px;
-}
-
-#sumry{
-    width: 300px;
-    height: 850px;
-    border: 1px solid black;
-    text-align: center;
-    margin-left: 70px;
-}
-#top_w_img{
-    box-sizing: border-box;
-}
-#top_w_img img{
-    width: 85%;
-    height:150px;
-}
-#top_w_img p{
-    margin: 0% ;
-    padding: 5px 0% ;
-}
-#car_name, .heading_sumry{
-    color: rgb(75, 74, 78) ;
-    font-size: 20px;
-}
-#seating_cap{
-    color: gray;
-}
-#pdt_ddt{
-    display: flex;
-    width: 73%;
-    margin: auto;
-}
-.time_hr{
-    width: 50px;
-    padding:0% ;
-    background-color: black;
-}
-.to{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: gray;
-    margin: 60px 0px;
-}
-#navi_box{
-    width: 90%;
-    height: 150px;
-    margin: auto;
-}
-#fare_inc_div{
-    width: 90%;
-    height: 150px;
-    margin: auto;
-}
-#fare_inc_div img{
-    width: 200px;
-    height: 100px;
-    margin-top: 20px;
-}
-#navi_box img{
-    width: 100%;
-    height: 100%;
-}
-#fr_ek_div{
-    display: flex;
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-#fr_ek_lef{
-    width: 52%;
-    text-align: left;
+#total_pay_tit p {
+  width: 420px;
+  font-size: 18px;
 }
 
-#fr_ek_rig{
-    width: 50%;
-    text-align: right;
+#sumry {
+  width: 300px;
+  height: 850px;
+  border: 1px solid black;
+  text-align: center;
+  margin-left: 70px;
+}
+#top_w_img {
+  box-sizing: border-box;
+}
+#top_w_img img {
+  width: 85%;
+  height: 150px;
+}
+#top_w_img p {
+  margin: 0%;
+  padding: 5px 0%;
+}
+#car_name,
+.heading_sumry {
+  color: rgb(75, 74, 78);
+  font-size: 20px;
+}
+#seating_cap {
+  color: gray;
+}
+#pdt_ddt {
+  display: flex;
+  width: 73%;
+  margin: auto;
+}
+.time_hr {
+  width: 50px;
+  padding: 0%;
+  background-color: black;
+}
+.to {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 60px 0px;
+}
+#navi_box {
+  width: 90%;
+  height: 150px;
+  margin: auto;
+}
+#fare_inc_div {
+  width: 90%;
+  height: 150px;
+  margin: auto;
+}
+#fare_inc_div img {
+  width: 200px;
+  height: 100px;
+  margin-top: 20px;
+}
+#navi_box img {
+  width: 100%;
+  height: 100%;
+}
+#fr_ek_div {
+  display: flex;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+#fr_ek_lef {
+  width: 52%;
+  text-align: left;
+}
+
+#fr_ek_rig {
+  width: 50%;
+  text-align: right;
 }
 #last {
-    margin-top: 10vh; 
+  margin-top: 10vh;
 }
 #last .footer {
   background-color: rgb(51, 65, 79);
@@ -913,7 +918,6 @@ body {
   width: 100%;
   padding-top: 20px;
   box-sizing: border-box;
-
 }
 #last .footer .Button {
   display: grid;
@@ -922,7 +926,7 @@ body {
   font-size: 14px;
   width: 800px;
   margin: auto;
-/* background-color: black; */
+  /* background-color: black; */
 }
 #last .footer .Button button {
   width: 210px;
@@ -946,7 +950,6 @@ body {
   text-align: center;
   text-decoration: none;
   color: white;
-  
 }
 #last .footer h4 {
   text-align: center;
@@ -955,7 +958,6 @@ body {
   width: 180px;
   margin: 15px auto;
   color: white;
-  
 }
 #last .footer .aboutus {
   display: grid;
@@ -964,10 +966,8 @@ body {
   grid-gap: 15px 25px;
   width: 1020px;
   margin: auto;
- 
-  
 }
-#last .footer .aboutus >div{
+#last .footer .aboutus > div {
   width: 220px;
   height: 50px;
 }
@@ -981,10 +981,10 @@ body {
   grid-template-columns: 250px 250px 250px 250px;
   grid-template-rows: 50px 50px 50px 50px 50px 50px 50px;
   /* padding: 20px; */
-  grid-gap:20px 25px;
+  grid-gap: 20px 25px;
   width: 1020px;
-  margin:auto ;
-   /* background-color: black; */
+  margin: auto;
+  /* background-color: black; */
 }
 #last .footer .cities .help {
   font-size: 14px;
@@ -994,7 +994,6 @@ body {
   width: 200px;
   height: 30px;
   /* background-color: blanchedalmond; */
-
 }
 #last .footer .cities a {
   color: white;
@@ -1006,12 +1005,12 @@ body {
   display: grid;
   grid-template-columns: 220px 220px 220px 220px;
   grid-template-rows: 50px 50px 50px 50px 50px;
-  grid-gap:20px 60px;
+  grid-gap: 20px 60px;
   width: 1050px;
-  margin:auto ;
+  margin: auto;
   /* background-color: black; */
 }
-#last .footer .airport >div{
+#last .footer .airport > div {
   width: 220px;
   height: 30px;
   /* background-color: blanchedalmond */
@@ -1038,14 +1037,14 @@ body {
   border-radius: 50%;
 }
 #last .footer .address h4 {
-  margin-left:1px ;
+  margin-left: 1px;
   font-size: 20px;
   color: rgb(173, 179, 184);
 }
 #last .footer .address p {
   font-size: 15px;
   color: rgb(173, 179, 184);
-   margin-left:5px ;
+  margin-left: 5px;
 }
 #last .address .social {
   display: grid;
@@ -1053,21 +1052,17 @@ body {
   grid-template-rows: auto;
   grid-gap: 40px;
   padding: 20px;
-  
 }
-
 
 @media only screen and (max-width: 800px) {
-    #offers #navbar #nav_ul {
-        margin-left:-40px;
-    }
-    #grid_front_off_pg{
-        width: 100%;
-        grid-template-columns: 100%;
-    }
-    #front_box{
-      height: 160vh;
-    }
-
+  #offers #navbar #nav_ul {
+    margin-left: -40px;
+  }
+  #grid_front_off_pg {
+    width: 100%;
+    grid-template-columns: 100%;
+  }
+  #front_box {
+    height: 160vh;
+  }
 }
-    

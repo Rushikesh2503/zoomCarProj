@@ -1,167 +1,159 @@
-   
-  function detail(e) {
-      let id = e;
-      //  let btn = document.getElementsByClassName('KnowMore');
-       let disp = document.getElementById(`kn${id}`);
-        console.log(id);
-      if (disp.style.display != "none")
-        disp.style.display = "none";
-      else
-        disp.style.display = "block";
-    }
+function detail(e) {
+  let id = e;
+  //  let btn = document.getElementsByClassName('KnowMore');
+  let disp = document.getElementById(`kn${id}`);
+  console.log(id);
+  if (disp.style.display != "none") disp.style.display = "none";
+  else disp.style.display = "block";
+}
 
-    let get_str_loc=JSON.parse(localStorage.getItem("start_city_name"));
-    console.log('get_str_loc:', get_str_loc)
-    let get_drop_loc=JSON.parse(localStorage.getItem("drop_city_name"));
-    console.log('get_drop_loc:', get_drop_loc);
-    if(get_drop_loc==""){
-      get_drop_loc=get_str_loc;
-    }
+let get_str_loc = JSON.parse(localStorage.getItem("start_city_name"));
+console.log("get_str_loc:", get_str_loc);
+let get_drop_loc = JSON.parse(localStorage.getItem("drop_city_name"));
+console.log("get_drop_loc:", get_drop_loc);
+if (get_drop_loc == "") {
+  get_drop_loc = get_str_loc;
+}
 
-    let st_loc_parent=document.getElementById("pick_loca");
-    let dr_loc_parent=document.getElementById("drop_loca");
+let st_loc_parent = document.getElementById("pick_loca");
+let dr_loc_parent = document.getElementById("drop_loca");
 
-    st_loc_parent.innerText=get_str_loc;
-    dr_loc_parent.innerText=get_drop_loc;
+st_loc_parent.innerText = get_str_loc;
+dr_loc_parent.innerText = get_drop_loc;
 
-    /*starting date and time get from local storage*/
-let get_pi_tm=JSON.parse(localStorage.getItem("pick_up_time"));
-let get_pi_dt=JSON.parse(localStorage.getItem("pick_up_date"));
- get_pi_dt=get_pi_dt;
+/*starting date and time get from local storage*/
+let get_pi_tm = JSON.parse(localStorage.getItem("pick_up_time"));
+let get_pi_dt = JSON.parse(localStorage.getItem("pick_up_date"));
+get_pi_dt = get_pi_dt;
 
-let time_parent=document.getElementById("pi_ti");
-let date_parent=document.getElementById("pi_dt");
-time_parent.innerText=get_pi_tm;
-date_parent.innerText=get_pi_dt;
+let time_parent = document.getElementById("pi_ti");
+let date_parent = document.getElementById("pi_dt");
+time_parent.innerText = get_pi_tm;
+date_parent.innerText = get_pi_dt;
 
 /*getting drop time and date from LS*/
 
-let get_dr_tm=JSON.parse(localStorage.getItem("drop_time"));
-let get_dr_dt=JSON.parse(localStorage.getItem("drop_date"));
- get_dr_dt=get_dr_dt;
+let get_dr_tm = JSON.parse(localStorage.getItem("drop_time"));
+let get_dr_dt = JSON.parse(localStorage.getItem("drop_date"));
+get_dr_dt = get_dr_dt;
 
-let time_parent2=document.getElementById("dr_ti");
-let date_parent2=document.getElementById("dr_dt");
-time_parent2.innerText=get_dr_tm;
-date_parent2.innerText=get_dr_dt;
+let time_parent2 = document.getElementById("dr_ti");
+let date_parent2 = document.getElementById("dr_dt");
+time_parent2.innerText = get_dr_tm;
+date_parent2.innerText = get_dr_dt;
 
-function gotosearchpg(){
-  window.location.href="../search/search.html"
+function gotosearchpg() {
+  window.location.href = "../search/search.html";
 }
-function bookingnow(e){
-  let pr_val=document.getElementById(`price_${e}`).innerText;
-  let car_name=document.getElementById(`car_name_${e}`).innerText;
-  let car_img=document.getElementById(`car_img_${e}`).src;
+function bookingnow(e) {
+  let pr_val = document.getElementById(`price_${e}`).innerText;
+  let car_name = document.getElementById(`car_name_${e}`).innerText;
+  let car_img = document.getElementById(`car_img_${e}`).src;
   // console.log('car_img:', car_img)
   // console.log('car_name:', car_name)
   // console.log('pr_val:', pr_val)
-  localStorage.setItem("car_name",JSON.stringify(car_name));
-  localStorage.setItem("booking_pr",JSON.stringify(pr_val));
-  localStorage.setItem("car_img_src",JSON.stringify(car_img));
+  localStorage.setItem("car_name", JSON.stringify(car_name));
+  localStorage.setItem("booking_pr", JSON.stringify(pr_val));
+  localStorage.setItem("car_img_src", JSON.stringify(car_img));
 
-  window.location.href="../summary/summarypg.html"
+  window.location.href = "../summary/summarypg.html";
 }
 
-function sortLH(){
-  var array1=[1,2,3,4,5];
-  var arr=[];
-  var data=[1,2,3,4,5];
-  for(let i=1;i<6;i++){
-    let pr_val=document.getElementById(`price_${i}`).innerText;
-    arr.push(pr_val)
+function sortLH() {
+  var array1 = [1, 2, 3, 4, 5];
+  var arr = [];
+  var data = [1, 2, 3, 4, 5];
+  for (let i = 1; i < 6; i++) {
+    let pr_val = document.getElementById(`price_${i}`).innerText;
+    arr.push(pr_val);
   }
-  for(var i=0;i<data.length-1;i++){
-      for(var j=0;j<data.length-i-1;j++){
-        if(arr[j]>arr[j+1]){
-          swap(arr,j,j+1);
-          swap(data,j,j+1);
-          
-        }
+  for (var i = 0; i < data.length - 1; i++) {
+    for (var j = 0; j < data.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1);
+        swap(data, j, j + 1);
       }
     }
+  }
 
-  function swap(arr,a,b){
+  function swap(arr, a, b) {
     var temp = arr[a];
-    arr[a] =arr[b];
+    arr[a] = arr[b];
     arr[b] = temp;
   }
-  var price_amtt=[];
-  var carNames=[];
-  var carImg_src=[];
-  for(let i=0;i<data.length;i++){
-  let pr_val=document.getElementById(`price_${data[i]}`).innerText;
+  var price_amtt = [];
+  var carNames = [];
+  var carImg_src = [];
+  for (let i = 0; i < data.length; i++) {
+    let pr_val = document.getElementById(`price_${data[i]}`).innerText;
     price_amtt.push(pr_val);
 
-  let car_name=document.getElementById(`car_name_${data[i]}`).innerText;
+    let car_name = document.getElementById(`car_name_${data[i]}`).innerText;
     carNames.push(car_name);
 
-  let car_img_src=document.getElementById(`car_img_${data[i]}`).src;
-    carImg_src.push(car_img_src)
+    let car_img_src = document.getElementById(`car_img_${data[i]}`).src;
+    carImg_src.push(car_img_src);
   }
   //console.log(price_amtt,carNames,carImg_src);
 
-  for(let i=0;i<array1.length;i++){
-  let pr_val=document.getElementById(`price_${array1[i]}`);
-    pr_val.innerText=`${price_amtt[i]}`
-  let car_name=document.getElementById(`car_name_${array1[i]}`);
-    car_name.innerText=`${carNames[i]}`
-  let car_img_src=document.getElementById(`car_img_${array1[i]}`);
-    car_img_src.src=`${carImg_src[i]}`
+  for (let i = 0; i < array1.length; i++) {
+    let pr_val = document.getElementById(`price_${array1[i]}`);
+    pr_val.innerText = `${price_amtt[i]}`;
+    let car_name = document.getElementById(`car_name_${array1[i]}`);
+    car_name.innerText = `${carNames[i]}`;
+    let car_img_src = document.getElementById(`car_img_${array1[i]}`);
+    car_img_src.src = `${carImg_src[i]}`;
   }
 }
 
-
-function sortHL(){
-  var array1=[1,2,3,4,5];
-  var arr=[];
-  var data=[1,2,3,4,5];
-  for(let i=1;i<6;i++){
-    let pr_val=document.getElementById(`price_${i}`).innerText;
-    arr.push(pr_val)
+function sortHL() {
+  var array1 = [1, 2, 3, 4, 5];
+  var arr = [];
+  var data = [1, 2, 3, 4, 5];
+  for (let i = 1; i < 6; i++) {
+    let pr_val = document.getElementById(`price_${i}`).innerText;
+    arr.push(pr_val);
   }
-  for(var i=0;i<data.length-1;i++){
-      for(var j=0;j<data.length-i-1;j++){
-        if(arr[j]<arr[j+1]){
-          swap(arr,j,j+1);
-          swap(data,j,j+1);
-          
-        }
-        
+  for (var i = 0; i < data.length - 1; i++) {
+    for (var j = 0; j < data.length - i - 1; j++) {
+      if (arr[j] < arr[j + 1]) {
+        swap(arr, j, j + 1);
+        swap(data, j, j + 1);
       }
     }
+  }
 
-  function swap(arr,a,b){
+  function swap(arr, a, b) {
     var temp = arr[a];
-    arr[a] =arr[b];
+    arr[a] = arr[b];
     arr[b] = temp;
   }
-  var price_amtt=[];
-  var carNames=[];
-  var carImg_src=[];
-  for(let i=0;i<data.length;i++){
-  let pr_val=document.getElementById(`price_${data[i]}`).innerText;
+  var price_amtt = [];
+  var carNames = [];
+  var carImg_src = [];
+  for (let i = 0; i < data.length; i++) {
+    let pr_val = document.getElementById(`price_${data[i]}`).innerText;
     price_amtt.push(pr_val);
 
-  let car_name=document.getElementById(`car_name_${data[i]}`).innerText;
+    let car_name = document.getElementById(`car_name_${data[i]}`).innerText;
     carNames.push(car_name);
 
-  let car_img_src=document.getElementById(`car_img_${data[i]}`).src;
-    carImg_src.push(car_img_src)
+    let car_img_src = document.getElementById(`car_img_${data[i]}`).src;
+    carImg_src.push(car_img_src);
   }
   //console.log(price_amtt,carNames,carImg_src);
 
-  for(let i=0;i<array1.length;i++){
-  let pr_val=document.getElementById(`price_${array1[i]}`);
-    pr_val.innerText=`${price_amtt[i]}`
-  let car_name=document.getElementById(`car_name_${array1[i]}`);
-    car_name.innerText=`${carNames[i]}`
-  let car_img_src=document.getElementById(`car_img_${array1[i]}`);
-    car_img_src.src=`${carImg_src[i]}`
+  for (let i = 0; i < array1.length; i++) {
+    let pr_val = document.getElementById(`price_${array1[i]}`);
+    pr_val.innerText = `${price_amtt[i]}`;
+    let car_name = document.getElementById(`car_name_${array1[i]}`);
+    car_name.innerText = `${carNames[i]}`;
+    let car_img_src = document.getElementById(`car_img_${array1[i]}`);
+    car_img_src.src = `${carImg_src[i]}`;
   }
 }
 
-
-    //LogIn POP
+//LogIn POP
 var logIn = document.getElementById("login_btn");
 logIn.addEventListener("click", popupCome2);
 function popupCome2() {
@@ -189,16 +181,6 @@ function popCancel() {
               </div>
               <div class="log_r_top_cont">
                 <label for="">Continue with</label>
-                <a
-                  href="https://www.facebook.com/login.php?skip_api_login=1&api_key=194504380711275&kid_directed_site=0&app_id=194504380711275&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.8%2Fdialog%2Foauth%3Fapp_id%3D194504380711275%26cbt%3D1622385494561%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfd7eb5e6eafb3%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%26client_id%3D194504380711275%26display%3Dpopup%26domain%3Dwww.zoomcar.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Fmumbai%252F%26fx_app%3Dfacebook%26locale%3Den_US%26logger_id%3Df27e55aa28e60e4%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df52f349df35ed%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%2526frame%253Df1a91b53ea2eb04%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv2.8%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df52f349df35ed%26domain%3Dwww.zoomcar.com%26origin%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Ff2bf161617a4c58%26relation%3Dopener%26frame%3Df1a91b53ea2eb04%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=mr_IN&pl_dbl=0">
-                  <div class="log_r_top_cont_face">Facebook</div>
-                </a>
-
-                <a
-                  href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.zoomcar.com%3Fid%3Dauth976566&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&client_id=1022741829589-ms1t8peh8j5iahb23ct46ma8uvicc7lc.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.zoomcar.com&fetch_basic_profile=true&gsiwebsdk=2&flowName=GeneralOAuthFlow">
-                  <div class="log_r_top_cont_gmail">Gmail</div>
-                </a>
-
               </div>
             </div>
             <div class="log_r_bot">
@@ -222,17 +204,7 @@ function popCancel2() {
               </div>
               <div class="log_r_top_cont">
                 <label for="">Continue with</label>
-                <a
-                  href="https://www.facebook.com/login.php?skip_api_login=1&api_key=194504380711275&kid_directed_site=0&app_id=194504380711275&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.8%2Fdialog%2Foauth%3Fapp_id%3D194504380711275%26cbt%3D1622385494561%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Dfd7eb5e6eafb3%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%26client_id%3D194504380711275%26display%3Dpopup%26domain%3Dwww.zoomcar.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Fmumbai%252F%26fx_app%3Dfacebook%26locale%3Den_US%26logger_id%3Df27e55aa28e60e4%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df52f349df35ed%2526domain%253Dwww.zoomcar.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.zoomcar.com%25252Ff2bf161617a4c58%2526relation%253Dopener%2526frame%253Df1a91b53ea2eb04%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv2.8%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df52f349df35ed%26domain%3Dwww.zoomcar.com%26origin%3Dhttps%253A%252F%252Fwww.zoomcar.com%252Ff2bf161617a4c58%26relation%3Dopener%26frame%3Df1a91b53ea2eb04%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=mr_IN&pl_dbl=0">
-                  <div class="log_r_top_cont_face">Facebook</div>
-                </a>
-
-                <a
-                  href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.zoomcar.com%3Fid%3Dauth976566&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&client_id=1022741829589-ms1t8peh8j5iahb23ct46ma8uvicc7lc.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.zoomcar.com&fetch_basic_profile=true&gsiwebsdk=2&flowName=GeneralOAuthFlow">
-                  <div class="log_r_top_cont_gmail">Gmail</div>
-                </a>
-
-              </div>
+                </div>
             </div>
             <div class="log_r_bot">
               <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob">
@@ -257,9 +229,11 @@ function signinacc(e) {
   let usermob_check = JSON.parse(localStorage.getItem("users"));
 
   var havedata = false;
-  for (let i = 0; i < usermob_check.length; i++) {
-    if (usermob_check[i].mob_num == mob_no) {
-      havedata = true;
+  if (usermob_check != null) {
+    for (let i = 0; i < usermob_check.length; i++) {
+      if (usermob_check[i].mob_num == mob_no) {
+        havedata = true;
+      }
     }
   }
   if (havedata) {
@@ -267,7 +241,6 @@ function signinacc(e) {
     e.prevent();
   }
 
-  
   sign_par_box1.innerHTML = `
       <div class="sign_up_topr_box1">
           <div class="log_r_top_logo">
