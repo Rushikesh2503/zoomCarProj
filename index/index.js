@@ -29,7 +29,7 @@ function popCancel() {
               </div>
             </div>
             <div class="log_r_bot">
-              <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob">
+              <input type="text" placeholder="Enter your Mobile number" class="log_input_email_mob">
               <div class="log_r_bot_btn">
                 <button class="btn_log_sub"></button>
               </div>
@@ -52,7 +52,7 @@ function popCancel2() {
               </div>
             </div>
             <div class="log_r_bot">
-              <input type="text" placeholder="Enter your E-mail or Mobile number" class="log_input_email_mob">
+              <input type="text" placeholder="Enter your Mobile number" class="log_input_email_mob">
               <div class="log_r_bot_btn">
                 <button class="btn_log_sub"></button>
               </div>
