@@ -133,6 +133,11 @@ localStorage.setItem("pick_up_date", JSON.stringify(res));
 
 let time = document.getElementById("timething1");
 let latest_time_h = today.getHours();
+if (latest_time_h < 10) {
+  latest_time_h = 0 + "" + latest_time_h;
+} else {
+  latest_time_h = latest_time_h;
+}
 
 let latest_time_min = today.getMinutes();
 if (latest_time_min < 10) {
@@ -140,9 +145,9 @@ if (latest_time_min < 10) {
 } else {
   latest_time_min = latest_time_min;
 }
-//   console.log('latest_time_h:', latest_time_h)
-// console.log('latest_time_min:', latest_time_min)
 time.value = `${latest_time_h}:${latest_time_min}`;
+
+console.log("time:", time.value);
 
 function checkTime() {
   let time_par = document.getElementById("dt3_divin");
