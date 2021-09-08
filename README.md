@@ -76,5 +76,25 @@
 *All the images and icon links have been taken from main website and some other internet sources and may be subject to copyright so try not to use the images or icons for business purposes or reproduce them without their approval on the owner the images and icons used here are just for the making this project and for learning purposes.*
 
 
-## Demo Image of Home Page.
+## Demo Images of Clone App
+
+* *Home Page*
 ![zoomHome](https://user-images.githubusercontent.com/82999542/122533925-ac781500-d03f-11eb-94a6-db56adf13d0a.png)
+
+* *Offers Page*
+![offerpg](https://user-images.githubusercontent.com/82999542/132513691-5e462fc3-b9e5-45b9-826b-b515c99c1ddf.png)
+
+* *Car Pick Up Location Page*
+![pickuppg](https://user-images.githubusercontent.com/82999542/132513711-044abefa-c5af-4081-bb83-249782be1520.png)
+
+* *Pick/Drop Date Selection*
+![pickDate](https://user-images.githubusercontent.com/82999542/132513727-b58737b9-1218-4a3f-8523-c60e3792f192.png)
+
+* *Car Selection & Sorting Page*
+![bookingpg](https://user-images.githubusercontent.com/82999542/132513737-2a4d446d-0bf0-42d3-ac30-f3d2d39f5dd1.png)
+
+* *Summary Page*
+![sumpg](https://user-images.githubusercontent.com/82999542/132513754-78be47ef-c7bf-412d-8ead-838db9b05b32.png)
+
+* *Payment Page*
+![paymentpg](https://user-images.githubusercontent.com/82999542/132513766-b126ba79-a2b9-4d65-8c3b-62421ebabb3c.png)
