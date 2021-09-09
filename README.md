@@ -64,18 +64,6 @@
 
 
 
-
-## Team Members
-
-* *Rushikesh Bambadkar*
-* *Vishnu Sankar*
-* *Sameel Paikadan*
-
-
-## Note:
-*All the images and icon links have been taken from main website and some other internet sources and may be subject to copyright so try not to use the images or icons for business purposes or reproduce them without their approval on the owner the images and icons used here are just for the making this project and for learning purposes.*
-
-
 ## Demo Images of Clone App
 
 * *Home Page*
@@ -98,3 +86,16 @@
 
 * *Payment Page*
 ![paymentpg](https://user-images.githubusercontent.com/82999542/132513766-b126ba79-a2b9-4d65-8c3b-62421ebabb3c.png)
+
+
+
+## Team Members
+
+* *Rushikesh Bambadkar*
+* *Vishnu Sankar*
+* *Sameel Paikadan*
+
+
+## Note:
+*All the images and icon links have been taken from main website and some other internet sources and may be subject to copyright so try not to use the images or icons for business purposes or reproduce them without their approval on the owner the images and icons used here are just for the making this project and for learning purposes.*
+
