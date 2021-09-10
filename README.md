@@ -6,6 +6,26 @@
 
 *We can book a zoom car with this website.*
 
+
+
+## Deployed Link
+
+<h4>https://rushikesh2503.github.io/zoomCarProj/</h4>
+
+
+## Installing and Running
+
+Executing the commands mentioned below one by one in your command line will help in making this app.
+
+**Cloning**
+
+```
+https://github.com/Rushikesh2503/zoomCarProj.git
+
+start live server in index.html
+
+```
+
 ## Pages Build
 
 *1. Home Page*
